@@ -34,117 +34,118 @@ export default function SignInPage() {
     //     }
     // };
 
-    // const handleSignIn = async (e: React.FormEvent) => {
-    //     e.preventDefault();
-    //     setLoginError(null);
-    //     setLoginMessage(null);
-    
-    //     try {
-    //         // Fetch AllowedUsers from Firebase
-    //         const allowedUsersRef = ref(database, "AllowedUsers");
-    //         const snapshot = await get(allowedUsersRef);
-    
-    //         if (!snapshot.exists()) {
-    //             setLoginError("Access denied. No allowed users found.");
-    //             return;
-    //         }
-    
-    //         // Get Allowed Users data
-    //         const allowedUsers = snapshot.val();
-    
-    //         // Find the user by email
-    //         const user = Object.values(allowedUsers).find(
-    //             (userData) => (userData as { email: string }).email === email
-    //         );
-
-    //         setFullName((user as { name: string }).name || "User");
-
-    
-    //         if (!user) {
-    //             setLoginError("Access denied. Your email is not registered.");
-    //             return;
-    //         }else{
-
-    //                         const sessionExpireTime = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 hours
-    //         sessionStorage.setItem("sessionExpireTime", sessionExpireTime.toString());
-    //         sessionStorage.setItem("userName", FullName);
-
-    //         // Redirect to dashboard with user details
-    //         router.push(`/dashboard`);    
-    //             setLoginMessage("Redirecting....")
-    //         }
-    
-    //         // Set Full Name    
-    //         // // Send OTP to email
-    //         // const response = await fetch("/api/send-otp", {
-    //         //     method: "POST",
-    //         //     headers: { "Content-Type": "application/json" },
-    //         //     body: JSON.stringify({ email }),
-    //         // });
-    
-    //         // const data = await response.json();
-    
-    //         // if (response.ok) {
-    //         //     setShowOtpField(true);
-    //         //     setshowSigninField(false);
-    //         //     setGeneratedOtp(data.otp);
-    //         //     setLoginMessage("OTP sent to your email. Please enter the OTP to proceed.");
-    //         // } else {
-    //         //     setLoginError(data.error || "Failed to send OTP. Please try again.");
-    //         // }
-    //     } catch (err) {
-    //         setLoginError("Something went wrong. Please try again.");
-    //         console.error("Login error:", err);
-    //     }
-    // };
-    
-
-
-
     const handleSignIn = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoginError(null);
         setLoginMessage(null);
-
+    
         try {
             // Fetch AllowedUsers from Firebase
             const allowedUsersRef = ref(database, "AllowedUsers");
             const snapshot = await get(allowedUsersRef);
-
+    
             if (!snapshot.exists()) {
                 setLoginError("Access denied. No allowed users found.");
                 return;
             }
-
+    
             // Get Allowed Users data
             const allowedUsers = snapshot.val();
-
+    
             // Find the user by email
             const user = Object.values(allowedUsers).find(
                 (userData) => (userData as { email: string }).email === email
             );
 
+            setFullName((user as { name: string }).name || "User");
+
+    
             if (!user) {
                 setLoginError("Access denied. Your email is not registered.");
                 return;
-            }
+            }else{
 
-            // Set Full Name
-            const userName = (user as { name: string }).name || "User";
-            setFullName(userName);
-
-            // Store session data
-            const sessionExpireTime = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 hours
+                            const sessionExpireTime = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 hours
             sessionStorage.setItem("sessionExpireTime", sessionExpireTime.toString());
-            sessionStorage.setItem("userName", userName);
+            sessionStorage.setItem("userName", FullName);
 
-            setLoginMessage("Redirecting...");
-            router.push("/dashboard");
+            // Redirect to dashboard with user details
+            router.push(`/dashboard`);    
+                setLoginMessage("Redirecting....")
+            }
+    
+            // Set Full Name    
+            // // Send OTP to email
+            // const response = await fetch("/api/send-otp", {
+            //     method: "POST",
+            //     headers: { "Content-Type": "application/json" },
+            //     body: JSON.stringify({ email }),
+            // });
+    
+            // const data = await response.json();
+    
+            // if (response.ok) {
+            //     setShowOtpField(true);
+            //     setshowSigninField(false);
+            //     setGeneratedOtp(data.otp);
+            //     setLoginMessage("OTP sent to your email. Please enter the OTP to proceed.");
+            // } else {
+            //     setLoginError(data.error || "Failed to send OTP. Please try again.");
+            // }
         } catch (err) {
             setLoginError("Something went wrong. Please try again.");
             console.error("Login error:", err);
         }
     };
+    
+
+
+
+    // const handleSignIn = async (e: React.FormEvent) => {
+    //     e.preventDefault();
+    //     setLoginError(null);
+    //     setLoginMessage(null);
+
+    //     try {
+    //         // Fetch AllowedUsers from Firebase
+    //         const allowedUsersRef = ref(database, "AllowedUsers");
+    //         const snapshot = await get(allowedUsersRef);
+
+    //         if (!snapshot.exists()) {
+    //             setLoginError("Access denied. No allowed users found.");
+    //             return;
+    //         }
+
+    //         // Get Allowed Users data
+    //         const allowedUsers = snapshot.val();
+
+    //         // Find the user by email
+    //         const user = Object.values(allowedUsers).find(
+    //             (userData) => (userData as { email: string }).email === email
+    //         );
+
+    //         if (!user) {
+    //             setLoginError("Access denied. Your email is not registered.");
+    //             return;
+    //         }
+
+    //         // Set Full Name
+    //         const userName = (user as { name: string }).name || "User";
+    //         setFullName(userName);
+            
+
+    //         // Store session data
+    //         const sessionExpireTime = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 hours
+    //         sessionStorage.setItem("sessionExpireTime", sessionExpireTime.toString());
+    //         sessionStorage.setItem("userName", userName);
+
+    //         setLoginMessage("Redirecting...");
+    //         router.push("/dashboard");
+    //     } catch (err) {
+    //         setLoginError("Something went wrong. Please try again.");
+    //         console.error("Login error:", err);
+    //     }
+    // };
 
 
 
