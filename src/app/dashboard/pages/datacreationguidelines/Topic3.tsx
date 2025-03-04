@@ -1,4 +1,7 @@
 // import '../Day1Module.css';
+import one from '../../../../../public/Images/5.3.png';
+import two from '../../../../../public/Images/5.3.1.png';
+import Image from 'next/image';
 
 export default function ThirTopic() {
     return (
@@ -30,7 +33,7 @@ export default function ThirTopic() {
                         </li>
                         <br />
                         <figure className='img-5-3'>
-                            <img src='../images/5.3.png'/>
+                        <Image src={one} width={0} height={0} alt="Logo" />
                         </figure>
 
 
@@ -53,7 +56,7 @@ export default function ThirTopic() {
 
                         <br />
                         <figure className='img-5-3'>
-                            <img src='../images/5.3.1.png'/>
+                        <Image src={two} width={0} height={0} alt="Logo" />
                         </figure>
 
                         <br />
