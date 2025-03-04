@@ -11,7 +11,7 @@ export default function Dashboard() {
 
   <div className="ProgressbarContent">
     <h1>
-    Welcome to Softage Information Technology Limited Data Team!
+    Welcome to General Agents Team!
     </h1>
     <br/>
     <p>Welcome to the ACE Data Collection Project! Our mission is to gather clean, precise recordings of tasks to train ACE, our computer control agent. As a data creator, you’ll play a key role in shaping ACE into the best computer control agent.</p><br/>

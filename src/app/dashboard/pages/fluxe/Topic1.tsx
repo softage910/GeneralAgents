@@ -25,6 +25,9 @@ export default function FirstTopic() {
             <p>
                 Fluxe is the tool on which you will be collecting data to train ACE.</p>
                 <br />
+                <a className="fluxe-download" href="/FluxeInstaller.pkg" download>
+        Click here to download Fluxe
+      </a>
                 <figure className='img-51'> 
                 <Image src={one} width={0} height={0} alt="Logo" />
                 </figure>
