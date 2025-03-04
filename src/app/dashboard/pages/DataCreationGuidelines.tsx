@@ -1,8 +1,7 @@
 import "./General.css";
 import { useState, useEffect } from "react";
 import { database, auth } from "../../../lib/firebaseconfig";
-import { ref, get, update } from "firebase/database";
-
+import { ref, get } from "firebase/database";
 import Topic1 from "./datacreationguidelines/Topic1";
 import Topic2 from "./datacreationguidelines/Topic2";
 import Topic3 from "./datacreationguidelines/Topic3";
@@ -20,7 +19,6 @@ import Topic9 from "./datacreationguidelines/Topic9";
 
 export default function DataCreation() {
     const [selectedTopic, setSelectedTopic] = useState<number>(1); // Start from Topic 1
-    const [completedTopics, setCompletedTopics] = useState<string[]>([]);
     const userId = auth.currentUser?.uid;
 
     const topics = [
@@ -43,13 +41,11 @@ export default function DataCreation() {
 
         get(userProgressRef).then((snapshot) => {
             if (snapshot.exists()) {
-                setCompletedTopics(Object.keys(snapshot.val()));
             }
         });
     }, [userId]);
 
     const selectedTopicIndex = topics.findIndex((topic) => topic.id === selectedTopic);
-    const selectedTopicKey = topics[selectedTopicIndex]?.key;
     const selectedTopicContent = topics[selectedTopicIndex]?.component;
 
     const handleNextTopic = async () => {
