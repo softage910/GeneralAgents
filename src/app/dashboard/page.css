@@ -1,0 +1,346 @@
+/* Importing Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+
+/* fallback */
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v226/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsLjBuVY.woff2) format('woff2');
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #212121;
+}
+
+
+.Dashboard-Section{
+  width: 100%;
+  display: flex;
+}
+
+.sidebar {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 20%;
+  display: flex;
+  overflow-x: hidden;
+  flex-direction: column;
+  background: rgba(23, 23, 23, 0.6); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  padding: 25px 20px;
+  transition: all 0.4s ease;
+  border-radius: 0px 40px 40px 0px;
+  border-right: solid rgba(255, 255, 255, 0.2) 1px; /* Subtle white border */
+  box-shadow: 20px 0px 10px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+}
+
+/* .sidebar:hover {
+  width: 260px;
+} */
+
+.sidebar .sidebar-header {
+  display: flex;
+  align-items: center;
+}
+
+
+/* .sidebar .sidebar-header h2 {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: 23px;
+} */
+
+.sidebar-links h4 {
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  margin: 10px 0;
+  position: relative;
+}
+
+/* .sidebar-links h4 span {
+  opacity: 1;
+}
+
+.sidebar:hover .sidebar-links h4 span {
+  opacity: 0;
+} */
+
+.sidebar-links .menu-separator {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  transform: scaleX(1);
+  transform: translateY(-50%);
+  background: #4f52ba;
+  transform-origin: right;
+  transition-delay: 0.2s;
+}
+
+.sidebar:hover .sidebar-links .menu-separator {
+  transition-delay: 0s;
+  transform: scaleX(0);
+}
+
+.sidebar-links {
+  list-style: none;
+  margin-top: 20px;
+  height: 90%;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.sidebar-links::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-links li a {
+  display: flex;
+  align-items: center;
+  gap: 0 20px;
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 15px 10px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.sidebar-links li a:hover {
+  color: white;
+  background: #2f2f2f;
+  border-radius: 10px;
+}
+
+
+.user-account {  background: rgba(23, 23, 23, 0.6); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+
+  border: solid rgba(255, 255, 255, 0.2) 1px; /* Subtle white border */
+  box-shadow: 4px 0px 30px rgba(0, 0, 0, 0.982); /* Soft shadow effect */
+  width: fit-content;
+  min-width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+}
+
+.user-profile {
+  width: 100%;
+  display: flex;
+  color: white;
+}
+
+.user-profile h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.user-profile span {
+  font-size: 0.775rem;
+  font-weight: 600;
+}
+
+.user-detail {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+justify-content: center;
+align-items: center;
+border-right: white 0.025px solid;
+}
+
+.Logout-button{
+  width: 50%;
+}
+
+/* .sidebar:hover .user-account {
+  background: #fff;
+  border-radius: 4px;
+} */
+
+
+
+.InnerDashboard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.Inner-Section{
+  width: 80%;
+  background: #212121;
+  color: white;
+}
+
+.Dashboard-Navbar{
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+  height: 10vh;
+}
+
+
+
+.Dashboard-Container{
+  width: 85%;
+}
+
+@media only screen and (max-width: 1460px) {
+  .sidebar{
+    width: 30%;
+  }
+}
+
+
+.sidebar-links li{
+  padding: 5px;
+}
+
+.sidebar-links li.active {
+  background-color: #2f2f2f; /* Change to your theme color */
+  color: white;
+  border-radius: 10px;
+}
+
+.sidebar-links li.active a {
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .Inner-Dashboard {
+  display: flex; 
+  gap: 10px; 
+  justify-content: center; 
+} */
+
+/* .Inner-Dashboard button {
+  background-color: grey;
+  color: white; 
+  border: none; 
+  border-radius: 4px; 
+  padding: 10px 20px; 
+  cursor: pointer; 
+  font-size: 25px; 
+  height: 10%;
+  width: 10%;
+  
+} */
+
+/* .Inner-Dashboard button:hover {
+  background-color: darkgrey; 
+} */
+
+
+
+.Logout-button{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Logout-button a{
+  color: white;
+  list-style: none;
+  text-decoration: none;
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Logout-button a span{
+  margin-right: 5px;
+  font-size: xx-large;
+}
+
+.dropdown-menu {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.locked a {
+  opacity: 0.5;
+  /* pointer-events: none; */
+}
+
+.locked:not(:first-child) a {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+
+
+
+
+
+
+
+.locked {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.unlocked {
+  pointer-events: auto;
+  opacity: 1;
+}
