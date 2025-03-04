@@ -1,49 +1,120 @@
 // import '../Day1Module.css';
 
-export default function FourTopic() {
+export default function ThirTopic() {
     return (
         <>
-            <h2 className="h2"><strong>Starting Conditions</strong></h2>
+
+            <h2 className="h2"><strong>Recording Instructions</strong></h2>
             <br />
             <ol className='ol'>
-                <li>
-                    Definition This is the "00:00" point of every video—where your system is
-                    at the moment you begin recording.
-                </li>
-                <li>Vary the Setup:
+                <li><strong>Optimal Actions</strong>
                     <ul className='ul'>
                         <li>
-                            Occasionally, have several applications open, whether they're
-                            overlapping or in the background. This diversity helps create more
-                            varied and realistic recordings.
+                            Optimal actions are your goal while performing recordings to train ACE.
                         </li>
                         <li>
-                            Use different datasets or arrange your windows in various layouts. The
-                            goal is to mimic real users environments. For instance, starting with a
-                            blank projects page or with only one project visible doesnt represent
-                            someone who frequently uses the tool. Refer to Section 4 for more
-                            details.
-
-
+                            When executing tasks, aim to follow the shortest and most natural path. For
+                            example, if an action can be completed with 3 clicks instead of 5, choose
+                            the 3-click method. This efficiency helps ACE learn more effectively.
                         </li>
                         <li>
-                            Avoid Repeating the Same Environment. Try not to begin every
-                            recording in the exact same setup. Mixing things up ensures that ACE is
-                            exposed to a wide range of starting points.
-
+                            Incorporate Keyboard shortcuts wherever necessary. This step also
+                            ensures that you take a more reliable path while recording.
                         </li>
+                        <p>
+                            Let us demonstrate the importance of Optimal Actions and Keyboard Shortcuts
+                            with this example:
+                        </p>
+                        <li>
+                            To archive the highlighted card on this Trello board, you have two options:
+                        </li>
+                        <br />
+                        <figure className='img-5-3'>
+                            <img src='../images/5.3.png'/>
+                        </figure>
+
+
+                        <br />
+                        <li>
+                            Right-Click Method Right-click the card and select Archive from the
+                            dropdown menu.
+                        </li>
+                        <li>
+                            Keyboard Shortcut Press the &quot;C&quot; key on your keyboard to archive the card
+                            instantly.
+                        </li>
+
+                        <p>
+                            Which method is more optimal?
+                            Using the keyboard shortcut (&quot;C&quot;) is the more efficient way to archive a card.
+                            It reduces the number of clicks and speeds up your workflow, and ACE also
+                            needs to learn that!
+                        </p>
+
+                        <br />
+                        <figure className='img-5-3'>
+                            <img src='../images/5.3.1.png'/>
+                        </figure>
+
+                        <br />
+
+
                     </ul>
                 </li>
-                <li>
-                If you're doing something that requires full-screen mode (e.g., a design app
-that only works maximized), thats acceptable. Otherwise, vary it to show
-ACE different possible starting points.
+
+                <li><strong>Screen Size and View Modes</strong>
+                    <ul className='ul'>
+                        <li>
+                        Resolutions Use the &quot;default resolution setting while recording.
+Additionally, vary between windowed and full-screen modes occasionally
+to provide diverse data.
+                        </li>
+                        <li>
+                        Why Exposing ACE to different screen layouts helps it learn to navigate
+                        consistently across various setups and configurations.
+                        </li>
+                
+
+
+                    </ul>
+
+
+                </li>
+                <li><strong>Mouse Movements</strong>
+                    <ul className='ul'>
+                        <li>
+                        Minimize Unnecessary Movement: Keep your mouse movements steady
+and avoid dragging it around the screen unnecessarily. This helps create
+clean recordings that are easy to follow and reduces potential confusion or
+lag/noise.
+                        </li>
+            
+                
+
+
+                    </ul>
+
+
+                </li>
+                <li><strong>Lag</strong>
+                    <ul className='ul'>
+                        <li>
+                        Acceptable Waits If a task inherently takes a few seconds to process (e.g.,
+loading a file), its okay to wait in the recording. Use your judgment to
+ensure that the final video remains clean and free of unnecessary delays.
+                        </li>
+                        
+            
+                
+
+
+                    </ul>
+
+
                 </li>
             </ol>
-            <br />
-            <figure className='img-5-3'>
-                            <img src='../images/5.3.2.png'/>
-                        </figure>
+
+
 
 
         </>

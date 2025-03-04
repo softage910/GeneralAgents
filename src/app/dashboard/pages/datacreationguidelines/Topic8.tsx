@@ -9,7 +9,7 @@ export default function EleTopic() {
 to master the tasks you perform. We are confident that by working together,
 you can help ACE become the best computer control agent possible.</li>
                 <li>
-                   Practice Tasks : We'll share sample tasks for you to try before you begin official recordings.
+                   Practice Tasks : We&apos;ll share sample tasks for you to try before you begin official recordings.
                    This helps you get comfortable with our workflow.
                 </li>
                 <li>Remember : A well-executed, clean recording (with minimal extra steps) is key to
@@ -39,7 +39,7 @@ and execute tasks with precision.
                 <li>Annotation : Labels/prompts used to mark smaller actions within your recordings,
                 helping to train ACE more effectively.</li>
                 <li>Starting Condition : The screen context at the beginning of your recording, interchangeable
-                with "Screen Context".</li>
+                with &quot;Screen Context&quot;.</li>
 
             </ol>
             

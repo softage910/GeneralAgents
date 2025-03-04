@@ -16,7 +16,6 @@ export default function SignInPage() {
     const [showSigninField, setshowSigninField] = useState(true);
     const [FullName, setFullName] = useState("");
     const [otp, setOtp] = useState<string[]>(Array(6).fill(""));
-    const [EmpCode, setEmpCode] = useState("");
 
     const router = useRouter();
 

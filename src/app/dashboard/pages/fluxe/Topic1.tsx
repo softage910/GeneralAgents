@@ -15,26 +15,26 @@ export default function FirstTopic() {
                 <br />
                <p> While installing Fluxe, if you are not able to open the installer, follow these
                 steps:
-                Go into 'Privacy & Security',</p>
+                Go into &apos;Privacy & Security&apos;,</p>
                 <figure className='img-52'>
                     <img src='../images/5.1.1.png'/>
                 </figure>
                 <br />
-                <p>and then scroll down to the botton in "Privacy and Security section" ,</p>
+                <p>and then scroll down to the botton in &quot;Privacy and Security section&quot; ,</p>
                 <figure className='img-53'>
                     <img src='../images/5.1.2.png'/>
                 </figure>
                 <br />
-               <p> you'll see a button saying 'Open Anyway' -- after that you can try opening the
+               <p> you&apos;ll see a button saying &apos;Open Anyway&apos; -- after that you can try opening the
                 Fluxe app again.</p>
                 <br />
                 <figure className='img-51'>
                     <img src='../images/5.1.2.1.png'/>
                 </figure>
                 <br />
-                <p>Instead of “OpenOffice, it will say Fluxe, Select Open Anyway for Fluxe, and it
+                <p>Instead of &quot;OpenOffice, it will say Fluxe, Select Open Anyway for Fluxe, and it
                 should work!
-                Fluxe looks like this on your "Applications" page</p>
+                Fluxe looks like this on your &quot;Applications&quot; page</p>
                 <br />
                 <figure className='img-55'>
                     <img src='../images/5.1.3.png'/>
@@ -72,7 +72,7 @@ export default function FirstTopic() {
                         <br />
                     </li>
                     <li>
-                        <strong>Once you have typed/pasted the prompt, click on the "Show Settings" button to open the tags menu, which will show up like this:</strong>
+                        <strong>Once you have typed/pasted the prompt, click on the &quot;Show Settings&quot; button to open the tags menu, which will show up like this:</strong>
                         <br />
                         <figure className='img-52'>
                     <img src='../images/5.1.8.png'/>
@@ -80,11 +80,11 @@ export default function FirstTopic() {
                         <br />
                     </li>
                     <li>
-                        <strong>After selecting the relevant tag, (for instance , for this prompt it will be "op-follow-people"), click on the "Exit Settings", </strong>
+                        <strong>After selecting the relevant tag, (for instance , for this prompt it will be &quot;op-follow-people&quot;), click on the &quot;Exit Settings&quot;, </strong>
                         
                     </li>
                     <li>
-                        <strong>Click on "Start Recording", and a countdown will start counting down from 3.</strong>
+                        <strong>Click on &quot;Start Recording&quot;, and a countdown will start counting down from 3.</strong>
                         <br />
                         <figure className='img-52'>
                     <img src='../images/5.1.9.png'/>

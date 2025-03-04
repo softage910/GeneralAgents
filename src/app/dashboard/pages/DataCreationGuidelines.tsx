@@ -64,16 +64,6 @@ export default function DataCreation() {
             setSelectedTopic(topics[selectedTopicIndex - 1].id);
         }
     };
-
-    const markTopicCompleted = async () => {
-        if (!selectedTopicKey || !userId) return;
-
-        const userProgressRef = ref(database, `userProgress/${userId}/day5/module`);
-        await update(userProgressRef, { [selectedTopicKey]: true });
-
-        setCompletedTopics([...completedTopics, selectedTopicKey]);
-    };
-
     return (
         <div className="Day1-Main">
             <div className="Header">

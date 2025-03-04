@@ -52,14 +52,6 @@ export default function Fluxe() {
     }
   };
 
-  const markTopicCompleted = async () => {
-    if (!selectedTopicKey || !userId) return;
-
-    const userProgressRef = ref(database, `users/${userId}/progress/Day5`);
-    await update(userProgressRef, { ["Module1"]: true });
-
-    setCompletedTopics([...completedTopics, selectedTopicKey]);
-  };
 
   return (
     <div className="Day1-Main">

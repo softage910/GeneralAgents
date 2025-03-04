@@ -16,7 +16,7 @@ export default function ThirTopic() {
 
                         <li>
                             When executing tasks, aim to follow the shortest and most natural path. For
-                            example, if an action can be completed with 3 clicks instead of 5, choose
+                            example, if an action can be completed with 3 clicks instead of 5, choos&apos;
                             the 3-click method. This efficiency helps ACE learn more effectively.
                         </li>
                         <li>
@@ -42,13 +42,13 @@ export default function ThirTopic() {
                             dropdown menu.
                         </li>
                         <li>
-                            Keyboard Shortcut Press the "C" key on your keyboard to archive the card
+                            Keyboard Shotcut Press the &quot;C&quot; key on your keyboard to archive the card
                             instantly.
                         </li>
 
                         <p>
                             Which method is more optimal?
-                            Using the keyboard shortcut ("C") is the more efficient way to archive a card.
+                            Using the keyboard shortcut (&quot;C&quot;) is the more efficient way to archive a card.
                             It reduces the number of clicks and speeds up your workflow, and ACE also
                             needs to learn that!
                         </p>

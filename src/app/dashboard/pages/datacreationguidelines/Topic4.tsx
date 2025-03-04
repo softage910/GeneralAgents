@@ -10,7 +10,7 @@ export default function FifTopic() {
                   Populate with Realistic Data:
                 </li>
                 <p>
-                Use "test" or "fake" data in apps like Canva, Asana, and others to make
+                Use &quot;test&quot; or &quot;fake&quot; data in apps like Canva, Asana, and others to make
 your screen look authentic and varied. Having multiple files with realsounding names in your boards, projects, and workspaces helps ACE
 understand the dynamic nature of different users patterns and habits.
                 </p>
@@ -30,18 +30,18 @@ understand the dynamic nature of different users patterns and habits.
             <br />
             <ol className='ol'>
                 <li>
-                    Each tool you work with will be labeled with a tag in the format "tool-
-                    (tool_name)", and the tasks you perform will be tagged as "op-
-                    (tool_name)-(feature_name)". For example:
+                    Each tool you work with will be labeled with a tag in the format &quot;tool-
+                    (tool_name)&quot;, and the tasks you perform will be tagged as &quot;op-
+                    (tool_name)-(feature_name)&quot;. For example:
                     <br />
                     <br />
                     <ul className='ul'>
                         <li>
-                            If you're recording a task using the Background Removal Tool in Adobe
-                            Photoshop, the tags would be "tool-ps" and "op-ps-backgroundremoval".
+                            If you&apos;re recording a task using the Background Removal Tool in Adobe
+                            Photoshop, the tags would be &quot;tool-ps&quot; and &quot;op-ps-backgroundremoval&quot;.
                         </li>
                         <li>
-                            For a task like Formatting in Google Sheets, the tags would be "toolsheets" and "op-sheets-formatting".
+                            For a task like Formatting in Google Sheets, the tags would be &quot;toolsheets&quot; and &quot;op-sheets-formatting&quot;.
                         </li>
 
                     </ul>

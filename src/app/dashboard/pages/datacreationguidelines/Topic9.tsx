@@ -15,7 +15,7 @@ export default function TweTopic() {
                 <li>Annotation : Labels/prompts used to mark smaller actions within your recordings,
                 helping to train ACE more effectively.</li>
                 <li>Starting Condition : The screen context at the beginning of your recording, interchangeable
-                with "Screen Context".</li>
+                with &quot;Screen Context&quot;.</li>
 
             </ol>
            

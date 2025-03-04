@@ -33,7 +33,7 @@ export default function FirTopic() {
 
                         <li>
                             A prompt is the instruction to guide ACE on the task you want to complete.
-                            Think of it as a clear and complete set of directions outlining what you're
+                            Think of it as a clear and complete set of directions outlining what you&apos;re
                             doing during your recording. A well-crafted prompt usually includes the
                             intended action and the expected outcome, expressed in straightforward,
                             technical terms.
@@ -59,7 +59,7 @@ export default function FirTopic() {
                     <ul className='ul'>
                         <li>
                             Annotations involve labelling the smaller actions in your recordings to break
-                            down how you're fulfilling each task. By adding annotations to specific
+                            down how you&apos;re fulfilling each task. By adding annotations to specific
                             parts of your recordings, you provide detailed instructions for each
                             segment. This helps ACE understand the exact steps you took to reach the
                             intended outcome. Annotations are essential, so be sure to highlight the key
@@ -77,7 +77,7 @@ export default function FirTopic() {
                         </li>
                         <li>
                             For more details on annotations and instructions on how to add them,
-                            please refer to the "Introduction to Engine.pdf".
+                            please refer to the &quot;Introduction to Engine.pdf&quot;.
                         </li>
 
 

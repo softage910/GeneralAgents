@@ -7,9 +7,9 @@ export default function TenTopic() {
 
             <ol className='ol'>
                 <li>
-                    <strong>I can't find the tag relevant to my task. What do I do?</strong>
+                    <strong>I can&apos;t find the tag relevant to my task. What do I do?</strong>
                     <ul className='ul'>
-                        <li>If you can't find a tag that matches your task, you can continue
+                        <li>If you can&apos;t find a tag that matches your task, you can continue
                             recording and reach out to us to request the addition of the specific tag.
                             Tagging is an ongoing process, and we encourage you to keep creating
                             data even if the appropriate tag isnt available yet. You can note down
@@ -32,7 +32,7 @@ export default function TenTopic() {
 
                 </li>
                 <li>
-                    <strong> I am having trouble using Fluxe; it shows me an error saying “[Error ID]",
+                    <strong> I am having trouble using Fluxe; it shows me an error saying &quot;[Error ID]&quot;,
                     and I am not able to record.</strong>
                     <ul className='ul'>
                         <li>Check for Updates Ensure that Fluxe is updated to the latest version.</li>

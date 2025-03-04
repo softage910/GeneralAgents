@@ -20,9 +20,7 @@ type ModuleInfo = {
 };
 
 export default function Dashboard() {
-  const [userDetails, setUserDetails] = useState<{ name: string; uid: string } | null>(null);
   const [selectedModule, setSelectedModule] = useState<string | null>(null);
-  const [openDay, setOpenDay] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
   const [userName, setUserName] = useState<string | null>(null);
   const router = useRouter(); // Correct way to use router in App Router

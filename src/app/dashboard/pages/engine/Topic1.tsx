@@ -33,7 +33,7 @@ export default function SecondTopic() {
                 </figure>
                 <br />
                 <p>You can also search for specific recordings, either by keywords, or by putting in
-                the whole prompt, in the “search instructions text box</p>
+                the whole prompt, in the &quot;search instructions text box</p>
                 <br />
                 <figure className='img-510'>
                     <img src='../images/5.2.4.png'/>
@@ -94,7 +94,7 @@ export default function SecondTopic() {
                 <br />
 
                 <p>Here you can see events marked with red/blue dots on this timeline of the
-                recording, under which you can see "Set Start" and "Set End" buttons, with a
+                recording, under which you can see &quot;Set Start&quot; and &quot;Set End&quot; buttons, with a
                 text box to write instructions for the selected segment, and an option to save
                 the annotated segment.</p>
                 <br />
@@ -125,8 +125,8 @@ actions, or different verbiage for the same action.</p>
                 <br />
 
                <p> Lets take a look at another example, in this task, the data creator is recording
-data to train ACE on Microsoft Word, the instruction is "center align the 'next
-steps' section and apply green shading in project report.docx".</p>
+data to train ACE on Microsoft Word, the instruction is &quot;center align the &apos;next
+steps&apos; section and apply green shading in project report.docx&quot;.</p>
                 <br />
                 <figure className='img-510'>
                     <img src='../images/5.2.15.png'/>
@@ -136,8 +136,8 @@ steps' section and apply green shading in project report.docx".</p>
                <p> Here we can annotate two actions, to mark Align and Intend selection, and the
 action of selecting a shade. Adding two annotations here, will make ACE
 understand the specific steps you have taken to reach the intended conclusion
-of the recording; which is "center align the 'next steps' section and apply green
-shading in project report.docx".</p>
+of the recording; which is &quot;center align the &apos;next steps&apos; section and apply green
+shading in project report.docx&quot;.</p>
 <br />
 <figure className='img-51'>
                     <img src='../images/5.2.16.png'/>
@@ -148,7 +148,7 @@ shading in project report.docx".</p>
 
 
 
-                <h2 className="h2"><strong>Let's get to creating data now!!</strong></h2>
+                <h2 className="h2"><strong>Let&apos;s get to creating data now!!</strong></h2>
 
              
 
