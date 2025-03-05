@@ -1,6 +1,5 @@
 // import '../Day1Module.css';
 
-import one from '../../../../../public/Images/5.2.0.png';
 import two from '../../../../../public/Images/5.2.1.png';
 import three from '../../../../../public/Images/5.2.2.png';
 import four from '../../../../../public/Images/5.2.3.png';
@@ -42,9 +41,7 @@ export default function SecondTopic() {
                 <a className="fluxe-download" href="https://engine.generalagents.co/readings" download>
         Click Here
       </a>
-            <figure className='img-510'>
-                <Image src={one} width={0} height={0} alt="Logo" />
-            </figure>
+      <br/>
             <br />
             <p>Once you log in, the Engine interface will show up like this:</p>
             <br />
