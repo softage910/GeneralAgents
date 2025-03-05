@@ -148,6 +148,38 @@
     margin: 30px auto auto auto;
     justify-content: space-between;
   }
+
+  .Onboarding-Content{
+    display: flex;
+    width: 90%;
+    margin: 30px auto auto auto;
+    justify-content: center;
+  }
+
+  .Content-Video{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #303030;
+    border-radius: 20px;
+  }
+
+  .Content-Video button{
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+
+  .Content-Video button:hover{
+    background-color: black;
+    color: white;
+  }
   
   .progress-container {
     width: 45%;

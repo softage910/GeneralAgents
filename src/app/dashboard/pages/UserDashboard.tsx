@@ -10,9 +10,6 @@ export default function Dashboard() {
 <div className="Progress-Section">
 
   <div className="ProgressbarContent">
-    <h1>
-    Welcome to General Agents Team!
-    </h1>
     <br/>
     <p>Welcome to the ACE Data Collection Project! Our mission is to gather clean, precise recordings of tasks to train ACE, our computer control agent. As a data creator, you’ll play a key role in shaping ACE into the best computer control agent.</p><br/>
 
@@ -49,6 +46,13 @@ export default function Dashboard() {
     </div>
     <div className="Graph-Container"><p>Graph</p></div>
   </div> */}
+
+  <div className="Onboarding-Content">
+    <div className="Content-Video">
+        <h1>Onboarding Video</h1>
+        <div><button><a href="https://drive.google.com/file/d/1xL2eClyOfoE2Pkm_Cbfl0HziFYMPYViH/view?usp=drive_link">Click Here</a></button></div>
+    </div>
+  </div>
  
     </div>
   );

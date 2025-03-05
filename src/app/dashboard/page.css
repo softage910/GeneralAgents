@@ -44,8 +44,7 @@ body {
   display: flex;
 }
 
-.sidebar {
-  /* position: fixed; */
+/* .sidebar {
   top: 0;
   left: 0;
   height: 100vh;
@@ -53,15 +52,128 @@ body {
   display: flex;
   overflow-x: hidden;
   flex-direction: column;
-  background: rgba(23, 23, 23, 0.6); /* Semi-transparent background */
-  backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
-  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  background: rgba(23, 23, 23, 0.6); /
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
   padding: 25px 20px;
   transition: all 0.4s ease;
   border-radius: 0px 40px 40px 0px;
-  border-right: solid rgba(255, 255, 255, 0.2) 1px; /* Subtle white border */
-  box-shadow: 20px 0px 10px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+  border-right: solid rgba(255, 255, 255, 0.2) 1px; 
+  box-shadow: 20px 0px 10px rgba(0, 0, 0, 0.2); 
+} */
+
+
+/* .sidebar {
+    position: fixed;
+    left: -20%; 
+    top: 0;
+    width: 20%;
+    height: 100vh;
+    background: #333;
+    color: white;
+    transition: left 0.3s ease-in-out;
+    padding: 20px;
+    z-index: 1000;
+} */
+
+/* .sidebar.open {
+    left: 0; 
+} */
+
+/* .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+/* .hamburger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    z-index: 1100;
+} */
+
+/* .close-btn {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+} */
+
+/* Default Sidebar (Hidden) */
+.sidebar {
+    position: fixed;
+    left: -25%; /* Sidebar initially hidden */
+    top: 0;
+    width: 25%;
+    height: 100vh;
+    background: #333;
+    color: white;
+    transition: left 0.3s ease-in-out;
+    padding: 20px;
+    z-index: 1000;
 }
+
+/* Sidebar Open */
+.sidebar.open {
+    left: 0;
+}
+
+/* Inner Section - Expands When Sidebar Closes */
+.Inner-Section {
+    margin-left: 0;
+    transition: margin-left 0.3s ease-in-out;
+    width: 100%;
+}
+
+/* When Sidebar is Open, Adjust Inner Section */
+.sidebar.open + .Inner-Section {
+    margin-left: 25%;
+    width: calc(100% - 25%); /* Adjust width accordingly */
+}
+
+/* Hamburger Button */
+.hamburger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: transparent;
+    border: none;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+/* Close Button */
+.close-btn {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-links li {
+    padding: 10px;
+}
+
+.sidebar-links li.active {
+    background: #555;
+}
+
 
 /* .sidebar:hover {
   width: 260px;
@@ -69,7 +181,7 @@ body {
 
 .sidebar .sidebar-header {
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 
@@ -203,11 +315,11 @@ border-right: white 0.025px solid;
   height: 90vh;
 }
 
-.Inner-Section{
-  width: 80%;
+/* .Inner-Section{
+  width: 100%;
   background: #212121;
   color: white;
-}
+} */
 
 .Dashboard-Navbar{
   display: flex;

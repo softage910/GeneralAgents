@@ -5,13 +5,17 @@ import { useRouter } from "next/navigation"; // Use next/navigation instead of n
 import { signOut } from "firebase/auth";
 import { auth } from "../../lib/firebaseconfig";
 import Image from "next/image";
-import Logo from "../auth/Logo.png";
+import Logo1 from "../../../public/Images/Logo-removebg-preview.png";
 import ComingSoon from "./pages/ComingSoon";
 import Fluxe from "./pages/Fluxe";
 import Engine from "./pages/Engine";
 import DataCreation from "./pages/DataCreationGuidelines";
+import ToolCoverage from "./pages/ToolCoverage";
 import './pages/MobileScreen.css';
 import UserDashboard from "./pages/UserDashboard";
+import ChatBot from "../components/ChatBot";
+import ReadingMaterial from "./pages/ReadingMaterial";
+import BasicsPrompt from "./pages/BasicsOfPrompting";
 
 type ModuleInfo = {
   day: string;
@@ -24,19 +28,24 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [userName, setUserName] = useState<string | null>(null);
   const router = useRouter(); // Correct way to use router in App Router
+  const [isOpen, setIsOpen] = useState(false);
 
 
   const dayModules: { [key: string]: string[] } = {
-    "DataList": ["Fluxe", "Engine", "Data Creation Guidelines","Practice Tasks","Demo Recordings","Suggested Reference Materials"],
+    "DataList": ["📖 Introduction To Fluxe", "📖 Introduction To Engine", "📖 Data Creation Guidelines","📖 Prompting Basics","📖 Extensive Tool Coverage And Function Mapper","📖 Samples Of Clean-Optimal Action Recordings","📖 Sample Tasks To Practice On","📖 Current Eval Performance","📖 Suggested Reading Materials","📖 Glossary"],
   };
 
   const moduleMap: { [key: string]: ModuleInfo } = {
-    "DataList - Fluxe": { day: "DataList", module: "Fluxe", component: Fluxe},
-    "DataList - Engine": { day: "DataList", module: "Engine", component: Engine},
-    "DataList - Data Creation Guidelines": { day: "DataList", module: "Data Creation Guidelines", component: DataCreation},
-    "DataList - Practice Tasks": { day: "DataList", module: "Practice Tasks", component: ComingSoon},
-    "DataList - Demo Recordings": { day: "DataList", module: "Demo Recordings", component: ComingSoon},
-    "DataList - Suggested Reference Materials": { day: "DataList", module: "Suggested Reference Materials", component: ComingSoon},
+    "DataList - 📖 Introduction To Fluxe": { day: "DataList", module: "Introduction To Fluxe", component: Fluxe},
+    "DataList - 📖 Introduction To Engine": { day: "DataList", module: "Introduction To Engine", component: Engine},
+    "DataList - 📖 Data Creation Guidelines": { day: "DataList", module: "Data Creation Guidelines", component: DataCreation},
+    "DataList - 📖 Prompting Basics": { day: "DataList", module: "Prompting Basics", component: BasicsPrompt},
+    "DataList - 📖 Extensive Tool Coverage And Function Mapper": { day: "DataList", module: "Extensive Tool Coverage And Function Mapper", component: ToolCoverage},
+    "DataList - 📖 Samples Of Clean-Optimal Action Recordings": { day: "DataList", module: "Sample Of Clean-Optimal Action Recordings", component: ComingSoon},
+    "DataList - 📖 Sample Tasks To Practice On": { day: "DataList", module: "Sample Tasks To Practice", component: ComingSoon},
+    "DataList - 📖 Current Eval Performance": { day: "DataList", module: "Current Eval Performance", component: ComingSoon},
+    "DataList - 📖 Suggested Reading Materials": { day: "DataList", module: "Suggested Reading Materials", component: ReadingMaterial},
+    "DataList - 📖 Glossary": { day: "DataList", module: "Glossary", component: ComingSoon}
   };
 
   useEffect(() => {
@@ -72,9 +81,6 @@ export default function Dashboard() {
     }
   };
 
-  const setSelectedModuleHandler = (key: string) => {
-    setSelectedModule(key);
-  };
 
   const renderContent = () => {
     if (loading) {
@@ -92,57 +98,72 @@ export default function Dashboard() {
     return <div>Loading...</div>;
   }
 
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+};
+
+const setSelectedModuleHandler = (module: string) => {
+    setSelectedModule(module);
+    setIsOpen(false); // Close sidebar on selecting a module
+};
+
   return (
 
     <div className="Dashboard-Section">
-      <aside className="sidebar">
-        <div className="sidebar-header">
-          <Image src={Logo} alt="Logo" width={250} height={50} />
-        </div>
-        <ul className="sidebar-links">
-        <h4>
-            <span>Main Menu</span>
-          </h4>
-          <li className={selectedModule === "Dashboard" ? "active" : ""}>
-            <a href="#" onClick={() => setSelectedModule("Dashboard")}>
-              <span className="material-symbols-outlined"> dashboard </span>Dashboard
-            </a>
-          </li>
-          <h4>
-            <span>Training / Assessment</span>
-          </h4>
-          {Object.keys(dayModules).map((day, i) => (
-            <li key={i}>
-              <ul>
-                {dayModules[day].map((module, index) => (
-                  <li key={index} className={selectedModule === `${day} - ${module}` ? "active" : ""}>
-                    <a href="#" onClick={() => setSelectedModuleHandler(`${day} - ${module}`)}>
-                      {module}
-                    </a>
-                  </li>
-                ))}
-              </ul>      
-            </li>
-          ))}
-        </ul>
-      </aside>
-      <div className="Inner-Section">
+            {/* Hamburger Button */}
+            <button className="hamburger" onClick={toggleSidebar}>
+                ☰
+            </button>
+
+            {/* Sidebar */}
+            <aside className={`sidebar ${isOpen ? "open" : ""}`}>
+                <div className="sidebar-header">
+                    <Image src={Logo1} alt="Logo" width={250} height={50} />
+                </div>
+
+                <ul className="sidebar-links">
+                    <li className={selectedModule === "Dashboard" ? "active" : ""}>
+                        <a href="#" onClick={() => setSelectedModule("Dashboard")}>Onboarding</a>
+                    </li>
+
+                    <hr />
+
+                    {Object.keys(dayModules).map((day, i) => (
+                        <li key={i}>
+                            <ul>
+                                {dayModules[day].map((module: string, index: number) => (
+                                    <li key={index} className={selectedModule === `${day} - ${module}` ? "active" : ""}>
+                                        <a href="#" onClick={() => setSelectedModuleHandler(`${day} - ${module}`)}>
+                                            {module}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </li>
+                    ))}
+                </ul>
+            </aside>
+
+      
+{/* Dynamically Adjusting Inner-Section */}
+<div className={`Inner-Section ${isOpen ? "expanded" : ""}`}>
         <div className="Dashboard-Navbar">
-          <div className="user-account">
-            <div className="user-profile">
-              <div className="user-detail">
-              <h3>{userName ? userName : "User"}</h3>
-              </div>
-              <div className="Logout-button">
-                <a href="#" onClick={handleLogout}>
-                  <span className="material-symbols-outlined"> logout </span>Logout
-                </a>
-              </div>
+            <div className="user-account">
+                <div className="user-profile">
+                    <div className="user-detail">
+                        <h3>{userName ? userName : "User"}</h3>
+                    </div>
+                    <div className="Logout-button">
+                        <a href="#" onClick={handleLogout}>
+                            <span className="material-symbols-outlined"> logout </span>Logout
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
         <div className="InnerDashboard">{renderContent()}</div>
-      </div>
+    </div>
+    <ChatBot />
     </div>
   );
 }

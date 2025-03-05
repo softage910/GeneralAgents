@@ -38,6 +38,10 @@ export default function SecondTopic() {
                 The data you create on FLUXE can now be accessed for reviewing, annotating
                 or flagging on ENGINE.</p>
             <br />
+           
+                <a className="fluxe-download" href="https://engine.generalagents.co/readings" download>
+        Click Here
+      </a>
             <figure className='img-510'>
                 <Image src={one} width={0} height={0} alt="Logo" />
             </figure>
