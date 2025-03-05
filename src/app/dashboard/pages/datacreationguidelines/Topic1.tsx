@@ -1,8 +1,6 @@
 // import '../Day1Module.css';
 import one from '../../../../../public/Images/5.3.png';
 import two from '../../../../../public/Images/5.3.1.png';
-import three from '../../../../../public/Images/5.3.png';
-import four from '../../../../../public/Images/5.3.1.png';
 import Image from 'next/image';
 
 export default function FirTopic() {

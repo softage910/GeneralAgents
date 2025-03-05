@@ -35,8 +35,7 @@ export default function ChatBot() {
         setopenChatbot(false);
     }
 
-    const handleSubmit = async (e: any) => {
-        e.preventDefault();
+    const handleSubmit = async () => {
 
         const res = await fetch("/api/send-query", {
             method: "POST",
@@ -46,7 +45,7 @@ export default function ChatBot() {
             body: JSON.stringify({ email, fullname, message }),
         });
 
-        const data = await res.json();
+        // const data = await res.json();
         // setStatus(data.message);
 
         if (res.ok) {

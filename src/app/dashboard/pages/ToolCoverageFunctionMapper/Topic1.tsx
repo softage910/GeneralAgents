@@ -1,7 +1,8 @@
 // import '../Day1Module.css';
 
-import one from '../../../../../public/Images/5.3.png';
-import two from '../../../../../public/Images/5.3.1.png';
+import table1 from '../../../../../public/Images/Table1.jpg';
+import table2 from '../../../../../public/Images/Table2.jpg';
+
 import Image from 'next/image';
 
 
@@ -31,13 +32,13 @@ export default function FirstTopic() {
                 <p>This is a function mapper for Asana</p>
 
                 <figure className='img-5-3'>
-                        <Image src={one} width={0} height={0} alt="Logo" />
+                        <Image src={table1} width={0} height={0} alt="Logo" />
                         </figure>
 
                 <p>Here is a function mapper for GitHub</p>
 
                         <figure className='img-5-3'>
-                        <Image src={one} width={0} height={0} alt="Logo" />
+                        <Image src={table2} width={0} height={0} alt="Logo" />
                         </figure>
 
                 <li><strong>Your Role as an Expert</strong>

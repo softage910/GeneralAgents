@@ -47,7 +47,7 @@ export default function FirstTopic() {
                                     Resource
                                 </button>
                             </a>
-            <p>This paper introduces Gemini, a suite of advanced multimodal models that seamlessly integrate text and visual information to tackle a diverse range of tasks. Experimental evaluations showcase Gemini's robust performance and versatility, marking a significant step forward in the development of capable and flexible AI systems.</p>
+            <p>This paper introduces Gemini, a suite of advanced multimodal models that seamlessly integrate text and visual information to tackle a diverse range of tasks. Experimental evaluations showcase Gemini&apos;s robust performance and versatility, marking a significant step forward in the development of capable and flexible AI systems.</p>
             
             <hr/>
 

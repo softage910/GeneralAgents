@@ -71,7 +71,7 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ message: "Email and message are required" }, { status: 400 });
         }
 
-        let transporter = nodemailer.createTransport({
+        const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
                 user: "quiz.verse@softage.ai", // Check if defined
