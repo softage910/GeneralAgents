@@ -167,9 +167,9 @@ export default function FirstTopic() {
             <ol className="ol">
                 <li><strong>Contextual actions:</strong>
                     <ul className="ul">
-                        <li>Right-clicking on file shows options like "open", "rename", or "delete".</li>
-                        <li>Selecting text reveals options like "copy", "cut", or "format".</li>
-                        <li>Viewing a product displays actions like "add to cart" or "save for later".</li>
+                        <li>Right-clicking on file shows options like &quot;open &quot;,  &quot;rename &quot;, or  &quot;delete &quot;.</li>
+                        <li>Selecting text reveals options like  &quot;copy &quot;,  &quot;cut &quot;, or  &quot;format &quot;.</li>
+                        <li>Viewing a product displays actions like  &quot;add to cart &quot; or  &quot;save for later &quot;.</li>
                     </ul>
                 </li>
                 <li><strong>Non-contextual actions:</strong>
