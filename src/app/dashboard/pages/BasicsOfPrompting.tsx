@@ -56,7 +56,7 @@ export default function BasicsPrompt() {
   return (
     <div className="Day1-Main">
       <div className="Header">
-        <h1 className="h1">Basics Of Prompting</h1>
+        <h1 className="h1"><strong>Basics Of Prompting</strong></h1>
       </div>
 
       <div className="MainContent">

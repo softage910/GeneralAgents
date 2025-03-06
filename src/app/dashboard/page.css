@@ -107,9 +107,9 @@ body {
 } */
 
 /* Default Sidebar (Hidden) */
-.sidebar {
+/* .sidebar {
     position: fixed;
-    left: -25%; /* Sidebar initially hidden */
+    left: -25%; 
     top: 0;
     width: 25%;
     height: 100vh;
@@ -120,25 +120,21 @@ body {
     z-index: 1000;
 }
 
-/* Sidebar Open */
 .sidebar.open {
     left: 0;
 }
 
-/* Inner Section - Expands When Sidebar Closes */
 .Inner-Section {
     margin-left: 0;
     transition: margin-left 0.3s ease-in-out;
     width: 100%;
 }
 
-/* When Sidebar is Open, Adjust Inner Section */
 .sidebar.open + .Inner-Section {
     margin-left: 25%;
-    width: calc(100% - 25%); /* Adjust width accordingly */
+    width: calc(100% - 25%); 
 }
 
-/* Hamburger Button */
 .hamburger {
     position: fixed;
     top: 20px;
@@ -151,7 +147,6 @@ body {
     z-index: 1100;
 }
 
-/* Close Button */
 .close-btn {
     background: transparent;
     border: none;
@@ -175,14 +170,107 @@ body {
 }
 
 
-/* .sidebar:hover {
-  width: 260px;
-} */
-
 .sidebar .sidebar-header {
   display: flex;
   justify-content: center;
+} */
+
+
+/* Sidebar - Initially Hidden */
+.sidebar {
+    position: fixed;
+    left: -100%; /* Completely hidden */
+    top: 0;
+    width: 400px; /* Default width */
+    height: 100vh;
+    background: #333;
+    color: white;
+    transition: left 0.3s ease-in-out;
+    padding: 20px;
+    z-index: 1000;
+    overflow-y: auto;
 }
+
+
+/* Sidebar Open */
+.sidebar.open {
+    left: 0;
+}
+
+/* Main Content (Inner Section) */
+.Inner-Section {
+    margin-left: 0;
+    transition: margin-left 0.3s ease-in-out;
+    width: 100%;
+}
+
+/* Shift content when sidebar opens */
+.sidebar.open + .Inner-Section {
+    margin-left: 400px;
+    width: calc(100% - 400px);
+}
+
+/* Hamburger Button */
+.hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: transparent;
+    border: none;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+/* Close Button */
+.close-btn {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+/* Sidebar Links */
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-links li {
+    padding: 10px;
+}
+
+.sidebar-links li.active {
+    background: #555;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 80%; /* Take more space on smaller screens */
+    }
+
+    .sidebar.open + .Inner-Section {
+        margin-left: 0; /* Do not push content on small screens */
+        width: 100%;
+    }
+
+    .hamburger {
+        font-size: 30px; /* Smaller icon on mobile */
+    }
+}
+
+
+.sidebar-header{
+    display: flex;
+    justify-content: center;
+}
+
 
 
 /* .sidebar .sidebar-header h2 {
@@ -249,6 +337,7 @@ body {
   padding: 15px 10px;
   text-decoration: none;
   transition: 0.2s ease;
+  font-size: 0.85rem;
 }
 
 .sidebar-links li a:hover {
@@ -346,13 +435,14 @@ border-right: white 0.025px solid;
 }
 
 .sidebar-links li.active {
-  background-color: #2f2f2f; /* Change to your theme color */
+  background-color: #212121; /* Change to your theme color */
   color: white;
   border-radius: 10px;
 }
 
 .sidebar-links li.active a {
   color: white;
+  font-size: 0.85rem;
 }
 
 

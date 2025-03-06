@@ -1,7 +1,8 @@
-// import '../Day1Module.css';
+import '../General.css';
 import one from '../../../../../public/Images/5.3.png';
 import two from '../../../../../public/Images/5.3.1.png';
 import Image from 'next/image';
+
 
 export default function FirTopic() {
     return (
@@ -11,8 +12,8 @@ export default function FirTopic() {
             
 
             <h2 className="h2"><strong>Guidelines</strong></h2>
-            <br />
-            <p>
+         
+            <p className="p">
                 Welcome to the ACE Data Collection Project! Our mission is to gather clean,
                 precise recordings of tasks to train ACE, our computer control agent. As a data
                 creator, youll play a key role in shaping ACE into the best computer control
@@ -45,7 +46,7 @@ export default function FirTopic() {
                             Creating Actionable Tasks
                         </li>
                         <li>
-                            Imagine prompts as tasks youd give to a human assistant — keep them
+                            Imagine prompts as tasks you&apos;d give to a human assistant — keep them
                             short, clear, and direct. Avoid using filler words to ensure your instructions
                             are easy to follow and effective.
                         </li>
@@ -94,7 +95,7 @@ export default function FirTopic() {
             <hr/>
 
             <h2 className="h2"><strong>Recording Instructions</strong></h2>
-            <br />
+      
 
             <ol className='ol'>
                 <li><strong>Optimal Actions</strong>
@@ -105,14 +106,14 @@ export default function FirTopic() {
 
                         <li>
                             When executing tasks, aim to follow the shortest and most natural path. For
-                            example, if an action can be completed with 3 clicks instead of 5, choos&apos;
-                            the 3-click method. This efficiency helps ACE learn more effectively.
+                            example, if an action can be completed with 3 clicks instead of 5, choose &apos;
+                            the 3-click method &apos;. This efficiency helps ACE learn more effectively.
                         </li>
                         <li>
                             Incorporate Keyboard shortcuts wherever necessary. This step also
                             ensures that you take a more reliable path while recording.
                         </li>
-                        <p>
+                        <p className="p">
                             Let us demonstrate the importance of Optimal Actions and Keyboard Shortcuts
                             with this example:
                         </p>
@@ -135,8 +136,8 @@ export default function FirTopic() {
                             instantly.
                         </li>
 
-                        <p>
-                            Which method is more optimal?
+                        <p className="p">
+                            Which method is more optimal?<br/>
                             Using the keyboard shortcut (&quot;C&quot;) is the more efficient way to archive a card.
                             It reduces the number of clicks and speeds up your workflow, and ACE also
                             needs to learn that!
@@ -209,12 +210,12 @@ ensure that the final video remains clean and free of unnecessary delays.
             <hr/>
 
             <h2 className="h2"><strong>Creating Realistic Accounts</strong></h2>
-            <br />
+         
             <ol className='ol'>
                 <li>
                   Populate with Realistic Data:
                 </li>
-                <p>
+                <p className="p">
                 Use &quot;test&quot; or &quot;fake&quot; data in apps like Canva, Asana, and others to make
 your screen look authentic and varied. Having multiple files with realsounding names in your boards, projects, and workspaces helps ACE
 understand the dynamic nature of different users patterns and habits.
@@ -223,7 +224,7 @@ understand the dynamic nature of different users patterns and habits.
                 <li>
                 Refresh Regularly
                 </li>
-                <p>
+                <p className="p">
                 Change or add new data every day to ensure ACE sees diverse account
                 states. Regular updates keep your recordings varied and reflective of realworld usage.
                 </p>
@@ -232,13 +233,13 @@ understand the dynamic nature of different users patterns and habits.
 <hr/>
 
             <h2 className="h2"><strong>Tagging Your Recordings</strong></h2>
-            <br />
+       
             <ol className='ol'>
                 <li>
                     Each tool you work with will be labeled with a tag in the format &quot;tool-
                     (tool_name)&quot;, and the tasks you perform will be tagged as &quot;op-
                     (tool_name)-(feature_name)&quot;. For example:
-                    <br />
+              
                     <br />
                     <ul className='ul'>
                         <li>
@@ -275,7 +276,7 @@ understand the dynamic nature of different users patterns and habits.
 or disrupted workflows. In these cases, its best to halt and restart the
 recording to ensure accuracy.</li>
                 <li>
-                    Minor Mouse Movements : Slightly off-target clicks are acceptable if they dont cause confusion in the
+                    Minor Mouse Movements : Slightly off-target clicks are acceptable if they don&apos;t cause confusion in the
                     final steps.
                 </li>
                 <li>
@@ -293,7 +294,7 @@ properly flagging your recordings.
                 <li>Your Responsibility As A Recorder : As a recorder, your goal is to produce clean and error-free data. Every
                     accurate action you record helps ACE learn the best ways to complete various tasks effectively.</li>
                 <li>
-                    Continuous Evaluation Of Ace : We evaluate ACEs performance on a weekly basis to identify any patterns
+                    Continuous Evaluation Of Ace : We evaluate ACE&apos;s performance on a weekly basis to identify any patterns
                     or gaps in its learning. This ongoing assessment allows us to refine our
                     instructions and improve the data collection process as needed.
                 </li>
@@ -305,7 +306,7 @@ properly flagging your recordings.
 
 
             <h2 className="h2"><strong>Examples</strong></h2>
-        <p>Sample Prompts - Short, direct prompts are preferred. Here are few examples from different tools:</p>
+        <p className="p">Sample Prompts - Short, direct prompts are preferred. Here are few examples from different tools:</p>
             <ol className='ol'>
                 <li>
                 Adobe Premiere Pro : &quot;apply a faded vintage look to wedding_ps_2009.mp4
@@ -347,7 +348,7 @@ configurations, schedule downtime during low-traffic hours&quot;.
             <li>If you can&apos;t find a tag that matches your task, you can continue
                 recording and reach out to us to request the addition of the specific tag.
                 Tagging is an ongoing process, and we encourage you to keep creating
-                data even if the appropriate tag isnt available yet. You can note down
+                data even if the appropriate tag isn&quot;t available yet. You can note down
                 the tags you want added and contact us.</li>
         </ul>
 
@@ -397,7 +398,7 @@ accidental flags.</li>
     <strong>I started working on [tool_name] and have made a few recordings. How
     do I ensure I have achieved even coverage on [tool_name]?</strong>
         <ul className='ul'>
-            <li>To ensure comprehensive coverage of [tool_name], create a featurewise list of the tools functionalities. Track the features youve recorded
+            <li>To ensure comprehensive coverage of [tool_name], create a featurewise list of the tools functionalities. Track the features you&quot;ve recorded
 using a Google Sheet or similar tool. This method helps you monitor
 which features have been covered and identify any gaps, ensuring that
 ACE receives thorough training on all aspects of [tool_name].</li>
@@ -425,10 +426,10 @@ training ACE effectively. If in doubt, re-record rather than submit a flawed
 session.</li>
             </ol>
             <br />
-            <p>
+            <p className="p">
             Thank you for contributing to ACEs development! If you have any questions or
 need clarification on these guidelines, dont hesitate to reach out. By following
-these principles, well build a robust dataset that helps ACE learn to navigate
+these principles, we&quot;ll build a robust dataset that helps ACE learn to navigate
 and execute tasks with precision.  
             </p>
 

@@ -81,17 +81,17 @@
    }
    
    .h2 {
-     font-size: 1.75em;
-     font-weight: bold;
-   }
-   
-   .h3 {
      font-size: 1.5em;
      font-weight: bold;
    }
    
+   .h3 {
+     font-size: 1.25em;
+     font-weight: bold;
+   }
+   
    .h4 {
-     font-size: 1.3em;
+     font-size: 1.2em;
      font-weight: bold;
    }
    
@@ -113,10 +113,25 @@
    .ol {
      margin: 0 0 0px 20px;
    }
+
+   .ol{
+    list-style-type: decimal;
+   }
+
+   .ul{
+    list-style-type: disc;
+   }
    
    .ul li,
    .ol li {
      margin-bottom: 10px;
+     text-align: left;
+     font-size: 1.2rem;
+   }
+
+   .p{
+    font-size: 1.2rem;
+    text-align: left;
    }
    
    .Day1Table {
@@ -170,16 +185,22 @@
      display: flex;
      flex-direction: column;
      align-items: center;
+     text-align: left;
    }
    
    .Header {
      text-align: center;
+     background-color: #303030;
+     width: 90%;
+     margin-top: 10px;
+     margin-bottom: 10px;
+     border-radius: 30px 30px 0px 0px;
    }
    
    .MainContent {
      padding: 50px;
      background: #303030;
-     border-radius: 30px;
+     border-radius: 0px 0px 30px 30px;
      overflow: scroll;
      height: 75vh;
      width: 90%;
@@ -271,9 +292,9 @@
      cursor: pointer;
      margin: 0px 10px 0px 10px;
    
-     backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
-     -webkit-backdrop-filter: blur(10px); /* For Safari */
-     border: solid rgba(255, 255, 255, 0.2) 1px; /* Subtle white border */
+     backdrop-filter: blur(10px); 
+     -webkit-backdrop-filter: blur(10px);
+     border: solid rgba(255, 255, 255, 0.2) 1px; 
      box-shadow: 4px 0px 15px rgba(0, 0, 0, 0.982);
    }
    
@@ -288,7 +309,6 @@
    
    .Toggle-Topic{
        display: flex;
-       /* below are the new properties that I added in the css */
        justify-content: right;
        margin-top: 30px;
        
@@ -327,23 +347,22 @@
    }
    
    figure{
-     display: flex;
-     justify-content: center;
      margin: 20px 0px 20px 0px;
    }
    
    .img-51 img{
-     width: 50%;
+     width: 90%;
+     height: 200px;
 
    }
    
    .img-52 img{
-     width: 30%;
+     width: 50%;
 
    }
    
    .img-53 img{
-     width: 30%;
+     width: 50%;
 
    }
    
@@ -354,7 +373,6 @@
    
    .img-510 img{
      width: 70%;
-
    }
    
    .img-511 img{

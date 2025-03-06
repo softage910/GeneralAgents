@@ -11,31 +11,31 @@ export default function FirstTopic() {
         <>
 
             <h2 className="h2"><strong>Extensive Tool Coverage and Function Mapper</strong></h2>
-            <p>These guidelines incorporate the concept of a function mapper, ensuring systematic coverage of a tool&apos;s features and functions.</p>
+            <p className="p">These guidelines incorporate the concept of a function mapper, ensuring systematic coverage of a tool&apos;s features and functions.</p>
 
             <br />
 
             <ol className='ol'>
                 <li><strong>Understanding the Function Mapper</strong>
-                <p>A function mapper is a systematic process that involves extracting all clickable buttons and interactive elements from a website, tool, app, or service. This methodical approach ensures every function or feature is identified and catalogued, providing a comprehensive overview of the interface&apos;s interactive components. By mapping these elements:</p>
+                <p className="p">A function mapper is a systematic process that involves extracting all clickable buttons and interactive elements from a website, tool, app, or service. This methodical approach ensures every function or feature is identified and catalogued, providing a comprehensive overview of the interface&apos;s interactive components. By mapping these elements:</p>
 
                     <ul className='ul'>
                         <li>
                         Experts can systematically create data prompts tied to each clickable feature.
                         </li>
                     </ul>
-                    <p>Key Benefit: A function mapper helps ensure no function is overlooked, leading to more robust training data and improved model performance.</p>
+                    <p className="p">Key Benefit: A function mapper helps ensure no function is overlooked, leading to more robust training data and improved model performance.</p>
                 </li>
 
                 <hr/>
-                <p>Take a look at these two sample function mappers to understand further.</p>
-                <p>This is a function mapper for Asana</p>
+                <p className="p">Take a look at these two sample function mappers to understand further.</p>
+                <p className="p">This is a function mapper for Asana</p>
 
                 <figure className='img-5-3'>
                         <Image src={table1} width={0} height={0} alt="Logo" />
                         </figure>
 
-                <p>Here is a function mapper for GitHub</p>
+                <p className="p">Here is a function mapper for GitHub</p>
 
                         <figure className='img-5-3'>
                         <Image src={table2} width={0} height={0} alt="Logo" />
@@ -138,9 +138,9 @@ export default function FirstTopic() {
             </ol>
 
             <hr/>
-            <h3 className='h3'>In Summary:</h3>
+            <h3 className='h3'>In Summary : </h3>
 
-            <p>Your primary objective is to teach the computer control agent all possible actions on the tool you specialize in. The function mapper is your strategic asset in this process, helping you systematically track, design, and update prompts for maximum coverage. Keep an eye on model evaluations to refine your dataset, ensuring the continuous improvement of the computer control agent&apos;s performance.</p>
+            <p className="p">Your primary objective is to teach the computer control agent all possible actions on the tool you specialize in. The function mapper is your strategic asset in this process, helping you systematically track, design, and update prompts for maximum coverage. Keep an eye on model evaluations to refine your dataset, ensuring the continuous improvement of the computer control agent&apos;s performance.</p>
 
         </>
     );

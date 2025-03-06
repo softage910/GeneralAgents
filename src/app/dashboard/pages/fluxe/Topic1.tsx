@@ -21,8 +21,8 @@ export default function FirstTopic() {
         <>
 
 
-            <h2 className="h2"><strong>Introduction To FLUXE</strong></h2>
-            <p>
+            <h2 className="h2"><strong>Introduction to FLUXE</strong></h2>
+            <p className="p">
                 Fluxe is the tool on which you will be collecting data to train ACE.</p>
                 <br />
                 <a className="fluxe-download" href="/FluxeInstaller.pkg" download>
@@ -32,39 +32,42 @@ export default function FirstTopic() {
                 <Image src={one} width={0} height={0} alt="Logo" />
                 </figure>
                 <br />
-               <p> While installing Fluxe, if you are not able to open the installer, follow these
-                steps:
+               <p className="p"> While installing Fluxe, if you are not able to open the installer, follow these steps:
+                <br />
+                <br />
                 Go into &apos;Privacy & Security&apos;,</p>
                 <figure className='img-52'>
                     <Image src={two} width={0} height={0} alt="Logo" />
                 </figure>
                 <br />
-                <p>and then scroll down to the botton in &quot;Privacy and Security section&quot; ,</p>
+                <p className="p">and then scroll down to the bottom in &quot;Privacy and Security section&quot; ,</p>
                 <figure className='img-53'>
                     <Image src={three} width={0} height={0} alt="Logo"/>
                 </figure>
                 <br />
-               <p> you&apos;ll see a button saying &apos;Open Anyway&apos; -- after that you can try opening the
+               <p className="p"> you&apos;ll see a button saying &apos;Open Anyway&apos; -- after that you can try opening the
                 Fluxe app again.</p>
                 <br />
                 <figure className='img-51'>
                     <Image src={four} width={0} height={0} alt="Logo"/>
                 </figure>
                 <br />
-                <p>Instead of &quot;OpenOffice, it will say Fluxe, Select Open Anyway for Fluxe, and it
+                <p className="p">Instead of &quot;OpenOffice, it will say Fluxe, Select Open Anyway for Fluxe, and it
                 should work!
                 Fluxe looks like this on your &quot;Applications&quot; page</p>
                 <br />
                 <figure className='img-55'>
                     <Image src={five} width={0} height={0} alt="Logo" />
                 </figure>
-               <p> When active, it looks like this on your toolbar</p>
+               <p className="p"> When active, it looks like this on your toolbar</p>
                 <br />
                 <figure className='img-51'>
                     <Image src={six} width={0} height={0} alt="Logo" />
                 </figure>
                 <br />
-                <h2 className="h2">How To Use Flux</h2>
+                <hr />
+            
+                <h2 className="h2">How To Use Fluxe</h2>
                 <ol className="ol">
                     <li>
                      <strong>Click on the Hammer icon on your tool bar</strong>
@@ -114,7 +117,7 @@ export default function FirstTopic() {
                         <br />
                     </li>
                     <li>
-                        <strong>Once the countdown finishes , Fluxe is actively recording your data. While recording, a new icon will show up on your toolbar,like this:</strong>
+                        <strong>Once the countdown finishes , Fluxe is actively recording your data. While recording a new icon will show up on your toolbar,like this:</strong>
                         <br />
                         <figure className='img-51'>
                     <Image src={thirteen} width={0} height={0} alt="Logo"/>
@@ -122,20 +125,19 @@ export default function FirstTopic() {
                         <br />
                     </li>
                     <li>
-                        <strong>To stop a recording use the shortcut use the shortcut</strong>
+                        <strong>To stop a recording use the shortcut</strong>
                         <br />
                         <br />
   
                     </li>
-                    <li>
-                    <strong>Thats it ! As simple as that . You can start creating Data to train ACE now!</strong>
-                    </li>
+
 
 
 
 
                 </ol>
 
+                <h2 className='h2'>Thats it ! As simple as that . You can start creating Data to train ACE now!</h2>
 
 
             <br />

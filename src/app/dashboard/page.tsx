@@ -32,40 +32,67 @@ export default function Dashboard() {
 
 
   const dayModules: { [key: string]: string[] } = {
-    "DataList": ["📖 Introduction To Fluxe", "📖 Introduction To Engine", "📖 Data Creation Guidelines","📖 Prompting Basics","📖 Extensive Tool Coverage And Function Mapper","📖 Samples Of Clean-Optimal Action Recordings","📖 Sample Tasks To Practice On","📖 Current Eval Performance","📖 Suggested Reading Materials","📖 Glossary"],
+    "DataList": ["Introduction To Fluxe", "Introduction To Engine", "Data Creation Guidelines","Prompting Basics","Extensive Tool Coverage And Function Mapper","Samples Of Clean-Optimal Action Recordings","Sample Tasks To Practice On","Current Eval Performance","Suggested Reading Materials","Glossary"],
   };
 
   const moduleMap: { [key: string]: ModuleInfo } = {
-    "DataList - 📖 Introduction To Fluxe": { day: "DataList", module: "Introduction To Fluxe", component: Fluxe},
-    "DataList - 📖 Introduction To Engine": { day: "DataList", module: "Introduction To Engine", component: Engine},
-    "DataList - 📖 Data Creation Guidelines": { day: "DataList", module: "Data Creation Guidelines", component: DataCreation},
-    "DataList - 📖 Prompting Basics": { day: "DataList", module: "Prompting Basics", component: BasicsPrompt},
-    "DataList - 📖 Extensive Tool Coverage And Function Mapper": { day: "DataList", module: "Extensive Tool Coverage And Function Mapper", component: ToolCoverage},
-    "DataList - 📖 Samples Of Clean-Optimal Action Recordings": { day: "DataList", module: "Sample Of Clean-Optimal Action Recordings", component: ComingSoon},
-    "DataList - 📖 Sample Tasks To Practice On": { day: "DataList", module: "Sample Tasks To Practice", component: ComingSoon},
-    "DataList - 📖 Current Eval Performance": { day: "DataList", module: "Current Eval Performance", component: ComingSoon},
-    "DataList - 📖 Suggested Reading Materials": { day: "DataList", module: "Suggested Reading Materials", component: ReadingMaterial},
-    "DataList - 📖 Glossary": { day: "DataList", module: "Glossary", component: ComingSoon}
+    "DataList - Introduction To Fluxe": { day: "DataList", module: "Introduction To Fluxe", component: Fluxe},
+    "DataList - Introduction To Engine": { day: "DataList", module: "Introduction To Engine", component: Engine},
+    "DataList - Data Creation Guidelines": { day: "DataList", module: "Data Creation Guidelines", component: DataCreation},
+    "DataList - Prompting Basics": { day: "DataList", module: "Prompting Basics", component: BasicsPrompt},
+    "DataList - Extensive Tool Coverage And Function Mapper": { day: "DataList", module: "Extensive Tool Coverage And Function Mapper", component: ToolCoverage},
+    "DataList - Samples Of Clean-Optimal Action Recordings": { day: "DataList", module: "Sample Of Clean-Optimal Action Recordings", component: ComingSoon},
+    "DataList - Sample Tasks To Practice On": { day: "DataList", module: "Sample Tasks To Practice", component: ComingSoon},
+    "DataList - Current Eval Performance": { day: "DataList", module: "Current Eval Performance", component: ComingSoon},
+    "DataList - Suggested Reading Materials": { day: "DataList", module: "Suggested Reading Materials", component: ReadingMaterial},
+    "DataList - Glossary": { day: "DataList", module: "Glossary", component: ComingSoon}
   };
 
-  useEffect(() => {
+//   useEffect(() => {
+//     const sessionExpireTime = sessionStorage.getItem("sessionExpireTime");
+//     const currentTime = new Date().getTime();
+
+//     const storedUserName = sessionStorage.getItem("userName");
+//         if (storedUserName) {
+//             setUserName(storedUserName);
+//         }
+  
+//     if (!sessionExpireTime || currentTime > Number(sessionExpireTime)) {
+//       handleLogout();
+//     } else {
+//       const remainingTime = Number(sessionExpireTime) - currentTime;
+//       setTimeout(handleLogout, remainingTime);
+//     }
+
+//     setLoading(false);
+//   }, []);
+
+
+useEffect(() => {
     const sessionExpireTime = sessionStorage.getItem("sessionExpireTime");
     const currentTime = new Date().getTime();
 
     const storedUserName = sessionStorage.getItem("userName");
-        if (storedUserName) {
-            setUserName(storedUserName);
-        }
-  
+    if (storedUserName) {
+        setUserName(storedUserName);
+    }
+
     if (!sessionExpireTime || currentTime > Number(sessionExpireTime)) {
-      handleLogout();
+        handleLogout();
     } else {
-      const remainingTime = Number(sessionExpireTime) - currentTime;
-      setTimeout(handleLogout, remainingTime);
+        const remainingTime = Number(sessionExpireTime) - currentTime;
+        setTimeout(handleLogout, remainingTime);
+    }
+
+    // Retrieve the last selected module from localStorage
+    const storedModule = localStorage.getItem("selectedModule");
+    if (storedModule) {
+        setSelectedModule(storedModule);
     }
 
     setLoading(false);
-  }, []);
+}, []);
+
   
 
   const handleLogout = async () => {
@@ -104,6 +131,7 @@ export default function Dashboard() {
 
 const setSelectedModuleHandler = (module: string) => {
     setSelectedModule(module);
+    localStorage.setItem("selectedModule", module); // Store in localStorage
     setIsOpen(false); // Close sidebar on selecting a module
 };
 
@@ -111,6 +139,7 @@ const setSelectedModuleHandler = (module: string) => {
 
     <div className="Dashboard-Section">
             {/* Hamburger Button */}
+
             <button className="hamburger" onClick={toggleSidebar}>
                 ☰
             </button>
@@ -118,7 +147,7 @@ const setSelectedModuleHandler = (module: string) => {
             {/* Sidebar */}
             <aside className={`sidebar ${isOpen ? "open" : ""}`}>
                 <div className="sidebar-header">
-                    <Image src={Logo1} alt="Logo" width={250} height={50} />
+                    <Image src={Logo1} alt="Logo" width={180} height={0} />
                 </div>
 
                 <ul className="sidebar-links">

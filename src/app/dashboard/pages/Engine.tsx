@@ -55,7 +55,7 @@ export default function Engine() {
   return (
     <div className="Day1-Main">
       <div className="Header">
-        <h1 className="h1">ENGINE</h1>
+        <h1 className="h1"><strong>ENGINE</strong></h1>
       </div>
 
       <div className="MainContent">

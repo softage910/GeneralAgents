@@ -65,7 +65,7 @@
 }
 
 .wrapper .title {
-    background: #4793e4;
+    background: #4A90E2;
     line-height: 2.5;
     display: flex;
     justify-content: space-between;
@@ -81,7 +81,7 @@
 }
 
 .wrapper .box {
-    padding: 10px 15px;
+    padding: 5px 5px;
     background-color: #212121;
 }
 
@@ -143,6 +143,7 @@
     transition: 0.3s all ease;
     min-height: 100px;
     text-align: center;
+    background-color: #FAFAFA;
 }
 
 
