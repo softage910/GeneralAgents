@@ -30,7 +30,7 @@ export default function FirstTopic() {
     </li>
     <li><strong>Precise language:</strong>
         <ul className="ul">
-            <li>Uses clear, direct language and action verbs (e.g., "schedule," "send," "organize") to avoid misinterpretation.</li>
+            <li>Uses clear, direct language and action verbs (e.g., &quot;schedule&quot;, &quot;send&quot;, &quot;organize&quot;) to avoid misinterpretation.</li>
         </ul>
     </li>
     <li><strong>Context-aware:</strong>
@@ -67,17 +67,17 @@ export default function FirstTopic() {
         <tr>
             <td>Action</td>
             <td>Clearly define the task to be performed</td>
-            <td>"Send a payment reminder email..."</td>
+            <td>&quot;Send a payment reminder email...&quot;</td>
         </tr>
         <tr>
             <td>Context</td>
             <td>Provide relevant environmental or situational information</td>
-            <td>"...using HubSpot templates, targeting overdue invoices 30 days"</td>
+            <td>&quot;...using HubSpot templates, targeting overdue invoices 30 days&quot;</td>
         </tr>
         <tr>
             <td>Constraints</td>
             <td>Specify any limitations or requirements</td>
-            <td>"Exclude clients with pending disputes; flag accounts 60 days overdue"</td>
+            <td>&quot;Exclude clients with pending disputes; flag accounts 60 days overdue&quot;</td>
         </tr>
     </tbody>
 </table>
@@ -89,14 +89,14 @@ export default function FirstTopic() {
 <ol className="ol" style={{ textAlign: "left" }}>
     <li><strong>Scheduling:</strong>
         <ul className="ul">
-            <li>Good: "Schedule a team meeting for next Tuesday at 2 PM on Zoom."</li>
-            <li>Bad: "Set up a meeting on Zoom."</li>
+            <li>Good: &quot;Schedule a team meeting for next Tuesday at 2 PM on Zoom.&quot;</li>
+            <li>Bad: &quot;Set up a meeting on Zoom.&quot;</li>
         </ul>
     </li>
     <li><strong>Reminders:</strong>
         <ul className="ul">
-            <li>"Remind me to call Mom tomorrow at 6 PM."</li>
-            <li>"Remind me about the call later."</li>
+            <li>&quot;Remind me to call Mom tomorrow at 6 PM.&quot;</li>
+            <li>&quot;Remind me about the call later.&quot;</li>
         </ul>
     </li>
 </ol>
@@ -110,33 +110,20 @@ export default function FirstTopic() {
         <ul className="ul">
             <li>Use simple, natural, and conversational prompts.</li>
             <li>Use tool-specific jargon and syntax (e.g., @mention in Slack, #tags in Asana).</li>
-            <li>Name files or folders exactly: "Q4_Report.docx" not just "the report."</li>
+            <li>Name files or folders exactly: &quot;Q4_Report.docx&quot; not just &quot;the report.&quot;</li>
         </ul>
     </li>
-    <li><strong>Don'ts:</strong>
+    <li><strong>Don&apos;ts:</strong>
         <ul className="ul">
-            <li>Use vague terms: ❌ "Handle files sometime today" → ✅ "Move *.csv files to Backup folder by 5 PM."</li>
-            <li>Overload single prompts: Split "Schedule meeting AND draft report" into separate tasks.</li>
+            <li>Use vague terms: ❌ &quot;Handle files sometime today&quot; → ✅ &quot;Move *.csv files to Backup folder by 5 PM.&quot;</li>
+            <li>Overload single prompts: Split &quot;Schedule meeting AND draft report&quot; into separate tasks.</li>
             <li>Assuming the agent knows context without specifying.</li>
         </ul>
     </li>
 </ol>
 <br />
 
-<h3 className="h3" style={{ textAlign: "left" }}><strong>Additional Reading Materials:</strong></h3>
 
-<ol className="ol" style={{ textAlign: "left" }}>
-    <li>
-        <a href="https://drive.google.com/file/d/1qRY4-6-QoNCwBp3vhX60gZmC4xzZeWxY/view?usp=share_link" target="_blank">
-            <button className='Watch-Button'>Resource1</button>
-        </a>
-    </li>
-    <li>
-        <a href="https://drive.google.com/file/d/1qRY4-6-QoNCwBp3vhX60gZmC4xzZeWxY/view?usp=share_link" target="_blank">
-            <button className='Watch-Button'>Resource2</button>
-        </a>
-    </li>
-</ol>
         </>
     );
 }
