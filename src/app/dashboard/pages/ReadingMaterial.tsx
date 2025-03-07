@@ -56,7 +56,7 @@ export default function ReadingMaterial() {
   return (
     <div className="Day1-Main">
       <div className="Header">
-        <h1 className="h1">Reading Material</h1>
+        <h1 className="h1">Suggested Reading Materials</h1>
       </div>
 
       <div className="MainContent">

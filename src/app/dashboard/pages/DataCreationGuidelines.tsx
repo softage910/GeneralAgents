@@ -63,9 +63,8 @@ export default function DataCreation() {
     return (
         <div className="Day1-Main">
             <div className="Header">
-                <h1 className="h1"><strong>INTRODUCTION TO THE
-                    ECOSYSTEM AND DATA CREATION
-                    GUIDELINES</strong></h1>
+                <h1 className="h1">Data Creation
+                    Guidelines</h1>
             </div>
 
             <div className="MainContent">

@@ -12,7 +12,7 @@ import ten from '../../../../../public/Images/5.1.8.png';
 import eleven from '../../../../../public/Images/5.1.9.png';
 import twelve from '../../../../../public/Images/5.1.10.png';
 import thirteen from '../../../../../public/Images/5.1.4.png';
-
+import Bulb from '../../../../../public/Images/bulb.png';
 
 import Image from 'next/image';
 
@@ -21,123 +21,139 @@ export default function FirstTopic() {
         <>
 
 
-            <h2 className="h2"><strong>Introduction to FLUXE</strong></h2>
+            {/* <h2 className="h2"><strong>Introduction to FLUXE</strong></h2> */}
             <p className="p">
-                Fluxe is the tool on which you will be collecting data to train ACE.</p>
-                <br />
-                <a className="fluxe-download" href="/FluxeInstaller.pkg" download>
-        Click here to download Fluxe
-      </a>
-                <figure className='img-51'> 
+            Fluxe is the tool on which you will be collecting data to train ACE.</p>
+            <br />
+            <a className="fluxe-download" href="/FluxeInstaller.pkg" download>
+                Click here to download Fluxe
+            </a>
+
+            <div className='Textarea-Hover'>
+                <div className='Textarea-Wrapper'>
+                    <Image width={50} height={50} src={Bulb} alt=''></Image>
+                    <p>
+                    Fluxe is a screen recording/data collection tool which records the video, and registers mouse and keyboard actions, during your data creation process.
+                    </p>
+                </div>
+            </div>
+
+            {/* <figure className='img-51'>
                 <Image src={one} width={0} height={0} alt="Logo" />
-                </figure>
-                <br />
-               <p className="p"> While installing Fluxe, if you are not able to open the installer, follow these steps:
+            </figure> */}
+            <hr />
+            <p className="p"> While installing Fluxe, if you are not able to open the installer,follow these steps:
                 <br />
                 <br />
                 Go into &apos;Privacy & Security&apos;,</p>
-                <figure className='img-52'>
-                    <Image src={two} width={0} height={0} alt="Logo" />
-                </figure>
-                <br />
-                <p className="p">and then scroll down to the bottom in &quot;Privacy and Security section&quot; ,</p>
-                <figure className='img-53'>
-                    <Image src={three} width={0} height={0} alt="Logo"/>
-                </figure>
-                <br />
-               <p className="p"> you&apos;ll see a button saying &apos;Open Anyway&apos; -- after that you can try opening the
+            <figure className='img-52'>
+                <Image src={two} width={0} height={0} alt="Logo" />
+            </figure>
+            <br />
+            <p className="p">and then scroll down to the bottom in &quot;Privacy and Security section&quot; ,</p>
+            <figure className='img-53'>
+                <Image src={three} width={0} height={0} alt="Logo" />
+            </figure>
+            <br />
+            <p className="p"> you&apos;ll see a button saying &apos;Open Anyway&apos;; after that , you can try opening the
                 Fluxe app again.</p>
-                <br />
-                <figure className='img-51'>
-                    <Image src={four} width={0} height={0} alt="Logo"/>
-                </figure>
-                <br />
-                <p className="p">Instead of &quot;OpenOffice, it will say Fluxe, Select Open Anyway for Fluxe, and it
+            <br />
+            <figure>
+                <Image src={four} width={700} height={0} alt="Logo" />
+            </figure>
+            <br />
+            <p className="p">Instead of &quot;OpenOffice&quot;, it will say Fluxe, Select <strong>Open Anyway</strong> for Fluxe, and it
                 should work!
-                Fluxe looks like this on your &quot;Applications&quot; page</p>
-                <br />
-                <figure className='img-55'>
-                    <Image src={five} width={0} height={0} alt="Logo" />
-                </figure>
-               <p className="p"> When active, it looks like this on your toolbar</p>
-                <br />
-                <figure className='img-51'>
-                    <Image src={six} width={0} height={0} alt="Logo" />
-                </figure>
-                <br />
+                </p>
                 <hr />
+                <p className='p'>Fluxe looks like this on your &quot;Applications&quot; page</p>
+            <br />
+            <figure className='img-55'>
+                <Image src={five} width={0} height={0} alt="Logo" />
+            </figure>
+            <p className="p"> When active, it looks like this on your toolbar</p>
+            <br />
+            <figure>
+                <Image src={six} width={800} height={0} alt="Logo" />
+            </figure>
+            <br />
+            <hr />
+
+            <h2 className="h2">How To Use Fluxe</h2>
+            <ol className="ol">
+                <li>
+                    <strong>Click on the Hammer icon on your tool bar</strong>
+                    <br />
+                    <figure>
+                        <Image src={seven} width={0} height={0} alt="Logo" />
+                    </figure>
+               
+                </li>
+                <li>
+                    <strong>It will open the Fluxe interface like this</strong>
+                    <br />
+                    <figure className='img-52'>
+                        <Image src={eight} width={0} height={0} alt="Logo" />
+                    </figure>
+                 
+                </li>
+                <li>
+                    <strong>Type in/Paste the prompt you wish to record like this:</strong>
+                    <br />
+                    <figure className='img-52'>
+                        <Image src={nine} width={0} height={0} alt="Logo" />
+                    </figure>
+                  
+                </li>
+                <li>
+                    <strong>Once you have typed/pasted the prompt, click on the &quot;Show Settings&quot; button to open the tags menu, which will show up like this:</strong>
+                    <br />
+                    <figure className='img-52'>
+                        <Image src={ten} width={0} height={0} alt="Logo" />
+                    </figure>
+                   
+                </li>
+                <li>
+                    <strong>After selecting the relevant tag, (for instance , for this prompt it will be &quot;op-follow-people&quot;), click on the &quot;Exit Settings&quot;, </strong>
+
+                </li>
+                <li>
+                    <strong>Click on &quot;Start Recording&quot;,</strong>
+                    <br />
+                    <figure className='img-52'>
+                        <Image src={eleven} width={0} height={0} alt="Logo" />
+                    </figure>
+                    <strong>and a countdown will start counting down from 3,</strong>
+                    <figure className='img-52'>
+                        <Image src={twelve} width={0} height={0} alt="Logo" />
+                    </figure>
             
-                <h2 className="h2">How To Use Fluxe</h2>
-                <ol className="ol">
-                    <li>
-                     <strong>Click on the Hammer icon on your tool bar</strong>
+                    <strong>Once the countdown finishes , Fluxe is actively recording your data.
                         <br />
-                        <figure>
-                    <Image src={seven} width={0} height={0} alt="Logo"/>
-                </figure>
-                        <br />
-                    </li>
-                    <li>
-                        <strong>It will open the Fluxe interface like this</strong>
-                        <br />
-                        <figure className='img-52'>
-                    <Image src={eight} width={0} height={0} alt="Logo"/>
-                </figure>
-                        <br />
-                    </li>
-                    <li>
-                        <strong>Type in/Paste the prompt you wish to record like this:</strong>
-                        <br />
-                        <figure className='img-52'>
-                    <Image src={nine} width={0} height={0} alt="Logo"/>
-                </figure>
-                        <br />
-                    </li>
-                    <li>
-                        <strong>Once you have typed/pasted the prompt, click on the &quot;Show Settings&quot; button to open the tags menu, which will show up like this:</strong>
-                        <br />
-                        <figure className='img-52'>
-                    <Image src={ten} width={0} height={0} alt="Logo"/>
-                </figure>
-                        <br />
-                    </li>
-                    <li>
-                        <strong>After selecting the relevant tag, (for instance , for this prompt it will be &quot;op-follow-people&quot;), click on the &quot;Exit Settings&quot;, </strong>
-                        
-                    </li>
-                    <li>
-                        <strong>Click on &quot;Start Recording&quot;, and a countdown will start counting down from 3.</strong>
-                        <br />
-                        <figure className='img-52'>
-                    <Image src={eleven} width={0} height={0} alt="Logo" />
-                </figure>
-                <figure className='img-52'>
-                    <Image src={twelve} width={0} height={0} alt="Logo" />
-                </figure>
-                        <br />
-                    </li>
-                    <li>
-                        <strong>Once the countdown finishes , Fluxe is actively recording your data. While recording a new icon will show up on your toolbar,like this:</strong>
-                        <br />
-                        <figure className='img-51'>
-                    <Image src={thirteen} width={0} height={0} alt="Logo"/>
-                </figure>
-                        <br />
-                    </li>
-                    <li>
-                        <strong>To stop a recording use the shortcut</strong>
-                        <br />
-                        <br />
-  
-                    </li>
+                         While recording a new icon will show up on your toolbar,like this:</strong>
+                    <br />
+                    <figure>
+                        <Image src={thirteen} width={0} height={0} alt="Logo" />
+                    </figure>
+                    
+                </li>
+           
+                <li>
+                    <strong>To stop a recording use the shortcut</strong>
+                    <br />
+                    <br />
+
+                </li>
 
 
 
 
 
-                </ol>
+            </ol>
 
-                <h2 className='h2'>Thats it ! As simple as that . You can start creating Data to train ACE now!</h2>
+            <h2 className='h2'>Thats it ! As simple as that . You can start creating Data to train ACE now!</h2>
+
+            <h2 className='h2'>Let&apos;s get to understanding ENGINE now!</h2>
 
 
             <br />

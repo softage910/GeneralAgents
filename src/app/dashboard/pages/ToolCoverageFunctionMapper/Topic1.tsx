@@ -10,7 +10,6 @@ export default function FirstTopic() {
     return (
         <>
 
-            <h2 className="h2"><strong>Extensive Tool Coverage and Function Mapper</strong></h2>
             <p className="p">These guidelines incorporate the concept of a function mapper, ensuring systematic coverage of a tool&apos;s features and functions.</p>
 
             <br />

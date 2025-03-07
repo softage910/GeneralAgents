@@ -189,9 +189,10 @@
    }
    
    .Header {
-     text-align: center;
+     text-align: left;
      background-color: #303030;
      width: 90%;
+     padding-left: 20px;
      margin-top: 10px;
      margin-bottom: 10px;
      border-radius: 30px 30px 0px 0px;
@@ -387,4 +388,36 @@
 
    .fluxe-download{
     color: rgb(146, 146, 250);
+   }
+
+
+   .Textarea-Hover{
+    margin-top: 10px;
+    width: 90%;
+    background-color: rgba(153, 203, 241, 0.789);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+   }
+
+   .Textarea-Wrapper{
+    width: 85%;
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+   }
+
+   .Textarea-Wrapper:hover{
+    transform: scale(1.1);
+   }
+
+   /* .Textarea-Hover:hover{
+    padding: 0px;
+   } */
+
+   .Textarea-Wrapper p{
+    margin-left: 10px;
+    font-size: 1rem;
+    
+  
    }

@@ -176,6 +176,10 @@ body {
 } */
 
 
+body{
+    color: white !important;
+}
+
 /* Sidebar - Initially Hidden */
 .sidebar {
     position: fixed;

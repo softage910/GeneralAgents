@@ -20,6 +20,7 @@ import sixteen from '../../../../../public/Images/5.0.16.0.png';
 import seventeen from '../../../../../public/Images/5.2.15.png';
 
 import eighteen from '../../../../../public/Images/5.2.16.png';
+import Bulb from '../../../../../public/Images/bulb.png';
 
 
 
@@ -32,25 +33,23 @@ export default function SecondTopic() {
     return (
         <>
 
-            <h2 className="h2"><strong>Introduction To ENGINE</strong></h2>
+            {/* <h2 className="h2"><strong>Introduction To ENGINE</strong></h2> */}
             <p className="p">
-                The data you create on FLUXE can now be accessed for reviewing, annotating
-                or flagging on ENGINE.</p>
+            The data you create on FLUXE can now be accessed for reviewing, annotating or flagging on ENGINE.</p>
             <br />
            
                 <a className="fluxe-download" href="https://engine.generalagents.co/readings" download>
-        Click Here
+        Click Here To Access Engine
       </a>
       <br/>
             <br />
-            <p className="p">Once you log in , the Engine interface will show up like this:</p>
+            <p className="p">Once you log in, the Engine interface will show up like this:</p>
             <br />
-            <figure className='img-511'>
-                <Image src={two} width={0} height={0} alt="Logo" />
+            <figure>
+                <Image src={two} width={1200} height={0} alt="Logo" />
             </figure>
             <br />
-            <p className="p">You can view Recordings and Executions by clicking on the respective
-                highlighted links</p>
+            <p className="p">You can view Recordings and Executions by clicking on the respective highlighted links</p>
             <br />
             <figure className='img-511'>
                 <Image src={three} width={0} height={0} alt="Logo" />
@@ -63,64 +62,79 @@ export default function SecondTopic() {
             </figure>
             <br />
             <p className="p">You can also search for specific recordings, either by keywords, or by putting in
-                the whole prompt, in the &quot;search instructions text box&quot;</p>
+                the whole prompt, in the <strong>&quot;search instructions text box&quot;</strong></p>
             <br />
             <figure className='img-510'>
                 <Image src={five} width={0} height={0} alt="Logo" />
             </figure>
             <br />
-            <p className="p">You can also filter your recordings using a date range, as shown here</p>
+            <p className="p">You can also filter your recordings using a date range, as shown here
+
+</p>
             <br />
             <figure className='img-510'>
                 <Image src={six} width={0} height={0} alt="Logo" />
             </figure>
             <br />
-            <p className="p">Your recordings will show up on the engine page as displayed:</p>
+            <p className="p">Your recordings will show up on the engine page as displayed:
+
+</p>
             <br />
             <figure className='img-511'>
                 <Image src={seven} width={0} height={0} alt="Logo" />
             </figure>
             <br />
-            <p className="p">You can click on specific recordings to see your created data</p>
+            <p className="p">You can click on specific recordings to see your created data
+
+</p>
             <br />
-            <figure className='img-510'>
-                <Image src={eight} width={0} height={0} alt="Logo" />
-            </figure>
+
+            <div className='Textarea-Hover'>
+                <div className='Textarea-Wrapper'>
+                    <Image width={50} height={50} src={Bulb} alt=''></Image>
+                    <p>
+                    Only you can access your recordings on the engine. You won't be able to view any other user's recordings.</p>
+                </div>
+            </div>
+
             <br />
-            <p className="p">In case of incorrect/undesirable actions in a recording, you can flag it by
-                selecting the flag icon</p>
+            <p className="p">In case of incorrect/undesirable actions in a recording, you can flag it by selecting the flag icon
+
+</p>
             <br />
             <figure className='img-510'>
                 <Image src={nine} width={0} height={0} alt="Logo" />
             </figure>
             <br />
-            <p className="p">On clicking the flag icon, you will encounter this pop-up</p>
+            <p className="p">On clicking the flag icon, you will encounter this pop-up
+
+</p>
             <br />
             <figure className='img-510'>
                 <Image src={ten} width={0} height={0} alt="Logo" />
             </figure>
             <br />
-            <p className="p">You can type and explain your reason(s) for flagging the recording here</p>
+            <p className="p">You can type and explain your reason(s) for flagging the recording here
+
+</p>
             <br />
             <figure className='img-510'>
                 <Image src={eleven} width={0} height={0} alt="Logo" />
             </figure>
             <br />
-            <p className="p">After flagging, the recordings will show up as greyed out on your recordings
-                page
+            <p className="p">After flagging, the recordings will show up as greyed out on your recordings page
+
+
                 <br />
                 <br />
             </p>
             <hr />
             <h2 className="h2"><strong>Annotations</strong></h2>
             <p className="p">
-                You can annotate specific parts of your recordings to give detailed instructions
-                per segment. This is particularly useful when your recording has a mix of
-                features while performing one task. Take this recording of a data creator
-                collecting data on chess for example:</p>
+            You can annotate specific parts of your recordings to give detailed instructions per segment. This is particularly useful when your recording has a mix of features while performing one task. Take this recording of a data creator collecting data on chess, for example:</p>
             <br />
-            <figure className='img-51'>
-                <Image src={twelve} width={0} height={0} alt="logo" />
+            <figure>
+                <Image src={twelve} width={700} height={0} alt="logo" />
                 <br />
 </figure>
                 <p className="p">Here you can see events marked with red/blue dots on this timeline of the
@@ -132,30 +146,35 @@ export default function SecondTopic() {
                     <Image src={thirteen} width={0} height={0} alt="Logo" />
                 </figure>
                 <br />
-                <p className="p">Select a Starting point and an end point, and put in your instructions for this
-                    particular segment , and save it.</p>
+                <p className="p">Select a Starting point and an endpoint, put in your instructions for this particular segment, and save it.
+
+</p>
                 <br />
                 <figure className='img-510'>
                     <Image src={fourteen} width={0} height={0} alt="Logo" />
                 </figure>
                 <br />
 
-                <p className="p">You can do multiple annotations on the same recording , distinguished by either
-                    actions, or different verbiage for the same action.</p>
+                <p className="p">You can do multiple annotations on the same recording, distinguished by either actions, or different verbiage for the same action.</p>
 
                 <br />
-                <figure className='img-51'>
-                    <Image src={fifteen} width={0} height={0} alt="Logo" />
+                <figure>
+                    <Image src={fifteen} width={800} height={0} alt="Logo" />
                 </figure>
                 <br />
-                <br />
-                <figure className='img-51'>
-                    <Image src={sixteen} width={0} height={0} alt="Logo" />
-                </figure>
+          
+
+                <div className='Textarea-Hover'>
+                <div className='Textarea-Wrapper'>
+                    <Image width={50} height={50} src={Bulb} alt=''></Image>
+                    <p>
+                    Annotating specific segments helps ACE learn more targeted actions, which adds to the value of the recording you are creating!                    </p>
+                </div>
+            </div>
+
                 <br />
 
-                <p className="p"> Lets take a look at another example, in this task , the data creator is recording
-                    data to train ACE on Microsoft Word, the instruction is &quot;center align the &apos;next
+                <p className="p"> Lets take a look at another example. In this task, the data creator records data to train ACE on Microsoft Word. The instruction is &quot;center align the &apos;next
                     steps&apos; section and apply green shading in project report.docx&quot;.</p>
                 <br />
                 <figure className='img-510'>
@@ -163,14 +182,11 @@ export default function SecondTopic() {
                 </figure>
                 <br />
 
-                <p className="p"> Here we can annotate two actions, to mark Align and Intend selection, and the
-                    action of selecting a shade. Adding two annotations here, will make ACE
-                    understand the specific steps you have taken to reach the intended conclusion
-                    of the recording; which is &quot;center align the &apos;next steps&apos; section and apply green
-                    shading in project report.docx&quot;.</p>
+                <p className="p"> Here we can annotate two actions, to mark Align and Intend selection, and the action of selecting a shade. Adding two annotations here will make ACE understand the specific steps you have taken to reach the intended conclusion of the recording, which is to &quot;center align the &apos;next steps&apos; section and apply green shading in project report.docx&quot;.
+                    </p>
                 <br />
-                <figure className='img-51'>
-                    <Image src={eighteen} width={0} height={0} alt="Logo" />
+                <figure>
+                    <Image src={eighteen} width={800} height={0} alt="Logo" />
                 </figure>
                 <br />
 
@@ -178,7 +194,7 @@ export default function SecondTopic() {
 
 
 
-                <h2 className="h2"><strong>Let&apos;s get to creating data now!!</strong></h2>
+                <h2 className="h2"><strong>Now that you know about Fluxe and Engine, let&apos;s move on to understanding the Data Creation Process!!</strong></h2>
             </>
             );
 }
