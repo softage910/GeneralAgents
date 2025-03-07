@@ -399,14 +399,46 @@ border-right: white 0.025px solid;
   border-radius: 4px;
 } */
 
-
-
 .InnerDashboard{
-  display: flex;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
   justify-content: center;
   align-items: center;
-  height: 90vh;
 }
+
+.NextPrev-btn{
+    display: flex;
+    justify-content: end;
+    width: 85%;
+    background-color: #303030;
+    margin-top: 10px;
+    border-radius: 0px 0px 30px 30px;
+    padding: 10px;
+}
+
+.NextPrev-btn button{
+    text-align: center;
+     padding: 10px;
+     color: black;
+     background-color: white;
+     min-width: 150px;
+     border-radius: 20px;
+     cursor: pointer;
+     margin: 0px 10px 0px 10px;
+     backdrop-filter: blur(10px); 
+     -webkit-backdrop-filter: blur(10px);
+     border: solid rgba(255, 255, 255, 0.2) 1px; 
+     box-shadow: 4px 0px 15px rgba(0, 0, 0, 0.982);
+}
+
+.NextPrev-btn button:hover{
+    color: white;
+    background-color: black;
+    transition: 0.25s;
+  
+  }
+
 
 /* .Inner-Section{
   width: 100%;

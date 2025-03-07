@@ -42,7 +42,7 @@ export default function FirstTopic() {
                 <Image src={one} width={0} height={0} alt="Logo" />
             </figure> */}
             <hr />
-            <p className="p"> While installing Fluxe, if you are not able to open the installer,follow these steps:
+            <p className="p"> While installing Fluxe, if you are not able to open the installer , follow these steps:
                 <br />
                 <br />
                 Go into &apos;Privacy & Security&apos;,</p>
@@ -82,7 +82,7 @@ export default function FirstTopic() {
             <h2 className="h2">How To Use Fluxe</h2>
             <ol className="ol">
                 <li>
-                    <strong>Click on the Hammer icon on your tool bar</strong>
+                    Click on the Hammer icon on your tool bar
                     <br />
                     <figure>
                         <Image src={seven} width={0} height={0} alt="Logo" />
@@ -90,7 +90,7 @@ export default function FirstTopic() {
                
                 </li>
                 <li>
-                    <strong>It will open the Fluxe interface like this</strong>
+                    It will open the Fluxe interface like this
                     <br />
                     <figure className='img-52'>
                         <Image src={eight} width={0} height={0} alt="Logo" />
@@ -98,7 +98,7 @@ export default function FirstTopic() {
                  
                 </li>
                 <li>
-                    <strong>Type in/Paste the prompt you wish to record like this:</strong>
+                    Type in/Paste the prompt you wish to record like this:
                     <br />
                     <figure className='img-52'>
                         <Image src={nine} width={0} height={0} alt="Logo" />
@@ -106,7 +106,7 @@ export default function FirstTopic() {
                   
                 </li>
                 <li>
-                    <strong>Once you have typed/pasted the prompt, click on the &quot;Show Settings&quot; button to open the tags menu, which will show up like this:</strong>
+                    Once you have typed/pasted the prompt, click on the &quot;Show Settings&quot; button to open the tags menu, which will show up like this:
                     <br />
                     <figure className='img-52'>
                         <Image src={ten} width={0} height={0} alt="Logo" />
@@ -114,23 +114,23 @@ export default function FirstTopic() {
                    
                 </li>
                 <li>
-                    <strong>After selecting the relevant tag, (for instance , for this prompt it will be &quot;op-follow-people&quot;), click on the &quot;Exit Settings&quot;, </strong>
+                   After selecting the relevant tag, (for instance , for this prompt it will be &quot;op-follow-people&quot;), click on the &quot;Exit Settings&quot;,
 
                 </li>
                 <li>
-                    <strong>Click on &quot;Start Recording&quot;,</strong>
+                    Click on &quot;Start Recording&quot;,
                     <br />
                     <figure className='img-52'>
                         <Image src={eleven} width={0} height={0} alt="Logo" />
                     </figure>
-                    <strong>and a countdown will start counting down from 3,</strong>
+                    and a countdown will start counting down from 3,
                     <figure className='img-52'>
                         <Image src={twelve} width={0} height={0} alt="Logo" />
                     </figure>
             
-                    <strong>Once the countdown finishes , Fluxe is actively recording your data.
+                    Once the countdown finishes , Fluxe is actively recording your data.
                         <br />
-                         While recording a new icon will show up on your toolbar,like this:</strong>
+                         While recording a new icon will show up on your toolbar,like this:
                     <br />
                     <figure>
                         <Image src={thirteen} width={0} height={0} alt="Logo" />
@@ -139,7 +139,7 @@ export default function FirstTopic() {
                 </li>
            
                 <li>
-                    <strong>To stop a recording use the shortcut</strong>
+                    To stop a recording use the shortcut
                     <br />
                     <br />
 
@@ -153,7 +153,7 @@ export default function FirstTopic() {
 
             <h2 className='h2'>Thats it ! As simple as that . You can start creating Data to train ACE now!</h2>
 
-            <h2 className='h2'>Let&apos;s get to understanding ENGINE now!</h2>
+            <h2 className='h2'>Let&apos;s Get To Understanding ENGINE Now!</h2>
 
 
             <br />

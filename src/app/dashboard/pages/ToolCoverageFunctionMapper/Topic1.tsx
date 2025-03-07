@@ -97,7 +97,8 @@ export default function FirstTopic() {
 
 
                 </li>
-                <li><strong> Why This Matters</strong>
+                <hr />
+                <li><strong>Why This Matters</strong>
                     <ol className='ol'>
                     <li>
                     Comprehensive Coverage

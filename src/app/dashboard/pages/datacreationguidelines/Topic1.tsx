@@ -3,9 +3,15 @@ import one from '../../../../../public/Images/5.3.png';
 
 import Image from 'next/image';
 import Bulb from '../../../../../public/Images/bulb.png';
+import { SetStateAction, useState } from 'react';
 
 
 export default function FirTopic() {
+    const [openIndex, setOpenIndex] = useState<number | null>(null); // Specify type
+
+    const toggleFAQ = (index: number) => {
+      setOpenIndex(openIndex === index ? null : index); // Only toggle the clicked FAQ
+    };
     return (
         <>
 
@@ -220,7 +226,7 @@ export default function FirTopic() {
                     <strong>Vary the Setup:</strong>
                     <ul className='ul'>
                         <li>Occasionally, several applications are open, whether overlapping or in the background. This diversity helps create more varied and realistic recordings.</li>
-                        <li>Use different datasets or arrange your windows in various layouts. The goal is to mimic real users environments. For instance, starting with a blank projects page or with only one project visible doesn&apos;t represent someone who frequently uses the tool. Refer to <strong>Section 4</strong> for more details.</li>
+                        <li>Use different datasets or arrange your windows in various layouts. The goal is to mimic real users environments. For instance, starting with a blank projects page or with only one project visible doesn&apos;t represent someone who frequently uses the tool.</li>
                         <li>Avoid Repeating the Same Environment. Try not to begin every recording in the exact same setup. Mixing things up ensures that ACE is exposed to a wide range of starting points.</li>
                     </ul>
                 </li>
@@ -386,87 +392,154 @@ export default function FirTopic() {
 
             <h2 className="h2"><strong>FAQs</strong></h2>
 
-            <ol className='ol'>
-                <li>
-                    <strong>I can&apos;t find the tag relevant to my task. What do I do?</strong>
-                    <ul className='ul'>
-                        <li>If you can&apos;t find a tag that matches your task, you can continue recording and contact us to request the addition of the specific tag. Tagging is an ongoing process, and we encourage you to keep creating data even if the appropriate tag isn’t available yet. You can note down the tags you want added and contact us.</li>
-                    </ul>
+            <ol className="ol">
+      {/* First FAQ */}
+      <li className="faq-item">
+        <strong className="faq-question" onClick={() => toggleFAQ(0)}>
+          I can't find the tag relevant to my task. What do I do?
+          <span
+            style={{
+              marginLeft: "10px",
+              fontSize: "30px",
+              cursor: "pointer",
+              transition: "transform 0.3s ease",
+              transform: openIndex === 0 ? "rotate(180deg)" : "rotate(0deg)",
+            }}
+          >
+            &#9662;
+          </span>
+        </strong>
+        {openIndex === 0 && (
+          <ul className="ul" style={{ borderBottom: "solid white 1px", borderLeft: "solid white 1px", borderRight: "solid white 1px",listStyle: "none", padding: "10px" }}>
+            <li>
+            If you can&apos;t find a tag that matches your task, you can continue recording and contact us to request the addition of the specific tag. Tagging is an ongoing process, and we encourage you to keep creating data even if the appropriate tag isn&apos;t available yet. You can note down the tags you want added and contact us.
+            </li>
+          </ul>
+        )}
+      </li>
 
+      {/* Second FAQ */}
+      <li className="faq-item">
+        <strong className="faq-question" onClick={() => toggleFAQ(1)}>
+          I have some concerns about my sensitive personal data being recorded. What should I do?
+          <span
+            style={{
+              marginLeft: "10px",
+              fontSize: "30px",
+              cursor: "pointer",
+              transition: "transform 0.3s ease",
+              transform: openIndex === 1 ? "rotate(180deg)" : "rotate(0deg)",
+            }}
+          >
+            &#9662;
+          </span>
+        </strong>
+        {openIndex === 1 && (
+          <ul className="ul" style={{ borderBottom: "solid white 1px", borderLeft: "solid white 1px", borderRight: "solid white 1px", listStyle: "none", padding: "10px" }}>
+            <li>
+            Your recordings are private and only visible to you. You cannot access other users&apos; recordings, and others cannot see yours. Your data is processed securely on our cloud and integrated into our large data repository. However, if there is confidential data you do not wish to record anywhere, we advise you to create a dummy account/profile/user where necessary and populate it to appear natural.
+            </li>
+          </ul>
+        )}
+      </li>
 
-                </li>
-                <li>
-                    <strong>I have some concerns about my sensitive personal data being recorded.
-                        What should I do?</strong>
-                    <ul className='ul'>
-                        <li>Your recordings are private and only visible to you. You cannot access other users&apos; recordings, and others cannot see yours. Your data is processed securely on our cloud and integrated into our large data repository. However, if there is confidential data you do not wish to record anywhere, we advise you to create a dummy account/profile/user where necessary and populate it to appear natural.</li>
-                    </ul>
+      {/* Third FAQ */}
+      <li className="faq-item">
+        <strong className="faq-question" onClick={() => toggleFAQ(2)}>
+          I am having trouble using Fluxe; it shows me an error saying "[Error ID]", and I am not able to record.
+          <span
+            style={{
+              marginLeft: "10px",
+              fontSize: "30px",
+              cursor: "pointer",
+              transition: "transform 0.3s ease",
+              transform: openIndex === 2 ? "rotate(180deg)" : "rotate(0deg)",
+            }}
+          >
+            &#9662;
+          </span>
+        </strong>
+        {openIndex === 2 && (
+          <ul className="ul" style={{ borderBottom: "solid white 1px", borderLeft: "solid white 1px", borderRight: "solid white 1px", listStyle: "none", padding: "10px" }}>
+            <li>
+              <strong>Check for Updates:</strong> Ensure that Fluxe is updated to the latest version.
+            </li>
+            <li>
+              <strong>Active Uploads:</strong> We strongly encourage you to keep your Mac active with Fluxe running to finish uploading your recordings. Sometimes recordings upload slower owing to slow upload speeds on the data creators&apos; side. Download an app like Caffeine, and keep your Mac on for some time until the data completes uploading.
+            </li>
+            <li>
+            If the issue persists after these steps, please contact our support team with the specific error ID for further assistance.
+            </li>
+          </ul>
+        )}
+      </li>
 
-                </li>
-                <li>
-                    <strong> I am having trouble using Fluxe; it shows me an error saying &quot;[Error ID]&quot;,
-                        and I am not able to record.</strong>
-                    <ul className='ul'>
-                        <li><strong>Check for Updates :</strong> Ensure that Fluxe is updated to the latest version.</li>
-                        <li><strong>Active Uploads :</strong> We strongly encourage you to keep your Mac active
-                            with Fluxe running to finish uploading your recordings. Sometimes
-                            recordings upload slower owing to slow upload speeds on the data
-                            creators side. Download an app like Caffeine, and keep your Mac on for
-                            some time until the data completes uploading.</li>
-                        <li>
-                            If the issue persists after these steps, please contact our support team
-                            with the specific error ID for further assistance.
-                        </li>
-                    </ul>
+      {/* Fourth FAQ */}
+      <li className="faq-item">
+        <strong className="faq-question" onClick={() => toggleFAQ(3)}>
+          I flagged a recording by mistake. Can I un-flag a recording?
+          <span
+            style={{
+              marginLeft: "10px",
+              fontSize: "30px",
+              cursor: "pointer",
+              transition: "transform 0.3s ease",
+              transform: openIndex === 3 ? "rotate(180deg)" : "rotate(0deg)",
+            }}
+          >
+            &#9662;
+          </span>
+        </strong>
+        {openIndex === 3 && (
+          <ul className="ul" style={{ borderBottom: "solid white 1px", borderLeft: "solid white 1px", borderRight: "solid white 1px", listStyle: "none", padding: "10px" }}>
+            <li>
+            Unfortunately, a recording cannot be unflagged once it has been flagged. Please review your recording carefully before flagging to avoid accidental flags.
+            </li>
+          </ul>
+        )}
+      </li>
 
-                </li>
-
-                <li>
-                    <strong>I flagged a recording by mistake. Can I un-flag a recording?</strong>
-                    <ul className='ul'>
-                        <li>Unfortunately, a recording cannot be unflagged once it has been
-                            flagged. Please review your recording carefully before flagging to avoid
-                            accidental flags.</li>
-                    </ul>
-
-                </li>
-                <li>
-                    <strong>I started working on [tool_name] and have made a few recordings. How
-                        do I ensure I have achieved even coverage on [tool_name]?</strong>
-                    <ul className='ul'>
-                        <li>To ensure comprehensive coverage of [tool_name], create a featurewise list of the tools functionalities. Track the features you&quot;ve recorded
-                            using a Google Sheet or similar tool. This method helps you monitor
-                            which features have been covered and identify any gaps, ensuring that
-                            ACE receives thorough training on all aspects of [tool_name].</li>
-                    </ul>
-
-                </li>
-
-
-
-            </ol>
+      {/* Fifth FAQ */}
+      <li className="faq-item">
+        <strong className="faq-question" onClick={() => toggleFAQ(4)}>
+          I started working on [tool_name] and have made a few recordings. How do I ensure I have achieved even
+          coverage on [tool_name]?
+          <span
+            style={{
+              marginLeft: "10px",
+              fontSize: "30px",
+              cursor: "pointer",
+              transition: "transform 0.3s ease",
+              transform: openIndex === 4 ? "rotate(180deg)" : "rotate(0deg)",
+            }}
+          >
+            &#9662;
+          </span>
+        </strong>
+        {openIndex === 4 && (
+          <ul className="ul" style={{ borderBottom: "solid white 1px", borderLeft: "solid white 1px", borderRight: "solid white 1px", listStyle: "none", padding: "10px" }}>
+            <li>
+            To ensure comprehensive coverage of [tool_name], create a function mapper for the tool’s functionalities. Track the features you’ve recorded using the Google Sheet of the same. This method helps you monitor which features have been covered and identify any gaps, ensuring that ACE receives thorough training on all aspects of [tool_name]. Refer to the <strong>Extensive Tool Coverage and Function Mapper</strong> section for more information on this topic.
+            </li>
+          </ul>
+        )}
+      </li>
+    </ol>
 
             <hr />
 
             <h2 className="h2"><strong>Closing Notes</strong></h2>
             <ol className='ol'>
-                <li><strong>Teaching ACE from your Expertise</strong> <br /> Your mission is to teach ACE your areas of expertise, guiding it step by step
-                    to master the tasks you perform. We are confident that by working together,
-                    you can help ACE become the best computer control agent possible.</li>
+                <li><strong>Teaching ACE from your Expertise</strong> <br /> Your mission is to teach ACE your areas of expertise, guiding it step by step to master the tasks you perform. We are confident that by working together, you can help ACE become the best computer control agent possible.</li>
                 <li>
                     <strong>Practice Tasks</strong> <br /> We&apos;ll share sample tasks for you to try before you begin official recordings.
                     This helps you get comfortable with our workflow.
                 </li>
-                <li><strong>Remember</strong> <br /> A well-executed, clean recording (with minimal extra steps) is key to
-                    training ACE effectively. If in doubt, re-record rather than submit a flawed
-                    session.</li>
+                <li><strong>Remember</strong> <br /> A well-executed, clean recording (with minimal extra steps) is key to training ACE effectively. If in doubt, re-record rather than submit a flawed session.</li>
             </ol>
             <br />
             <p className="p">
-                Thank you for contributing to ACEs development! If you have any questions or
-                need clarification on these guidelines, dont hesitate to reach out. By following
-                these principles, we&quot;ll build a robust dataset that helps ACE learn to navigate
-                and execute tasks with precision.
+                <strong>Thank you</strong> for contributing to ACE&apos;s development! Don&apos;t hesitate to reach out if you have any questions or need clarification on these guidelines. By following these principles, we&apos;ll build a robust dataset that helps ACE learn to navigate and execute tasks with precision.
             </p>
 
 
@@ -482,10 +555,10 @@ export default function FirTopic() {
                     recordings.</li>
                 <li><strong>ACE </strong><br />Our computer control agent that learns and improves through the data you
                     provide.</li>
-                <li><strong>Prompt</strong> <br /> The instruction you input into Fluxe to guide ACE on the specific task to be
-                    completed.</li>
-                <li><strong>Annotation</strong> <br /> Labels/prompts used to mark smaller actions within your recordings,
-                    helping to train ACE more effectively.</li>
+                <li><strong>Prompt</strong> <br /> The instruction you input into Fluxe to guide ACE on the specific task to be completed.
+
+</li>
+                <li><strong>Annotation</strong> <br />Labels/prompts used to mark smaller actions within your recordings, helping to train ACE more effectively.</li>
                 <li><strong>Starting Condition</strong> <br /> The screen context at the beginning of your recording, interchangeable
                     with &quot;Screen Context&quot;.</li>
 
@@ -494,4 +567,8 @@ export default function FirTopic() {
 
         </>
     );
+}
+
+function setOpenIndex(arg0: number | null) {
+    throw new Error('Function not implemented.');
 }

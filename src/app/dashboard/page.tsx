@@ -190,7 +190,37 @@ const setSelectedModuleHandler = (module: string) => {
                 </div>
             </div>
         </div>
-        <div className="InnerDashboard">{renderContent()}</div>
+        <div className="InnerDashboard">{renderContent()}
+
+                {/* Button for moving to the next module */}
+    {selectedModule && moduleMap[selectedModule] && (() => {
+        const modules = Object.keys(moduleMap);
+        const currentIndex = modules.indexOf(selectedModule);
+        const prevModule = currentIndex > 0 ? modules[currentIndex - 1] : null;
+        const nextModule = currentIndex < modules.length - 1 ? modules[currentIndex + 1] : null;
+
+        return nextModule ? (
+            <div className="NextPrev-btn">
+            {prevModule && (
+                    <button
+                        onClick={() => setSelectedModuleHandler(prevModule)}
+                        className="mt-6 px-4 py-2 bg-gray-500 text-white rounded-lg mr-2"
+                    >
+                        ← {moduleMap[prevModule].module}
+                    </button>
+                )}
+                {nextModule && (
+                    <button
+                        onClick={() => setSelectedModuleHandler(nextModule)}
+                        className="mt-6 px-4 py-2 bg-blue-500 text-white rounded-lg"
+                    >
+                        {moduleMap[nextModule].module} →
+                    </button>
+                )}
+            </div>
+        ) : null;
+    })()}
+        </div>
     </div>
     <ChatBot />
     </div>

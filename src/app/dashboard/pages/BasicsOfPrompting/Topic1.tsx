@@ -144,9 +144,9 @@ Prompts designed for computer use agents are the digital equivalent of clear, co
 
 <h2 className="h2"><strong>Use Cases</strong></h2>
             <p className="p">
-            Use cases demonstrate the practical application of action agents in real-world situations, highlighting their ability to interpret instructions, process relevant data, and execute actions to achieve desired outcomes efficiently and accurately.</p>
+            Use cases demonstrate the practical application of action agents in real-world situations, highlighting their ability to interpret instructions, process relevant data, and execute actions to achieve desired outcomes efficiently and accurately.</p><br/>
 
-<p className="p" >The concept of use cases for action agents is inherently fluid and multifaceted and constantly evolving. Instead of fitting into predefined categories, their applications are better understood as a spectrum of possibilities driven by the specific problems they are designed to solve.</p>
+<p className="p" >The concept of use cases for action agents is inherently fluid and multifaceted and constantly evolving. Instead of fitting into predefined categories, their applications are better understood as a spectrum of possibilities driven by the specific problems they are designed to solve.</p><br/>
 
 <p className="p" >Essentially, a use case for an action agent emerges from the intersection of its capabilities—perception, decision-making, and action—with a particular domain&apos;s needs and constraints. This means that the same underlying principles of autonomous action can manifest in vastly different ways depending on the context.</p>
             <br />
