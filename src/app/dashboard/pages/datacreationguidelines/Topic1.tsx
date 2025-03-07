@@ -3,7 +3,7 @@ import one from '../../../../../public/Images/5.3.png';
 
 import Image from 'next/image';
 import Bulb from '../../../../../public/Images/bulb.png';
-import { SetStateAction, useState } from 'react';
+import {  useState } from 'react';
 
 
 export default function FirTopic() {
@@ -396,7 +396,7 @@ export default function FirTopic() {
       {/* First FAQ */}
       <li className="faq-item">
         <strong className="faq-question" onClick={() => toggleFAQ(0)}>
-          I can't find the tag relevant to my task. What do I do?
+          I can&apos;t find the tag relevant to my task. What do I do?
           <span
             style={{
               marginLeft: "10px",
@@ -446,7 +446,7 @@ export default function FirTopic() {
       {/* Third FAQ */}
       <li className="faq-item">
         <strong className="faq-question" onClick={() => toggleFAQ(2)}>
-          I am having trouble using Fluxe; it shows me an error saying "[Error ID]", and I am not able to record.
+          I am having trouble using Fluxe; it shows me an error saying &quot;[Error ID]&quot;, and I am not able to record.
           <span
             style={{
               marginLeft: "10px",
@@ -569,6 +569,4 @@ export default function FirTopic() {
     );
 }
 
-function setOpenIndex(arg0: number | null) {
-    throw new Error('Function not implemented.');
-}
+
