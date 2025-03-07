@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Prompting1 from '../../../../../public/Images/Prompting1.png';
 import Bulb from '../../../../../public/Images/bulb.png';
 export default function FirstTopic() {
     return (

@@ -6,7 +6,7 @@ import four from '../../../../../public/Images/5.2.3.png';
 import five from '../../../../../public/Images/5.2.4.png';
 import six from '../../../../../public/Images/5.2.5.png';
 import seven from '../../../../../public/Images/5.2.6.png';
-import eight from '../../../../../public/Images/5.2.0.1.png';
+
 import nine from '../../../../../public/Images/5.2.8.png';
 import ten from '../../../../../public/Images/5.2.9.png';
 import eleven from '../../../../../public/Images/5.2.10.png';
@@ -15,7 +15,7 @@ import thirteen from '../../../../../public/Images/5.2.12.png';
 import fourteen from '../../../../../public/Images/5.2.13.png';
 
 import fifteen from '../../../../../public/Images/5.2.14.png';
-import sixteen from '../../../../../public/Images/5.0.16.0.png';
+
 
 import seventeen from '../../../../../public/Images/5.2.15.png';
 
@@ -93,7 +93,7 @@ export default function SecondTopic() {
                 <div className='Textarea-Wrapper'>
                     <Image width={50} height={50} src={Bulb} alt=''></Image>
                     <p>
-                    Only you can access your recordings on the engine. You won't be able to view any other user's recordings.</p>
+                    Only you can access your recordings on the engine. You won&apos;t be able to view any other user&apos;s recordings.</p>
                 </div>
             </div>
 

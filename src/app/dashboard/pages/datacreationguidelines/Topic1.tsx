@@ -1,6 +1,6 @@
 import '../General.css';
 import one from '../../../../../public/Images/5.3.png';
-import two from '../../../../../public/Images/5.3.1.png';
+
 import Image from 'next/image';
 import Bulb from '../../../../../public/Images/bulb.png';
 
@@ -143,7 +143,7 @@ export default function FirTopic() {
                             <div className='Textarea-Wrapper'>
                                 <Image width={50} height={50} src={Bulb} alt=''></Image>
                                 <p>
-                                    Following these steps ensures that ACE learns the most optimal and efficient ways to execute the tasks you're teaching!                    </p>
+                                    Following these steps ensures that ACE learns the most optimal and efficient ways to execute the tasks you&apos;re teaching!                    </p>
                             </div>
                         </div>
 

@@ -1,5 +1,5 @@
 // import '../Day1Module.css';
-import one from '../../../../../public/Images/5.0.png';
+
 import two from '../../../../../public/Images/5.1.1.png';
 import three from '../../../../../public/Images/5.1.2.png';
 import four from '../../../../../public/Images/5.1.2.1.png';
