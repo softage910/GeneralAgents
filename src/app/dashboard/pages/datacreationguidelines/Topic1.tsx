@@ -121,8 +121,12 @@ export default function FirTopic() {
                             To archive the highlighted card on this Trello board, you have two options:
                         </li>
                         <br />
-                        <figure className='img-5-3'>
+{/*                         <figure className='img-5-3'>
                             <Image src={one} width={0} height={0} alt="Logo" />
+                        </figure> */}
+
+                                               <figure className='img-5-3'>
+                            <Image className='Image-Tag' src={one} width={0} height={0} alt="Logo" />
                         </figure>
 
 
