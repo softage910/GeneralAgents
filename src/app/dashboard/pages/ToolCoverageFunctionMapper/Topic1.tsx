@@ -31,13 +31,13 @@ export default function FirstTopic() {
                 <p className="p">This is a function mapper for Asana</p>
 
                 <figure className='img-5-3'>
-                        <Image src={table1} width={0} height={0} alt="Logo" />
+                        <Image className='Image-Tag' src={table1} width={0} height={0} alt="Logo" />
                         </figure>
 
                 <p className="p">Here is a function mapper for GitHub</p>
 
                         <figure className='img-5-3'>
-                        <Image src={table2} width={0} height={0} alt="Logo" />
+                        <Image className='Image-Tag' src={table2} width={0} height={0} alt="Logo" />
                         </figure>
 
                 <li><strong>Your Role as an Expert</strong>
