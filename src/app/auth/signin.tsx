@@ -136,7 +136,7 @@ export default function SignInPage() {
             sessionStorage.setItem("userEmail", user.email);
 
             setLoginMessage("Redirecting...");
-            router.push("/dashboard");
+            router.push("/dashboard?Onboarding");
         } catch (err) {
             setLoginError("Something went wrong. Please try again.");
             console.error("Login error:", err);
