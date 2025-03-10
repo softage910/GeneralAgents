@@ -1,12 +1,8 @@
 "use client";
-import "./UserDashboard.css";
-
+import "../pages/UserDashboard.css";
 
 export default function Dashboard() {
-
-
-
-  return (
+return (
 <div className="Progress-Section">
 
   <div className="ProgressbarContent">
@@ -49,11 +45,10 @@ export default function Dashboard() {
 
   <div className="Onboarding-Content">
     <div className="Content-Video">
-        <h1>(Space For Onboarding Video)</h1>
-        <div><button><a href="https://drive.google.com/file/d/1xL2eClyOfoE2Pkm_Cbfl0HziFYMPYViH/view?usp=drive_link">Click Here</a></button></div>
+        {/* <h1>(Space For Onboarding Video)</h1> */}
+        <div style={{position: "relative", paddingTop:"56.25%"}}><iframe src="https://iframe.mediadelivery.net/embed/394091/e8800de5-1a8d-4e3e-b6f1-bb3bccf108cb?autoplay=false&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style={{ position: "absolute", top: "0", height:"100%", width: "100%"}} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"></iframe></div>
     </div>
   </div>
- 
-    </div>
+</div>
   );
 }

@@ -21,13 +21,13 @@ export default function FirTopic() {
             <h2 className="h2"><strong>Guidelines</strong></h2>
 
             <p className="p">These guidelines are designed to help you understand our goals and processes.
-
-
             </p>
+            
             <p className='p'>There are <strong>11 key sections</strong> in this guide, each addressing an essential aspect of the data creation process.
 
             </p>
-            <br />
+            <hr />
+     
 
             <h2 className="h2"><strong>Prompts & Annotations</strong></h2>
 
@@ -121,8 +121,12 @@ export default function FirTopic() {
                             To archive the highlighted card on this Trello board, you have two options:
                         </li>
                         <br />
-                        <figure className='img-5-3'>
+{/*                         <figure className='img-5-3'>
                             <Image src={one} width={0} height={0} alt="Logo" />
+                        </figure> */}
+
+                                               <figure className='img-5-3'>
+                            <Image className='Image-Tag' src={one} width={0} height={0} alt="Logo" />
                         </figure>
 
 
@@ -356,7 +360,9 @@ export default function FirTopic() {
             <h2 className="h2"><strong>Examples</strong></h2>
             <p className="p">Sample Prompts</p>
             <br />
-            <p>Short, direct prompts are preferred. Here are few examples from different tools:</p>
+        
+
+            <p className='p'>Short, direct prompts are preferred. Here are few examples from different tools:</p>
             <br />
             <ol className='ol'>
                 <li>

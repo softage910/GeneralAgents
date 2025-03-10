@@ -14,6 +14,7 @@ import twelve from '../../../../../public/Images/5.1.10.png';
 import thirteen from '../../../../../public/Images/5.1.4.png';
 import Bulb from '../../../../../public/Images/bulb.png';
 
+
 import Image from 'next/image';
 
 export default function FirstTopic() {
@@ -47,19 +48,19 @@ export default function FirstTopic() {
                 <br />
                 Go into &apos;Privacy & Security&apos;,</p>
             <figure className='img-52'>
-                <Image src={two} width={0} height={0} alt="Logo" />
+                <Image className='Image-Tag'  src={two} width={0} height={0} alt="Logo" />
             </figure>
             <br />
             <p className="p">and then scroll down to the bottom in &quot;Privacy and Security section&quot; ,</p>
             <figure className='img-53'>
-                <Image src={three} width={0} height={0} alt="Logo" />
+                <Image className='Image-Tag'  src={three} width={0} height={0} alt="Logo" />
             </figure>
             <br />
             <p className="p"> you&apos;ll see a button saying &apos;Open Anyway&apos;; after that , you can try opening the
                 Fluxe app again.</p>
             <br />
             <figure>
-                <Image src={four} width={700} height={0} alt="Logo" />
+                <Image className='Image-Tag'  src={four} width={700} height={0} alt="Logo" />
             </figure>
             <br />
             <p className="p">Instead of &quot;OpenOffice&quot;, it will say Fluxe, Select <strong>Open Anyway</strong> for Fluxe, and it
@@ -69,12 +70,12 @@ export default function FirstTopic() {
                 <p className='p'>Fluxe looks like this on your &quot;Applications&quot; page</p>
             <br />
             <figure className='img-55'>
-                <Image src={five} width={0} height={0} alt="Logo" />
+                <Image className='Image-Tag'  src={five} width={0} height={0} alt="Logo" />
             </figure>
             <p className="p"> When active, it looks like this on your toolbar</p>
             <br />
             <figure>
-                <Image src={six} width={800} height={0} alt="Logo" />
+                <Image className='Image-Tag'  src={six} width={800} height={0} alt="Logo" />
             </figure>
             <br />
             <hr />
@@ -85,7 +86,7 @@ export default function FirstTopic() {
                     Click on the Hammer icon on your tool bar
                     <br />
                     <figure>
-                        <Image src={seven} width={0} height={0} alt="Logo" />
+                        <Image className='Image-Tag'  src={seven} width={0} height={0} alt="Logo" />
                     </figure>
                
                 </li>
@@ -93,7 +94,7 @@ export default function FirstTopic() {
                     It will open the Fluxe interface like this
                     <br />
                     <figure className='img-52'>
-                        <Image src={eight} width={0} height={0} alt="Logo" />
+                        <Image className='Image-Tag'  src={eight} width={0} height={0} alt="Logo" />
                     </figure>
                  
                 </li>
@@ -101,7 +102,7 @@ export default function FirstTopic() {
                     Type in/Paste the prompt you wish to record like this:
                     <br />
                     <figure className='img-52'>
-                        <Image src={nine} width={0} height={0} alt="Logo" />
+                        <Image className='Image-Tag'  src={nine} width={0} height={0} alt="Logo" />
                     </figure>
                   
                 </li>
@@ -109,7 +110,7 @@ export default function FirstTopic() {
                     Once you have typed/pasted the prompt, click on the &quot;Show Settings&quot; button to open the tags menu, which will show up like this:
                     <br />
                     <figure className='img-52'>
-                        <Image src={ten} width={0} height={0} alt="Logo" />
+                        <Image className='Image-Tag'  src={ten} width={0} height={0} alt="Logo" />
                     </figure>
                    
                 </li>
@@ -121,11 +122,11 @@ export default function FirstTopic() {
                     Click on &quot;Start Recording&quot;,
                     <br />
                     <figure className='img-52'>
-                        <Image src={eleven} width={0} height={0} alt="Logo" />
+                        <Image className='Image-Tag'  src={eleven} width={0} height={0} alt="Logo" />
                     </figure>
                     and a countdown will start counting down from 3,
                     <figure className='img-52'>
-                        <Image src={twelve} width={0} height={0} alt="Logo" />
+                        <Image className='Image-Tag'  src={twelve} width={0} height={0} alt="Logo" />
                     </figure>
             
                     Once the countdown finishes , Fluxe is actively recording your data.
@@ -133,15 +134,21 @@ export default function FirstTopic() {
                          While recording a new icon will show up on your toolbar,like this:
                     <br />
                     <figure>
-                        <Image src={thirteen} width={0} height={0} alt="Logo" />
+                        <Image className='Image-Tag'  src={thirteen} width={0} height={0} alt="Logo" />
                     </figure>
                     
                 </li>
            
                 <li>
-                    To stop a recording use the shortcut
+                    To stop a recording use the shortcut: <strong className='stop-recor'>[ CMD + Shift + Ctrl + R ]</strong>
+
+                    <ul className='ul'>
+                        <br />
+                        <li>ENSURE TO STOP YOUR RECORDING USING THE SHORTCUT MENTIONED. DO NOT USE THE &quot;STOP RECORDING&quot; BUTTON ON FLUXE TO STOP THE RECORDING.</li>
+                        <li>Using the &quot;STOP RECORDING&quot; button causes issues in our data processing. So you should avoid using that.</li>
+                    </ul>
                     <br />
-                    <br />
+                    <br/>
 
                 </li>
 

@@ -46,26 +46,26 @@ export default function SecondTopic() {
             <p className="p">Once you log in, the Engine interface will show up like this:</p>
             <br />
             <figure>
-                <Image src={two} width={1200} height={0} alt="Logo" />
+                <Image className='Image-Tag' src={two} width={1200} height={0} alt="Logo" />
             </figure>
             <br />
             <p className="p">You can view Recordings and Executions by clicking on the respective highlighted links</p>
             <br />
             <figure className='img-511'>
-                <Image src={three} width={0} height={0} alt="Logo" />
+                <Image className='Image-Tag' src={three} width={0} height={0} alt="Logo" />
             </figure>
             <br />
             <p className="p">You can filter your recordings by tags to check the recordings of specific tags.</p>
             <br />
             <figure className='img-510'>
-                <Image src={four} width={0} height={0} alt="Logo" />
+                <Image className='Image-Tag' src={four} width={0} height={0} alt="Logo" />
             </figure>
             <br />
             <p className="p">You can also search for specific recordings, either by keywords, or by putting in
                 the whole prompt, in the <strong>&quot;search instructions text box&quot;</strong></p>
             <br />
             <figure className='img-510'>
-                <Image src={five} width={0} height={0} alt="Logo" />
+                <Image className='Image-Tag' src={five} width={0} height={0} alt="Logo" />
             </figure>
             <br />
             <p className="p">You can also filter your recordings using a date range, as shown here
@@ -73,7 +73,7 @@ export default function SecondTopic() {
 </p>
             <br />
             <figure className='img-510'>
-                <Image src={six} width={0} height={0} alt="Logo" />
+                <Image className='Image-Tag' src={six} width={0} height={0} alt="Logo" />
             </figure>
             <br />
             <p className="p">Your recordings will show up on the engine page as displayed:
@@ -81,7 +81,7 @@ export default function SecondTopic() {
 </p>
             <br />
             <figure className='img-511'>
-                <Image src={seven} width={0} height={0} alt="Logo" />
+                <Image className='Image-Tag' src={seven} width={0} height={0} alt="Logo" />
             </figure>
             <br />
             <p className="p">You can click on specific recordings to see your created data
@@ -103,7 +103,7 @@ export default function SecondTopic() {
 </p>
             <br />
             <figure className='img-510'>
-                <Image src={nine} width={0} height={0} alt="Logo" />
+                <Image className='Image-Tag' src={nine} width={0} height={0} alt="Logo" />
             </figure>
             <br />
             <p className="p">On clicking the flag icon, you will encounter this pop-up
@@ -111,7 +111,7 @@ export default function SecondTopic() {
 </p>
             <br />
             <figure className='img-510'>
-                <Image src={ten} width={0} height={0} alt="Logo" />
+                <Image className='Image-Tag' src={ten} width={0} height={0} alt="Logo" />
             </figure>
             <br />
             <p className="p">You can type and explain your reason(s) for flagging the recording here
@@ -119,7 +119,7 @@ export default function SecondTopic() {
 </p>
             <br />
             <figure className='img-510'>
-                <Image src={eleven} width={0} height={0} alt="Logo" />
+                <Image className='Image-Tag' src={eleven} width={0} height={0} alt="Logo" />
             </figure>
             <br />
             <p className="p">After flagging, the recordings will show up as greyed out on your recordings page
@@ -134,7 +134,7 @@ export default function SecondTopic() {
             You can annotate specific parts of your recordings to give detailed instructions per segment. This is particularly useful when your recording has a mix of features while performing one task. Take this recording of a data creator collecting data on chess, for example:</p>
             <br />
             <figure>
-                <Image src={twelve} width={700} height={0} alt="logo" />
+                <Image className='Image-Tag' src={twelve} width={700} height={0} alt="logo" />
                 <br />
 </figure>
                 <p className="p">Here you can see events marked with red/blue dots on this timeline of the
@@ -143,7 +143,7 @@ export default function SecondTopic() {
                     the annotated segment.</p>
                 <br />
                 <figure className='img-510'>
-                    <Image src={thirteen} width={0} height={0} alt="Logo" />
+                    <Image className='Image-Tag' src={thirteen} width={0} height={0} alt="Logo" />
                 </figure>
                 <br />
                 <p className="p">Select a Starting point and an endpoint, put in your instructions for this particular segment, and save it.
@@ -151,7 +151,7 @@ export default function SecondTopic() {
 </p>
                 <br />
                 <figure className='img-510'>
-                    <Image src={fourteen} width={0} height={0} alt="Logo" />
+                    <Image className='Image-Tag' src={fourteen} width={0} height={0} alt="Logo" />
                 </figure>
                 <br />
 
@@ -159,7 +159,7 @@ export default function SecondTopic() {
 
                 <br />
                 <figure>
-                    <Image src={fifteen} width={800} height={0} alt="Logo" />
+                    <Image className='Image-Tag' src={fifteen} width={800} height={0} alt="Logo" />
                 </figure>
                 <br />
           
@@ -178,7 +178,7 @@ export default function SecondTopic() {
                     steps&apos; section and apply green shading in project report.docx&quot;.</p>
                 <br />
                 <figure className='img-510'>
-                    <Image src={seventeen} width={0} height={0} alt="Logo" />
+                    <Image className='Image-Tag' src={seventeen} width={0} height={0} alt="Logo" />
                 </figure>
                 <br />
 
@@ -186,7 +186,7 @@ export default function SecondTopic() {
                     </p>
                 <br />
                 <figure>
-                    <Image src={eighteen} width={800} height={0} alt="Logo" />
+                    <Image className='Image-Tag' src={eighteen} width={800} height={0} alt="Logo" />
                 </figure>
                 <br />
 

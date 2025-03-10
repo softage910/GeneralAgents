@@ -32,47 +32,29 @@ export default function Dashboard() {
 
 
   const dayModules: { [key: string]: string[] } = {
-    "DataList": ["Introduction To Fluxe", "Introduction To Engine", "Data Creation Guidelines","Prompting Basics","Extensive Tool Coverage And Function Mapper","Samples Of Clean-Optimal Action Recordings","Sample Tasks To Practice On","Current Eval Performance","Suggested Reading Materials","Glossary"],
+    "DataList": ["Onboarding","Introduction To Fluxe", "Introduction To Engine", "Data Creation Guidelines","Prompting Basics","Extensive Tool Coverage And Function Mapper","Samples Of Clean-Optimal Action Recordings","Sample Tasks To Practice On","Current Eval Performance","Suggested Reading Materials","Glossary"],
   };
 
-  const moduleMap: { [key: string]: ModuleInfo } = {
-    "DataList - Introduction To Fluxe": { day: "DataList", module: "Introduction To Fluxe", component: Fluxe},
-    "DataList - Introduction To Engine": { day: "DataList", module: "Introduction To Engine", component: Engine},
-    "DataList - Data Creation Guidelines": { day: "DataList", module: "Data Creation Guidelines", component: DataCreation},
-    "DataList - Prompting Basics": { day: "DataList", module: "Prompting Basics", component: BasicsPrompt},
-    "DataList - Extensive Tool Coverage And Function Mapper": { day: "DataList", module: "Extensive Tool Coverage And Function Mapper", component: ToolCoverage},
-    "DataList - Samples Of Clean-Optimal Action Recordings": { day: "DataList", module: "Sample Of Clean-Optimal Action Recordings", component: ComingSoon},
-    "DataList - Sample Tasks To Practice On": { day: "DataList", module: "Sample Tasks To Practice", component: ComingSoon},
-    "DataList - Current Eval Performance": { day: "DataList", module: "Current Eval Performance", component: ComingSoon},
-    "DataList - Suggested Reading Materials": { day: "DataList", module: "Suggested Reading Materials", component: ReadingMaterial},
-    "DataList - Glossary": { day: "DataList", module: "Glossary", component: ComingSoon}
-  };
-
-//   useEffect(() => {
-//     const sessionExpireTime = sessionStorage.getItem("sessionExpireTime");
-//     const currentTime = new Date().getTime();
-
-//     const storedUserName = sessionStorage.getItem("userName");
-//         if (storedUserName) {
-//             setUserName(storedUserName);
-//         }
-  
-//     if (!sessionExpireTime || currentTime > Number(sessionExpireTime)) {
-//       handleLogout();
-//     } else {
-//       const remainingTime = Number(sessionExpireTime) - currentTime;
-//       setTimeout(handleLogout, remainingTime);
-//     }
-
-//     setLoading(false);
-//   }, []);
+  const moduleMap: { [key: string]: ModuleInfo & { customName: string } } = {
+    "DataList - Onboarding": { day: "DataList", module: "Onboarding", component: UserDashboard, customName: "Onboarding" },
+    "DataList - Introduction To Fluxe": { day: "DataList", module: "Introduction To Fluxe", component: Fluxe, customName: "Fluxe" },
+    "DataList - Introduction To Engine": { day: "DataList", module: "Introduction To Engine", component: Engine, customName: "Engine" },
+    "DataList - Data Creation Guidelines": { day: "DataList", module: "Data Creation Guidelines", component: DataCreation, customName: "Data_Guidelines" },
+    "DataList - Prompting Basics": { day: "DataList", module: "Prompting Basics", component: BasicsPrompt, customName: "Prompting_basics" },
+    "DataList - Extensive Tool Coverage And Function Mapper": { day: "DataList", module: "Extensive Tool Coverage And Function Mapper", component: ToolCoverage, customName: "Function_Mapper" },
+    "DataList - Samples Of Clean-Optimal Action Recordings": { day: "DataList", module: "Sample Of Clean-Optimal Action Recordings", component: ComingSoon, customName: "Sample-Recordings" },
+    "DataList - Sample Tasks To Practice On": { day: "DataList", module: "Sample Tasks To Practice", component: ComingSoon, customName: "Demo_Tasks" },
+    "DataList - Current Eval Performance": { day: "DataList", module: "Current Eval Performance", component: ComingSoon, customName: "Eval" },
+    "DataList - Suggested Reading Materials": { day: "DataList", module: "Suggested Reading Materials", component: ReadingMaterial, customName: "Suggested_Reading" },
+    "DataList - Glossary": { day: "DataList", module: "Glossary", component: ComingSoon, customName: "Glossary" },
+};
 
 
-useEffect(() => {
+  useEffect(() => {
     const sessionExpireTime = sessionStorage.getItem("sessionExpireTime");
     const currentTime = new Date().getTime();
-
     const storedUserName = sessionStorage.getItem("userName");
+
     if (storedUserName) {
         setUserName(storedUserName);
     }
@@ -84,18 +66,32 @@ useEffect(() => {
         setTimeout(handleLogout, remainingTime);
     }
 
-    // Retrieve the last selected module from localStorage
-    const storedModule = localStorage.getItem("selectedModule");
-    if (storedModule) {
-        setSelectedModule(storedModule);
+    // Retrieve module name from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const moduleNameFromUrl = urlParams.get("module");
+
+    if (moduleNameFromUrl) {
+        // Find the corresponding module key in moduleMap
+        const foundModuleKey = Object.keys(moduleMap).find(
+            key => moduleMap[key].module === moduleNameFromUrl
+        );
+
+        if (foundModuleKey) {
+            setSelectedModule(foundModuleKey);
+        }
+    } else {
+        // Fallback to localStorage if URL does not have a module
+        const storedModule = localStorage.getItem("selectedModule");
+        if (storedModule) {
+            setSelectedModule(storedModule);
+        }
     }
 
     setLoading(false);
 }, []);
 
-  
 
-  const handleLogout = async () => {
+const handleLogout = async () => {
     try {
       await signOut(auth);
       sessionStorage.clear();
@@ -118,7 +114,7 @@ useEffect(() => {
       const SelectedComponent = moduleMap[selectedModule].component;
       return <SelectedComponent />;
     }
-    return <UserDashboard />;
+    // return <UserDashboard />;
   };
 
   if (loading) {
@@ -129,13 +125,18 @@ useEffect(() => {
     setIsOpen(!isOpen);
 };
 
-const setSelectedModuleHandler = (module: string) => {
-    setSelectedModule(module);
-    localStorage.setItem("selectedModule", module); // Store in localStorage
-    setIsOpen(false); // Close sidebar on selecting a module
+const setSelectedModuleHandler = (moduleKey: string) => {
+    const moduleInfo = moduleMap[moduleKey];
+
+    if (moduleInfo) {
+        setSelectedModule(moduleKey);
+        localStorage.setItem("selectedModule", moduleKey); // Store selection
+        router.push(`/dashboard?${encodeURIComponent(moduleInfo.customName)}`); // Push only the module name
+        setIsOpen(false); // Close sidebar
+    }
 };
 
-  return (
+return (
 
     <div className="Dashboard-Section">
             {/* Hamburger Button */}
@@ -150,12 +151,9 @@ const setSelectedModuleHandler = (module: string) => {
                     <Image src={Logo1} alt="Logo" width={180} height={0} />
                 </div>
 
-                <ul className="sidebar-links">
-                    <li className={selectedModule === "Dashboard" ? "active" : ""}>
-                        <a href="#" onClick={() => setSelectedModule("Dashboard")}>Onboarding</a>
-                    </li>
+                <hr/>
 
-                    <hr />
+                <ul className="sidebar-links">
 
                     {Object.keys(dayModules).map((day, i) => (
                         <li key={i}>
@@ -193,33 +191,35 @@ const setSelectedModuleHandler = (module: string) => {
         <div className="InnerDashboard">{renderContent()}
 
                 {/* Button for moving to the next module */}
-    {selectedModule && moduleMap[selectedModule] && (() => {
-        const modules = Object.keys(moduleMap);
-        const currentIndex = modules.indexOf(selectedModule);
-        const prevModule = currentIndex > 0 ? modules[currentIndex - 1] : null;
-        const nextModule = currentIndex < modules.length - 1 ? modules[currentIndex + 1] : null;
+{/* Button for moving to the next module */}
+{selectedModule && moduleMap[selectedModule] && (() => {
+    const modules = Object.keys(moduleMap);
+    const currentIndex = modules.indexOf(selectedModule);
+    const prevModule = currentIndex > 1 ? modules[currentIndex - 1] : null;
+    const nextModule = currentIndex < modules.length - 1 ? modules[currentIndex + 1] : null;
 
-        return nextModule ? (
-            <div className="NextPrev-btn">
+    return selectedModule !== "DataList - Onboarding" ? ( // 🚀 Hides Next Button for Onboarding
+        <div className="NextPrev-btn">
             {prevModule && (
-                    <button
-                        onClick={() => setSelectedModuleHandler(prevModule)}
-                        className="mt-6 px-4 py-2 bg-gray-500 text-white rounded-lg mr-2"
-                    >
-                        ← {moduleMap[prevModule].module}
-                    </button>
-                )}
-                {nextModule && (
-                    <button
-                        onClick={() => setSelectedModuleHandler(nextModule)}
-                        className="mt-6 px-4 py-2 bg-blue-500 text-white rounded-lg"
-                    >
-                        {moduleMap[nextModule].module} →
-                    </button>
-                )}
-            </div>
-        ) : null;
-    })()}
+                <button
+                    onClick={() => setSelectedModuleHandler(prevModule)}
+                    className="mt-6 px-4 py-2 bg-gray-500 text-white rounded-lg mr-2"
+                >
+                    ← {moduleMap[prevModule].module}
+                </button>
+            )}
+            {nextModule && (
+                <button
+                    onClick={() => setSelectedModuleHandler(nextModule)}
+                    className="mt-6 px-4 py-2 bg-blue-500 text-white rounded-lg"
+                >
+                    {moduleMap[nextModule].module} →   
+                </button>  
+            )}  
+        </div>   
+    ) : null;
+})()}
+
         </div>
     </div>
     <ChatBot />
