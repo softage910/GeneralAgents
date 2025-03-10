@@ -1,5 +1,5 @@
 import '../General.css';
-import one from '../../../../../public/Images/5.3.png';
+
 
 import Image from 'next/image';
 import Bulb from '../../../../../public/Images/bulb.png';
@@ -11,15 +11,13 @@ import Trello1 from '../../../../../public/Images/Trello_PoorlyPopulatedBoard.pn
 import Trello2 from '../../../../../public/Images/Trello_WellPopulatedBoard.png';
 
 
-import { useState } from 'react';
+
 
 
 export default function FirTopic() {
-    const [openIndex, setOpenIndex] = useState<number | null>(null); // Specify type
+    
 
-    const toggleFAQ = (index: number) => {
-        setOpenIndex(openIndex === index ? null : index); // Only toggle the clicked FAQ
-    };
+
     return (
         <>
         <p className="p">When creating data to train ACE, it is important to have a full-fledged, &apos;real&apos;
@@ -297,7 +295,7 @@ export default function FirTopic() {
 
             <br/>
 
-            <p className='p'>By focusing on real, diverse data, you're not just filling in boxes—you&apos;re setting
+            <p className='p'>By focusing on real, diverse data, you&apos;re not just filling in boxes—you&apos;re setting
                 up ACE to tackle real-world challenges head-on. Every thoughtful detail you
                 add helps build an agent that&apos;s ready to adapt and thrive in any situation. Your
                 work makes all the difference in creating a robust system that can handle the
