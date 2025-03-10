@@ -142,11 +142,36 @@ export default function FirstTopic() {
                 <li>
                     To stop a recording use the shortcut: <strong className='stop-recor'>[ CMD + Shift + Ctrl + R ]</strong>
 
-                    <ul className='ul'>
+                    {/* <ul className='ul'>
                         <br />
+                        
                         <li>ENSURE TO STOP YOUR RECORDING USING THE SHORTCUT MENTIONED. DO NOT USE THE &quot;STOP RECORDING&quot; BUTTON ON FLUXE TO STOP THE RECORDING.</li>
                         <li>Using the &quot;STOP RECORDING&quot; button causes issues in our data processing. So you should avoid using that.</li>
-                    </ul>
+                    </ul> */}
+            <div className='Textarea-Hover' style={{backgroundColor:'orange'}}>
+                <div className='Textarea-Wrapper'>
+                    <div style={{marginTop: "5px" , marginRight: "10px"}}>
+                    <Image width={70} height={0} src={Bulb} alt=''></Image>
+                    </div>
+                    {/* <ul className='ul'>
+                        <li>ENSURE TO STOP YOUR RECORDING USING THE SHORTCUT MENTIONED. DO NOT USE THE &quot;STOP RECORDING&quot; BUTTON ON FLUXE TO STOP THE RECORDING.</li>
+                        <li>Using the &quot;STOP RECORDING&quot; button causes issues in our data processing. So you should avoid using that.</li>
+                    </ul> */}
+                    <div>
+                    <p className='p'>
+                    1. ENSURE TO STOP YOUR RECORDING USING THE SHORTCUT MENTIONED. DO NOT USE THE &quot;STOP RECORDING&quot; BUTTON ON FLUXE TO STOP THE RECORDING.
+
+
+                    </p>
+                    <p className='p'>
+                    2. Using the &quot;STOP RECORDING&quot; button causes issues in our data processing. So you should avoid using that.
+                    </p>
+                    </div>
+                    
+                </div>
+            </div>
+
+                    
                     <br />
                     <br/>
 

@@ -23,66 +23,54 @@ export default function FirTopic() {
             <p className="p">These guidelines are designed to help you understand our goals and processes.
             </p>
             
-            <p className='p'>There are <strong>11 key sections</strong> in this guide, each addressing an essential aspect of the data creation process.
+            <p className='p'>There are 10 <strong>key sections</strong> in this guide, each addressing an essential aspect of the data creation process.
 
             </p>
             <hr />
      
 
-            <h2 className="h2"><strong>Prompts & Annotations</strong></h2>
+            <h2 className="h2"><strong>Prompts, Instructions & Annotations</strong></h2>
 
             <ol className='ol'>
                 <li><strong>Prompts</strong>
                     <ul className='ul'>
                         <li>
-                            What is a Prompt?
+                            <strong>What is a Prompt?</strong>
                         </li>
 
                         <li>
-                            A prompt is the instruction to guide ACE on the task you want to complete.
-                            Think of it as a clear and complete set of directions outlining what you&apos;re
-                            doing during your recording. A well-crafted prompt usually includes the
-                            intended action and the expected outcome, expressed in straightforward,
-                            technical terms.
+                        A prompt is the instruction to guide ACE on the task you want to complete. 
+                        Think of it as a clear and complete set of directions outlining what you&apos;re doing during your recording. 
+                        A well-crafted prompt usually includes the intended action and the expected outcome, expressed in straightforward, technical terms.
                         </li>
                         <li>
-                            Imagine prompts as tasks you&apos;d give to a human assistant — keep them
-                            short, clear, and direct. Avoid using filler words to ensure your instructions
-                            are easy to follow and effective.
+                        Imagine prompts as tasks you&apos;d give to a human assistant — keep them short, clear, and direct. 
+                        Avoid using filler words to ensure your instructions are easy to follow and effective.
                         </li>
 
                         <li>
-                            There is a dedicated section called <strong>Prompting Basics</strong>, refer to it for more information on prompts.
+                        There is a dedicated section called <strong>Prompting Basics</strong>, refer to it for more information on prompts.
                         </li>
 
 
                     </ul>
                 </li>
 
-                <li><strong>What Are Annotations?</strong>
+                <li><strong>Instruction Prompts and Annotation Prompts</strong>
                     <ul className='ul'>
                         <li>
-                            Annotations involve labelling the smaller actions in your recordings to break
-                            down how you&apos;re fulfilling each task. By adding annotations to specific
-                            parts of your recordings, you provide detailed instructions for each
-                            segment. This helps ACE understand the exact steps you took to reach the
-                            intended outcome. Annotations are essential, so be sure to highlight the key
-                            steps that are crucial for completing the task.
+                        Instruction Prompts are what you feed into Fluxe.
                         </li>
                         <li>
-                            An important point to keep in mind is that annotations also have the same
-                            structure and functionality as prompts, think of annotations as smaller
-                            tasks/prompts, whereby you will be breaking down larger recordings to
-                            standalone as smaller recordings with specific annotations/prompts.
+                        Annotations work similarly to instructional prompts but are best used when you&apos;re recording longer sessions. 
+                        They allow you to break down a large task into smaller tasks.
                         </li>
                         <li>
-                            <strong>Key Steps Only:</strong> Focus on the main steps that are essential to completing
-                            the task in the prompt—avoid over-detailing every click.
+                        In essence, annotations are prompts used to mark smaller tasks in your recordings.
                         </li>
-                        <li>
-                            In essence, annotations are prompts used to mark smaller tasks in your recordings.
-                        </li>
-                        <li>Please refer to the Engine section of the website for more details on annotations and instructions on how to add them.</li>
+              
+                        <li>Please refer to the Engine section of the website for more details on annotations and instructions on how to add them.
+                            And refer to Prompts: Instructions and Annotations section for more details on both, and Prompting Basics section to understand prompts in detail.</li>
 
 
                     </ul>
@@ -549,27 +537,7 @@ export default function FirTopic() {
             </p>
 
 
-            <hr />
-
-            <h2 className="h2"><strong>Terms To Remember</strong></h2>
-            <ol className='ol'>
-                <li><strong>Fluxe</strong>
-                    <br />
-                    The data collection tool used for recording your tasks and interactions.</li>
-                <li><strong>Engine</strong>
-                    <br />Your recordings dashboard, where you annotate and review your
-                    recordings.</li>
-                <li><strong>ACE </strong><br />Our computer control agent that learns and improves through the data you
-                    provide.</li>
-                <li><strong>Prompt</strong> <br /> The instruction you input into Fluxe to guide ACE on the specific task to be completed.
-
-</li>
-                <li><strong>Annotation</strong> <br />Labels/prompts used to mark smaller actions within your recordings, helping to train ACE more effectively.</li>
-                <li><strong>Starting Condition</strong> <br /> The screen context at the beginning of your recording, interchangeable
-                    with &quot;Screen Context&quot;.</li>
-
-            </ol>
-
+           
 
         </>
     );

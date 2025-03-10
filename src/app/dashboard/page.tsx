@@ -16,6 +16,8 @@ import UserDashboard from "./pages/UserDashboard";
 import ChatBot from "../components/ChatBot";
 import ReadingMaterial from "./pages/ReadingMaterial";
 import BasicsPrompt from "./pages/BasicsOfPrompting";
+import DataPopulation from "./pages/DataPopulation";
+import PromptsInstructions from "./pages/PromptsInstructions";
 
 type ModuleInfo = {
   day: string;
@@ -32,7 +34,7 @@ export default function Dashboard() {
 
 
   const dayModules: { [key: string]: string[] } = {
-    "DataList": ["Onboarding","Introduction To Fluxe", "Introduction To Engine", "Data Creation Guidelines","Prompting Basics","Extensive Tool Coverage And Function Mapper","Samples Of Clean-Optimal Action Recordings","Sample Tasks To Practice On","Current Eval Performance","Suggested Reading Materials","Glossary"],
+    "DataList": ["Onboarding","Introduction To Fluxe", "Introduction To Engine", "Data Creation Guidelines","Importance of Data Population and Diversity","Prompts: Instructions and Annotations","Prompting Basics","Extensive Tool Coverage And Function Mapper","Sample Tasks To Practice On","Current Eval Performance","Suggested Reading Materials","Glossary"],
   };
 
   const moduleMap: { [key: string]: ModuleInfo & { customName: string } } = {
@@ -40,9 +42,10 @@ export default function Dashboard() {
     "DataList - Introduction To Fluxe": { day: "DataList", module: "Introduction To Fluxe", component: Fluxe, customName: "Fluxe" },
     "DataList - Introduction To Engine": { day: "DataList", module: "Introduction To Engine", component: Engine, customName: "Engine" },
     "DataList - Data Creation Guidelines": { day: "DataList", module: "Data Creation Guidelines", component: DataCreation, customName: "Data_Guidelines" },
+    "DataList - Importance of Data Population and Diversity": { day: "DataList", module: "Importance of Data Population and Diversity", component: DataPopulation, customName: "Data_Population" },
+    "DataList - Prompts: Instructions and Annotations": { day: "DataList", module: "Prompts: Instructions and Annotations", component: PromptsInstructions, customName: "prompt_inst" },
     "DataList - Prompting Basics": { day: "DataList", module: "Prompting Basics", component: BasicsPrompt, customName: "Prompting_basics" },
     "DataList - Extensive Tool Coverage And Function Mapper": { day: "DataList", module: "Extensive Tool Coverage And Function Mapper", component: ToolCoverage, customName: "Function_Mapper" },
-    "DataList - Samples Of Clean-Optimal Action Recordings": { day: "DataList", module: "Sample Of Clean-Optimal Action Recordings", component: ComingSoon, customName: "Sample-Recordings" },
     "DataList - Sample Tasks To Practice On": { day: "DataList", module: "Sample Tasks To Practice", component: ComingSoon, customName: "Demo_Tasks" },
     "DataList - Current Eval Performance": { day: "DataList", module: "Current Eval Performance", component: ComingSoon, customName: "Eval" },
     "DataList - Suggested Reading Materials": { day: "DataList", module: "Suggested Reading Materials", component: ReadingMaterial, customName: "Suggested_Reading" },

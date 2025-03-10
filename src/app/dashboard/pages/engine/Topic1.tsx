@@ -38,7 +38,7 @@ export default function SecondTopic() {
             The data you create on FLUXE can now be accessed for reviewing, annotating or flagging on ENGINE.</p>
             <br />
            
-                <a className="fluxe-download" href="https://engine.generalagents.co/readings" download>
+                <a className="fluxe-download" href="https://engine.generalagents.co" download>
         Click Here To Access Engine
       </a>
       <br/>

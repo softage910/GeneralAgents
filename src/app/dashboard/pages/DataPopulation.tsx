@@ -2,7 +2,7 @@ import "./General.css";
 import { useState, useEffect } from "react";
 import { database, auth } from "../../../lib/firebaseconfig";
 import { ref, get } from "firebase/database";
-import Topic1 from "./datacreationguidelines/Topic1";
+import Topic1 from "./DataPopulation/Topic1";
 // import Topic2 from "./datacreationguidelines/Topic2";
 // import Topic3 from "./datacreationguidelines/Topic3";
 // import Topic4 from "./datacreationguidelines/Topic4";
@@ -17,7 +17,7 @@ import Topic1 from "./datacreationguidelines/Topic1";
 
 
 
-export default function DataCreation() {
+export default function DataPopulation() {
     const [selectedTopic, setSelectedTopic] = useState<number>(1); // Start from Topic 1
     const userId = auth.currentUser?.uid;
 
@@ -63,8 +63,8 @@ export default function DataCreation() {
     return (
         <div className="Day1-Main">
             <div className="Header">
-                <h1 className="h1">Data Creation
-                    Guidelines</h1>
+                <h1 className="h1">Importance of Data Population
+                and Diversity</h1>
             </div>
 
             <div className="MainContent">
