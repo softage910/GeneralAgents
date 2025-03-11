@@ -7,7 +7,7 @@ import Topic1 from "./FinalChecklist/Topic1";
 
 
 
-export default function finalcheck() {
+export default function FinalCheck() {
   const [selectedTopic, setSelectedTopic] = useState<number>(1); // Start from Topic 1
   const [completedTopics, setCompletedTopics] = useState<string[]>([]);
   const userId = auth.currentUser?.uid;

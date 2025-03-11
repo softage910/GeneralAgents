@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Bulb from '../../../../../public/Images/bulb.png';
+
 export default function FinalCheck() {
     return (
 

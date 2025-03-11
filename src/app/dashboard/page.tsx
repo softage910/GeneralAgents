@@ -18,7 +18,7 @@ import ReadingMaterial from "./pages/ReadingMaterial";
 import BasicsPrompt from "./pages/BasicsOfPrompting";
 import DataPopulation from "./pages/DataPopulation";
 import PromptsInstructions from "./pages/PromptsInstructions";
-import finalcheck from "./pages/FinalCheck";
+import FinalCheck from "./pages/FinalCheck";
 
 type ModuleInfo = {
   day: string;
@@ -50,7 +50,7 @@ export default function Dashboard() {
     "DataList - Sample Tasks To Practice On": { day: "DataList", module: "Sample Tasks To Practice", component: ComingSoon, customName: "Demo_Tasks" },
     "DataList - Current Eval Performance": { day: "DataList", module: "Current Eval Performance", component: ComingSoon, customName: "Eval" },
     "DataList - Suggested Reading Materials": { day: "DataList", module: "Suggested Reading Materials", component: ReadingMaterial, customName: "Suggested_Reading" },
-    "DataList - Final Checklist": { day: "DataList", module: "Final Checklist", component: finalcheck, customName: "Final-Checklist" },
+    "DataList - Final Checklist": { day: "DataList", module: "Final Checklist", component: FinalCheck, customName: "Final-Checklist" },
     "DataList - Glossary": { day: "DataList", module: "Glossary", component: ComingSoon, customName: "Glossary" },
 };
 
