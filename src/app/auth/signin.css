@@ -120,89 +120,46 @@
 
 
 /* General Styles */
-
-.main{
-  background-color: #212121;
-  font-family: "Spectral", serif;
-}
-
 .mainsection {
   width: 100%;
+  background-color: #141413;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
   padding: 20px;
   color: black;
-  display: flex;
 }
 
 .container {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container div{
-  font-size: 3rem;
-  background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, rgb(211, 218, 11))) 0 0 no-repeat;
-	-webkit-background-size: 150px;
-	color: rgba(255, 255, 255, 0.414);
-	-webkit-background-clip: text;
-	-webkit-animation-name: shine;
-	-webkit-animation-duration: 3s;
-	-webkit-animation-iteration-count: infinite;
-	text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
-}
-
-@-webkit-keyframes shine {
-	0% {
-		background-position: -1000px;
-	}
-	33% {
-		background-position: top left;
-	}
-	66% {
-		background-position: top right;
-	}
-	100% {
-		background-position: 1000px;
-	}
+  padding: 50px;
+  text-align: center;
 }
 
 /* Logo */
-.logo-ring{
-  position: absolute;
+.Logo {
   display: flex;
-  align-items: center;
-  padding: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 /* Form Card */
 .back-css {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url('../../../public/Images/x-2-removebg-preview.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-size: 50%;
-  background-position: center;
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
   border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .inner-card{
   background: rgba(23, 23, 23, 0.045); /* Semi-transparent background */
-  backdrop-filter: blur(15px); /* Blur effect for glassmorphism */
+  backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
   -webkit-backdrop-filter: blur(10px); /* For Safari */
   border: solid rgba(255, 255, 255, 0.2) 1px; /* Subtle white border */
   box-shadow: 4px 0px 30px rgba(0, 0, 0, 0.618);
-  width: 100%;
-  height: 50vh;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 20px;
 }
 
 /* Heading */
@@ -227,7 +184,7 @@ input[type="email"] {
 .login-btn{
   width: 100%;
   padding: 12px;
-  background-color: rgba(255, 255, 255, 0.54);
+  background-color: #007bff;
   color: white;
   font-size: 1rem;
   font-weight: bold;
@@ -239,7 +196,7 @@ input[type="email"] {
 }
 
 .login-btn:hover {
-  background-color: rgba(0, 0, 0, 0.689);
+  background-color: #0056b3;
 }
 
 /* Success & Error Messages */
@@ -302,3 +259,4 @@ p {
       padding: 8px;
   }
 }
+
