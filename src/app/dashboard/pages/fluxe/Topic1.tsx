@@ -24,7 +24,7 @@ export default function FirstTopic() {
 
             {/* <h2 className="h2"><strong>Introduction to FLUXE</strong></h2> */}
             <p className="p">
-            Fluxe is the tool on which you will be collecting data to train ACE.</p>
+                Fluxe is the tool on which you will be collecting data to train ACE.</p>
             <br />
             <a className="fluxe-download" href="/FluxeInstaller.pkg" download>
                 Click here to download Fluxe
@@ -34,7 +34,7 @@ export default function FirstTopic() {
                 <div className='Textarea-Wrapper'>
                     <Image width={50} height={50} src={Bulb} alt=''></Image>
                     <p>
-                    Fluxe is a screen recording/data collection tool which records the video, and registers mouse and keyboard actions, during your data creation process.
+                        Fluxe is a screen recording/data collection tool which records the video, and registers mouse and keyboard actions, during your data creation process.
                     </p>
                 </div>
             </div>
@@ -48,34 +48,34 @@ export default function FirstTopic() {
                 <br />
                 Go into &apos;Privacy & Security&apos;,</p>
             <figure className='img-52'>
-                <Image className='Image-Tag'  src={two} width={0} height={0} alt="Logo" />
+                <Image className='Image-Tag' src={two} width={0} height={0} alt="Logo" />
             </figure>
             <br />
             <p className="p">and then scroll down to the bottom in &quot;Privacy and Security section&quot; ,</p>
             <figure className='img-53'>
-                <Image className='Image-Tag'  src={three} width={0} height={0} alt="Logo" />
+                <Image className='Image-Tag' src={three} width={0} height={0} alt="Logo" />
             </figure>
             <br />
             <p className="p"> you&apos;ll see a button saying &apos;Open Anyway&apos;; after that , you can try opening the
                 Fluxe app again.</p>
             <br />
             <figure>
-                <Image className='Image-Tag'  src={four} width={700} height={0} alt="Logo" />
+                <Image className='Image-Tag' src={four} width={700} height={0} alt="Logo" />
             </figure>
             <br />
             <p className="p">Instead of &quot;OpenOffice&quot;, it will say Fluxe, Select <strong>Open Anyway</strong> for Fluxe, and it
                 should work!
-                </p>
-                <hr />
-                <p className='p'>Fluxe looks like this on your &quot;Applications&quot; page</p>
+            </p>
+            <hr />
+            <p className='p'>Fluxe looks like this on your &quot;Applications&quot; page</p>
             <br />
             <figure className='img-55'>
-                <Image className='Image-Tag'  src={five} width={0} height={0} alt="Logo" />
+                <Image className='Image-Tag' src={five} width={0} height={0} alt="Logo" />
             </figure>
             <p className="p"> When active, it looks like this on your toolbar</p>
             <br />
             <figure>
-                <Image className='Image-Tag'  src={six} width={800} height={0} alt="Logo" />
+                <Image className='Image-Tag' src={six} width={800} height={0} alt="Logo" />
             </figure>
             <br />
             <hr />
@@ -86,59 +86,59 @@ export default function FirstTopic() {
                     Click on the Hammer icon on your tool bar
                     <br />
                     <figure>
-                        <Image className='Image-Tag'  src={seven} width={0} height={0} alt="Logo" />
+                        <Image className='Image-Tag' src={seven} width={0} height={0} alt="Logo" />
                     </figure>
-               
+
                 </li>
                 <li>
                     It will open the Fluxe interface like this
                     <br />
                     <figure className='img-52'>
-                        <Image className='Image-Tag'  src={eight} width={0} height={0} alt="Logo" />
+                        <Image className='Image-Tag' src={eight} width={0} height={0} alt="Logo" />
                     </figure>
-                 
+
                 </li>
                 <li>
                     Type in/Paste the prompt you wish to record like this:
                     <br />
                     <figure className='img-52'>
-                        <Image className='Image-Tag'  src={nine} width={0} height={0} alt="Logo" />
+                        <Image className='Image-Tag' src={nine} width={0} height={0} alt="Logo" />
                     </figure>
-                  
+
                 </li>
                 <li>
                     Once you have typed/pasted the prompt, click on the &quot;Show Settings&quot; button to open the tags menu, which will show up like this:
                     <br />
                     <figure className='img-52'>
-                        <Image className='Image-Tag'  src={ten} width={0} height={0} alt="Logo" />
+                        <Image className='Image-Tag' src={ten} width={0} height={0} alt="Logo" />
                     </figure>
-                   
+
                 </li>
                 <li>
-                   After selecting the relevant tag, (for instance , for this prompt it will be &quot;op-follow-people&quot;), click on the &quot;Exit Settings&quot;,
+                    After selecting the relevant tag, (for instance , for this prompt it will be &quot;op-follow-people&quot;), click on the &quot;Exit Settings&quot;,
 
                 </li>
                 <li>
                     Click on &quot;Start Recording&quot;,
                     <br />
                     <figure className='img-52'>
-                        <Image className='Image-Tag'  src={eleven} width={0} height={0} alt="Logo" />
+                        <Image className='Image-Tag' src={eleven} width={0} height={0} alt="Logo" />
                     </figure>
                     and a countdown will start counting down from 3,
                     <figure className='img-52'>
-                        <Image className='Image-Tag'  src={twelve} width={0} height={0} alt="Logo" />
+                        <Image className='Image-Tag' src={twelve} width={0} height={0} alt="Logo" />
                     </figure>
-            
+
                     Once the countdown finishes , Fluxe is actively recording your data.
-                        <br />
-                         While recording a new icon will show up on your toolbar,like this:
+                    <br />
+                    While recording a new icon will show up on your toolbar,like this:
                     <br />
                     <figure>
-                        <Image className='Image-Tag'  src={thirteen} width={0} height={0} alt="Logo" />
+                        <Image className='Image-Tag' src={thirteen} width={0} height={0} alt="Logo" />
                     </figure>
-                    
+
                 </li>
-           
+
                 <li>
                     To stop a recording use the shortcut: <strong className='stop-recor'>[ CMD + Shift + Ctrl + R ]</strong>
 
@@ -148,32 +148,32 @@ export default function FirstTopic() {
                         <li>ENSURE TO STOP YOUR RECORDING USING THE SHORTCUT MENTIONED. DO NOT USE THE &quot;STOP RECORDING&quot; BUTTON ON FLUXE TO STOP THE RECORDING.</li>
                         <li>Using the &quot;STOP RECORDING&quot; button causes issues in our data processing. So you should avoid using that.</li>
                     </ul> */}
-            <div className='Textarea-Hover' style={{backgroundColor:'orange'}}>
-                <div className='Textarea-Wrapper'>
-                    <div style={{marginTop: "5px" , marginRight: "10px"}}>
-                    <Image width={70} height={0} src={Bulb} alt=''></Image>
-                    </div>
-                    {/* <ul className='ul'>
+                    <div className='Textarea-Hover' style={{ backgroundColor: 'orange' }}>
+                        <div className='Textarea-Wrapper'>
+                            <div style={{ marginTop: "5px", marginRight: "10px" }}>
+                                <Image width={70} height={0} src={Bulb} alt=''></Image>
+                            </div>
+                            {/* <ul className='ul'>
                         <li>ENSURE TO STOP YOUR RECORDING USING THE SHORTCUT MENTIONED. DO NOT USE THE &quot;STOP RECORDING&quot; BUTTON ON FLUXE TO STOP THE RECORDING.</li>
                         <li>Using the &quot;STOP RECORDING&quot; button causes issues in our data processing. So you should avoid using that.</li>
                     </ul> */}
-                    <div>
-                    <p className='p'>
-                    1. ENSURE TO STOP YOUR RECORDING USING THE SHORTCUT MENTIONED. DO NOT USE THE &quot;STOP RECORDING&quot; BUTTON ON FLUXE TO STOP THE RECORDING.
+                            <div>
+                                <p className='p'>
+                                    1. ENSURE TO STOP YOUR RECORDING USING THE SHORTCUT MENTIONED. DO NOT USE THE &quot;STOP RECORDING&quot; BUTTON ON FLUXE TO STOP THE RECORDING.
 
 
-                    </p>
-                    <p className='p'>
-                    2. Using the &quot;STOP RECORDING&quot; button causes issues in our data processing. So you should avoid using that.
-                    </p>
+                                </p>
+                                <p className='p'>
+                                    2. Using the &quot;STOP RECORDING&quot; button causes issues in our data processing. So you should avoid using that.
+                                </p>
+                            </div>
+
+                        </div>
                     </div>
-                    
-                </div>
-            </div>
 
-                    
+
                     <br />
-                    <br/>
+                    <br />
 
                 </li>
 

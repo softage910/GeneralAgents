@@ -18,6 +18,7 @@ import ReadingMaterial from "./pages/ReadingMaterial";
 import BasicsPrompt from "./pages/BasicsOfPrompting";
 import DataPopulation from "./pages/DataPopulation";
 import PromptsInstructions from "./pages/PromptsInstructions";
+import finalcheck from "./pages/FinalCheck";
 
 type ModuleInfo = {
   day: string;
@@ -34,7 +35,7 @@ export default function Dashboard() {
 
 
   const dayModules: { [key: string]: string[] } = {
-    "DataList": ["Onboarding","Introduction To Fluxe", "Introduction To Engine", "Data Creation Guidelines","Importance of Data Population and Diversity","Prompts: Instructions and Annotations","Prompting Basics","Extensive Tool Coverage And Function Mapper","Sample Tasks To Practice On","Current Eval Performance","Suggested Reading Materials","Glossary"],
+    "DataList": ["Onboarding","Introduction To Fluxe", "Introduction To Engine", "Data Creation Guidelines","Importance of Data Population and Diversity","Prompts: Instructions and Annotations","Prompting Basics","Extensive Tool Coverage And Function Mapper","Sample Tasks To Practice On","Current Eval Performance","Suggested Reading Materials","Final Checklist","Glossary"],
   };
 
   const moduleMap: { [key: string]: ModuleInfo & { customName: string } } = {
@@ -49,6 +50,7 @@ export default function Dashboard() {
     "DataList - Sample Tasks To Practice On": { day: "DataList", module: "Sample Tasks To Practice", component: ComingSoon, customName: "Demo_Tasks" },
     "DataList - Current Eval Performance": { day: "DataList", module: "Current Eval Performance", component: ComingSoon, customName: "Eval" },
     "DataList - Suggested Reading Materials": { day: "DataList", module: "Suggested Reading Materials", component: ReadingMaterial, customName: "Suggested_Reading" },
+    "DataList - Final Checklist": { day: "DataList", module: "Final Checklist", component: finalcheck, customName: "Final-Checklist" },
     "DataList - Glossary": { day: "DataList", module: "Glossary", component: ComingSoon, customName: "Glossary" },
 };
 

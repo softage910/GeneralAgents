@@ -194,7 +194,7 @@ export default function FirstTopic() {
                         <div className="Onboarding-Content">
                             <div className="Content-Video">
                                 {/* <h1>(Space For Onboarding Video)</h1> */}
-                                <div style={{ position: "relative", paddingTop: "56.25%" }}><iframe src="https://iframe.mediadelivery.net/embed/394091/ac15a9bb-caa5-4d13-8a91-a6d40d4a5b03?autoplay=false&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style={{position:"absolute",top:"0",height:"100%", width: "100%" }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"></iframe></div>
+                                <div style={{ position: "relative", paddingTop: "56.25%" }}><iframe src="https://iframe.mediadelivery.net/embed/394091/ac15a9bb-caa5-4d13-8a91-a6d40d4a5b03?autoplay=false&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style={{position:"absolute",top:"0",height:"100%", width: "100%"}} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"></iframe></div>
                             </div>
                         </div>
                     </ul>

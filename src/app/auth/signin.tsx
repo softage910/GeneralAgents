@@ -100,7 +100,8 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { database } from "@/lib/firebaseconfig";
 import { get, ref } from "firebase/database";
-import Logo from "../../../public/Images/Logo-removebg-preview.png";
+import Logo from "../../../public/Images/logo-ring.png";
+
 
 export default function SignInPage() {
     const [email, setEmail] = useState("");
@@ -145,17 +146,18 @@ export default function SignInPage() {
 
     return (
         <div className="main">
+            <div className="logo-ring">
+                        <Image src={Logo} alt="Logo" width={80} height={0} priority />
+            </div>
             <div className="mainsection">
                 <div className="container">
-                    <div className="Logo">
-                        <Image src={Logo} alt="Logo" width={250} height={50} priority />
-                    </div>
+                    <div>GENERAL AGENTS</div>
                 </div>
                 <div className="flex items-center justify-center back-css p-5">
                     <div className="inner-card w-full max-w-md p-8 rounded-lg">
                         <form onSubmit={handleSignIn} className="mt-6">
                             <h2 className="login-heading">Login</h2>
-                            <label className="block text-gray-600">Email</label>
+                            <label className="block text-white">Email</label>
                             <input
                                 type="email"
                                 placeholder="Enter your email"
