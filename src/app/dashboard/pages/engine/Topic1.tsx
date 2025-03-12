@@ -35,7 +35,7 @@ export default function SecondTopic() {
 
             {/* <h2 className="h2"><strong>Introduction To ENGINE</strong></h2> */}
             <p className="p">
-            The data you create on FLUXE can now be accessed for reviewing, annotating or flagging on ENGINE.</p>
+            The data you create on Fluxe can now be accessed for reviewing, annotating or flagging on Engine.</p>
             <br />
            
                 <a className="fluxe-download" href="https://engine.generalagents.co" download>
@@ -62,7 +62,7 @@ export default function SecondTopic() {
             </figure>
             <br />
             <p className="p">You can also search for specific recordings, either by keywords, or by putting in
-                the whole prompt, in the <strong>&quot;search instructions text box&quot;</strong></p>
+                the whole prompt, in the &quot;search instructions text box&quot;</p>
             <br />
             <figure className='img-510'>
                 <Image className='Image-Tag' src={five} width={0} height={0} alt="Logo" />
@@ -93,7 +93,7 @@ export default function SecondTopic() {
                 <div className='Textarea-Wrapper'>
                     <Image width={50} height={50} src={Bulb} alt=''></Image>
                     <p>
-                    Only you can access your recordings on the engine. You won&apos;t be able to view any other user&apos;s recordings.</p>
+                    Only you can access your recordings on the Engine. You won&apos;t be able to view any other user&apos;s recordings.</p>
                 </div>
             </div>
 
@@ -168,13 +168,13 @@ export default function SecondTopic() {
                 <div className='Textarea-Wrapper'>
                     <Image width={50} height={50} src={Bulb} alt=''></Image>
                     <p>
-                    Annotating specific segments helps ACE learn more targeted actions, which adds to the value of the recording you are creating!                    </p>
+                    Annotating specific segments helps Ace learn more targeted actions, which adds to the value of the recording you are creating!                    </p>
                 </div>
             </div>
 
                 <br />
 
-                <p className="p"> Lets take a look at another example. In this task, the data creator records data to train ACE on Microsoft Word. The instruction is &quot;center align the &apos;next
+                <p className="p"> Lets take a look at another example. In this task, the data creator records data to train Ace on Microsoft Word. The instruction is &quot;center align the &apos;next
                     steps&apos; section and apply green shading in project report.docx&quot;.</p>
                 <br />
                 <figure className='img-510'>
@@ -182,7 +182,7 @@ export default function SecondTopic() {
                 </figure>
                 <br />
 
-                <p className="p"> Here we can annotate two actions, to mark Align and Intend selection, and the action of selecting a shade. Adding two annotations here will make ACE understand the specific steps you have taken to reach the intended conclusion of the recording, which is to &quot;center align the &apos;next steps&apos; section and apply green shading in project report.docx&quot;.
+                <p className="p"> Here we can annotate two actions, to mark Align and Intend selection, and the action of selecting a shade. Adding two annotations here will make Ace understand the specific steps you have taken to reach the intended conclusion of the recording, which is to &quot;center align the &apos;next steps&apos; section and apply green shading in project report.docx&quot;.
                     </p>
                 <br />
                 <figure>

@@ -157,7 +157,9 @@ export default function FirstTopic() {
             <ul className="ul">
                 <li>Contextual task: You can start working on it immediately in your current view or screen. Essentially, no extra steps are required before you can begin the task.
                 </li>
+                <br />
                 <li>Non-contextual task: You have to do some setup or navigation first—go to another page, change a mode, or perform certain steps—before you can start the task.</li>
+                <br />
                 <li>A simpler way to understand this in regards to data creation is to see if the task you will be performing, are there steps that need to be taken to reach/start the task, or if you can start performing the task directly. If you need to do certain steps to reach the point of starting the task (navigating, setting up), then it is most likely a non-contextual task. If you can start performing directly on the screen you are in; then it is a contextual task.</li>
             </ul>
             <br />
@@ -165,9 +167,11 @@ export default function FirstTopic() {
             <h3 className="h3">Example:</h3>
             <p className="p">Take a look at these identical tasks executed both contextually and non-contextually to understand the concept further.</p>
             <p className="p">Lets look at two identical Canva tasks:</p>
+            <br />
 
             <ol className="ol">
                 <li><strong>Contextual</strong>
+                <br />
                     <ul className="ul">
                         <li>Prompt: Change the font of eco-conscious heading to sigher</li>
                         {/* <a href="https://drive.google.com/file/d/1RLkJpB_Cbtghni7dPt_-2igiUK6hPJrt/view?usp=drive_link" target="_blank">                                <button className='Watch-Button'>
@@ -185,6 +189,7 @@ export default function FirstTopic() {
 
 
                 <li><strong>Non-Contextual</strong>
+                <br />
                     <ul className="ul">
                         <li>Prompt: change the font of eco-conscious heading to sigher on canva</li>
                         {/* <a href="https://drive.google.com/file/d/1qPOJXCRLCuk7YurGGsdxpNPbGtI-j9nY/view?usp=drive_link" target="_blank">                                <button className='Watch-Button'>
@@ -210,6 +215,7 @@ export default function FirstTopic() {
 
             <ol className="ol">
                 <li><strong>Contextual</strong>
+                <br />
                     <ul className="ul">
                         <li>mark as complete the refactor api error handling card under to-do list</li>
                         <div className="Onboarding-Content">
@@ -223,6 +229,7 @@ export default function FirstTopic() {
 
 
                 <li><strong>Non-Contextual</strong>
+                <br />
                     <ul className="ul">
                         <li>mark as complete the refactor api error handling card under to-do list in seasonal promotions board</li>
                         <div className="Onboarding-Content">
@@ -243,8 +250,8 @@ export default function FirstTopic() {
                 <div className='Textarea-Wrapper'>
                     <Image width={50} height={50} src={Bulb} alt=''></Image>
                     <p>
-                        Non-Contextual recordings play a key role in teaching ACE navigation on complex Ul, or even from complicated starting conditions.
-                        The idea is to imagine a homing signal, which will guide ACE to the correct point required to execute the task properly</p>
+                        Non-Contextual recordings play a key role in teaching Ace navigation on complex Ul, or even from complicated starting conditions.
+                        The idea is to imagine a homing signal, which will guide Ace to the correct point required to execute the task properly</p>
                 </div>
             </div>
 

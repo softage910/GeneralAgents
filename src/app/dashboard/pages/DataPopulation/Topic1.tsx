@@ -20,9 +20,9 @@ export default function FirTopic() {
 
     return (
         <>
-        <p className="p">When creating data to train ACE, it is important to have a full-fledged, &apos;real&apos;
+        <p className="p">When creating data to train Ace, it is important to have a full-fledged, &apos;real&apos;
                 workspace/account on the tool of your choice. If creating a new account to
-                train ACE, then ensure that it is populated as you would be using it if it was a
+                train Ace, then ensure that it is populated as you would be using it if it was a
                 personal account
         </p>
         <hr/>
@@ -30,9 +30,9 @@ export default function FirTopic() {
                 <li><strong>Objective</strong>
                     <ul className='ul'>
                         <li>
-                            To ensure ACE is exposed to a wide range of user scenarios by
+                            To ensure Ace is exposed to a wide range of user scenarios by
                             emulating realistic workspaces, accounts, and usage patterns. This
-                            diversity is critical for ACE to learn how to navigate and manage the
+                            diversity is critical for Ace to learn how to navigate and manage the
                             varying complexities found in real-life setups.
                         </li>
                     </ul>
@@ -45,7 +45,7 @@ export default function FirTopic() {
                         <li>
                             <strong>Emulating Complexity:</strong>
                             <p className='p'>
-                            Creating dummy accounts with rich, diverse data allows ACE to
+                            Creating dummy accounts with rich, diverse data allows Ace to
                             understand and process the intricate configurations that different
                             individuals and organizations may have. </p>
                             <br/>
@@ -61,14 +61,14 @@ export default function FirTopic() {
                         <li>
                             <strong>Avoiding Data Homogeneity:</strong>
                             <p className='p'>Relying on minimal or repetitive data entries does not adequately
-                            represent real user environments, potentially limiting ACE&apos;s ability to
+                            represent real user environments, potentially limiting Ace&apos;s ability to
                             handle varied contexts.</p>
                             <br/>
-                            <p className='p'>Imagine yourself as a coach, who will guide ACE to its goal through
-                            complex scenarios. If ACE faces no complications to execute actions,then it will turn out to be a weak agent! The training conditions are what
+                            <p className='p'>Imagine yourself as a coach, who will guide Ace to its goal through
+                            complex scenarios. If Ace faces no complications to execute actions,then it will turn out to be a weak agent! The training conditions are what
                             separate a robust-goal-driven agent who will tackle any situation that it
                             will be subject to from an agent who can complete tasks only under
-                            IDEAL (simple) conditions. We want ACE to be a robust-goal-driven
+                            IDEAL (simple) conditions. We want Ace to be a robust-goal-driven
                             agent who is equipped to tackle any situation.</p>
                         </li>
                         
@@ -76,7 +76,7 @@ export default function FirTopic() {
                         <li>
                             <strong>Emulating different users:</strong>
                             <p className='p'>Leveraging online tutorials, templates, and role-based examples (such
-                            as project managers, dieticians, or UX experts) ensures that ACE is
+                            as project managers, dieticians, or UX experts) ensures that Ace is
                             trained on comprehensive and realistic datasets.</p>
                         <br />
                         <p className='p'>Think of all the different types of users who will use the tool; think of
@@ -100,7 +100,7 @@ export default function FirTopic() {
                             </ul>
                         </li>
                         <br/>
-                        <li><strong>Workspace Customization:</strong>
+                        <li><strong>workspace Customization:</strong>
                             <ul className='ul'>
                                 <li>Tailor workspaces or boards to represent multiple user types and
                                     scenarios.</li>
@@ -119,7 +119,7 @@ export default function FirTopic() {
                     <ul className='ul'>
                         <li><strong>Regular Updates:</strong>
                             <p className='p'>Periodically refresh and update the dummy accounts and data to
-                                expose ACE to evolving user states and avoid learning from static,
+                                expose Ace to evolving user states and avoid learning from static,
                                 repetitive data. </p>
                             <ul className='ul'>
                                 <li>A basic rule to follow here is to refresh/re-align the data everyday
@@ -155,6 +155,7 @@ export default function FirTopic() {
                     <ul className='ul'>
                         <li><strong>Google Sheets</strong>
                             <p className='p'>Prompt: Remove the rows where the Sales date is before 2024</p>
+                            <br />
                             <ul className='ul'>
                                 <li>Example of a well-populated Google Sheet:</li>
                                 <div className='figure img-511'>
@@ -170,6 +171,7 @@ export default function FirTopic() {
                                             and the sheet has enough data to make it a complex data set!</p>
                                     </div>
                                 </div>
+                                <br />
                                 <li>Example of a poorly populated Google Sheet:</li>
                                 <div className='figure img-511'>
                 <Image className='Image-Tag' src={Gsheet1} width={0} height={0} alt="Logo" />
@@ -183,7 +185,7 @@ export default function FirTopic() {
                                         <p>
                                             In this Google Sheet, there is only one column with dates, and
                                             the compilation of data is relatively poor, this will be an &quot;easy&quot;
-                                            task for ACE!</p>
+                                            task for Ace!</p>
                                     </div>
                                 </div>
                             </ul>
@@ -192,6 +194,7 @@ export default function FirTopic() {
                         <li><strong>Trello</strong>
                             <p className='p'>Prompt: move the card expense reports from Q2 key initiatives to the
                                 short-term priorities list, after manage time chaos card</p>
+                                <br />
                             <ul className='ul'>
                                 <li>Example of a well-populated board:</li>
                                 <div className='figure img-511'>
@@ -204,12 +207,13 @@ export default function FirTopic() {
                                         </div>
                                         <p>
                                             In this Trello Board, there are multiple lists with fully fleshed
-                                            out content, the implication is that ACE will have to search and
+                                            out content, the implication is that Ace will have to search and
                                             find the correct card, and even after finding the correct card, it
                                             will need to figure out where the card needs to be moved! This
-                                            is a well populated Trello Workspace.</p>
+                                            is a well populated Trello workspace.</p>
                                     </div>
                                 </div>
+                                <br />
                                 <li>Example of a poorly populated board:</li>
                                 <div className='figure img-511'>
                 <Image className='Image-Tag' src={Trello1} width={0} height={0} alt="Logo" />
@@ -232,6 +236,7 @@ export default function FirTopic() {
                         <li><strong>Canva</strong>
                             <p className='p'>Prompt: Update the font style of Navigate the path to increased sales to
                                 Anaktoria</p>
+                                <br />
                             <ul className='ul'>
                                 <li>Example of a well-populated design:</li>
                                 <div className='figure img-511'>
@@ -247,6 +252,7 @@ export default function FirTopic() {
                                             altered is in the middle. Which in itself is relatively complex.</p>
                                     </div>
                                 </div>
+                                <br />
                                 <li>Example of a poorly populated design:</li>
                                 <div className='figure img-511'>
                 <Image className='Image-Tag' src={Canva_BadDesign} width={0} height={0} alt="Logo" />
@@ -269,24 +275,24 @@ export default function FirTopic() {
 
                 <br/>
 
-                <li><strong> Implications for ACE Training</strong>
+                <li><strong> Implications for Ace Training</strong>
                     <ul className='ul'>
                         <li>
                             <strong>Enhanced Adaptability:</strong>
                             <p className='p'>Exposure to a wide array of data setups and user environments enables
-                                ACE to better adapt to real-world challenges.</p>
+                                Ace to better adapt to real-world challenges.</p>
                         </li>
                         <br/>
                         <li>
                             <strong>Improved Navigation:</strong>
-                            <p className='p'>The diversity in data fields and user scenarios trains ACE to efficiently
+                            <p className='p'>The diversity in data fields and user scenarios trains Ace to efficiently
                                 manage and operate within complex digital ecosystems.</p>
                         </li>
                         <br/>
                         <li>
                             <strong>Robust Learning:</strong>
                             <p className='p'>A well-rounded dataset that accurately reflects the diversity of user
-                                interactions helps prevent potential oversights in ACE&apos;s learning
+                                interactions helps prevent potential oversights in Ace&apos;s learning
                                 process, leading to more reliable and comprehensive performance.</p>
                         </li>
                     </ul>
@@ -296,7 +302,7 @@ export default function FirTopic() {
             <br/>
 
             <p className='p'>By focusing on real, diverse data, you&apos;re not just filling in boxes—you&apos;re setting
-                up ACE to tackle real-world challenges head-on. Every thoughtful detail you
+                up Ace to tackle real-world challenges head-on. Every thoughtful detail you
                 add helps build an agent that&apos;s ready to adapt and thrive in any situation. Your
                 work makes all the difference in creating a robust system that can handle the
                 complexities of everyday digital interactions.</p>

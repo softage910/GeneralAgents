@@ -24,7 +24,7 @@ export default function FirstTopic() {
 
             {/* <h2 className="h2"><strong>Introduction to FLUXE</strong></h2> */}
             <p className="p">
-                Fluxe is the tool on which you will be collecting data to train ACE.</p>
+                Fluxe is the tool on which you will be collecting data to train Ace.</p>
             <br />
             <a className="fluxe-download" href="/FluxeInstaller.pkg" download>
                 Click here to download Fluxe
@@ -52,6 +52,7 @@ export default function FirstTopic() {
             </figure>
             <br />
             <p className="p">and then scroll down to the bottom in &quot;Privacy and Security section&quot; ,</p>
+            <br />
             <figure className='img-53'>
                 <Image className='Image-Tag' src={three} width={0} height={0} alt="Logo" />
             </figure>
@@ -63,7 +64,7 @@ export default function FirstTopic() {
                 <Image className='Image-Tag' src={four} width={700} height={0} alt="Logo" />
             </figure>
             <br />
-            <p className="p">Instead of &quot;OpenOffice&quot;, it will say Fluxe, Select <strong>Open Anyway</strong> for Fluxe, and it
+            <p className="p">Instead of &quot;OpenOffice&quot;, it will say Fluxe, Select &apos;Open Anyway&apos; for Fluxe, and it
                 should work!
             </p>
             <hr />
@@ -183,9 +184,9 @@ export default function FirstTopic() {
 
             </ol>
 
-            <h2 className='h2'>Thats it ! As simple as that . You can start creating Data to train ACE now!</h2>
+            <h2 className='h2'>Thats it ! As simple as that . You can start creating Data to train Ace now!</h2>
 
-            <h2 className='h2'>Let&apos;s Get To Understanding ENGINE Now!</h2>
+            <h2 className='h2'>Let&apos;s Get To Understanding Engine Now!</h2>
 
 
             <br />

@@ -39,7 +39,7 @@ export default function FirTopic() {
                         </li>
 
                         <li>
-                        A prompt is the instruction to guide ACE on the task you want to complete. 
+                        A prompt is the instruction to guide Ace on the task you want to complete. 
                         Think of it as a clear and complete set of directions outlining what you&apos;re doing during your recording. 
                         A well-crafted prompt usually includes the intended action and the expected outcome, expressed in straightforward, technical terms.
                         </li>
@@ -89,13 +89,13 @@ export default function FirTopic() {
                 <li><strong>Optimal Actions</strong>
                     <ul className='ul'>
                         <li>
-                            Optimal actions are your goal while performing recordings to train ACE.
+                            Optimal actions are your goal while performing recordings to train Ace.
                         </li>
 
                         <li>
                             When executing tasks, aim to follow the shortest and most natural path. For
                             example, if an action can be completed with <strong>3 clicks</strong> instead of <strong>5</strong>, choose &apos;
-                            the <strong>3-click</strong> method &apos;. This efficiency helps ACE learn more effectively.
+                            the <strong>3-click</strong> method &apos;. This efficiency helps Ace learn more effectively.
                         </li>
                         <li>
                             Incorporate <strong>Keyboard shortcuts</strong> wherever necessary. This step also
@@ -131,7 +131,7 @@ export default function FirTopic() {
                         <p className="p">
                             <strong>Which method is more optimal?</strong><br />
                             Using the <strong>keyboard shortcut (&quot;C&quot;)</strong> is the more efficient way to archive a card.
-                            It reduces the number of clicks and speeds up your workflow, and ACE also
+                            It reduces the number of clicks and speeds up your workflow, and Ace also
                             needs to learn that!
                         </p>
 
@@ -141,7 +141,7 @@ export default function FirTopic() {
                             <div className='Textarea-Wrapper'>
                                 <Image width={50} height={50} src={Bulb} alt=''></Image>
                                 <p>
-                                    Following these steps ensures that ACE learns the most optimal and efficient ways to execute the tasks you&apos;re teaching!                    </p>
+                                    Following these steps ensures that Ace learns the most optimal and efficient ways to execute the tasks you&apos;re teaching!                    </p>
                             </div>
                         </div>
 
@@ -159,7 +159,7 @@ export default function FirTopic() {
                             to provide diverse data.
                         </li>
                         <li>
-                            <strong>Why:</strong> Exposing ACE to different screen layouts helps it learn to navigate
+                            <strong>Why:</strong> Exposing Ace to different screen layouts helps it learn to navigate
                             consistently across various setups and configurations.
                         </li>
 
@@ -219,10 +219,10 @@ export default function FirTopic() {
                     <ul className='ul'>
                         <li>Occasionally, several applications are open, whether overlapping or in the background. This diversity helps create more varied and realistic recordings.</li>
                         <li>Use different datasets or arrange your windows in various layouts. The goal is to mimic real users environments. For instance, starting with a blank projects page or with only one project visible doesn&apos;t represent someone who frequently uses the tool.</li>
-                        <li>Avoid Repeating the Same Environment. Try not to begin every recording in the exact same setup. Mixing things up ensures that ACE is exposed to a wide range of starting points.</li>
+                        <li>Avoid Repeating the Same Environment. Try not to begin every recording in the exact same setup. Mixing things up ensures that Ace is exposed to a wide range of starting points.</li>
                     </ul>
                 </li>
-                <li>If you&apos;re doing something that requires full-screen mode (e.g., a design app that only works maximized), that&apos;s acceptable. Otherwise, vary it to show ACE different possible starting points.</li>
+                <li>If you&apos;re doing something that requires full-screen mode (e.g., a design app that only works maximized), that&apos;s acceptable. Otherwise, vary it to show Ace different possible starting points.</li>
             </ol>
 
             <div className='Textarea-Hover'>
@@ -240,7 +240,7 @@ export default function FirTopic() {
                         </li>
                         <li><strong>Why It&apos;s Important</strong>
                             <ul className='ul'>
-                                <li>Moving your cursor before the countdown ends can disrupt data processing, which may affect the quality of your recordings. We want to avoid any issues to ensure the best results for ACE.</li>
+                                <li>Moving your cursor before the countdown ends can disrupt data processing, which may affect the quality of your recordings. We want to avoid any issues to ensure the best results for Ace.</li>
                             </ul>
                         </li>
                     </ol></div>
@@ -258,7 +258,7 @@ export default function FirTopic() {
                 </li>
                 <p className="p">
                     Use &quot;test&quot; or &quot;fake&quot; data in apps like Canva, Asana, and others to make
-                    your screen look authentic and varied. Having multiple files with real-sounding names in your boards, projects, and workspaces helps ACE
+                    your screen look authentic and varied. Having multiple files with real-sounding names in your boards, projects, and workspaces helps Ace
                     understand the dynamic nature of different users patterns and habits.
                 </p>
                 <br />
@@ -266,7 +266,7 @@ export default function FirTopic() {
                     Refresh Regularly
                 </li>
                 <p className="p">
-                    Change or add new data every day to ensure ACE sees diverse account
+                    Change or add new data every day to ensure Ace sees diverse account
                     states. Regular updates keep your recordings varied and reflective of realworld usage.
                 </p>
             </ol>
@@ -329,12 +329,12 @@ export default function FirTopic() {
 
             <hr />
 
-            <h2 className="h2"><strong>Your Role-Ensuring Quality & Integrity</strong></h2>
+            <h2 className="h2"><strong>Your Role - Ensuring Quality & Integrity</strong></h2>
             <ol className='ol'>
                 <li><strong>Your Responsibility As A Recorder:</strong> As a recorder, your goal is to produce <strong>clean and error-free</strong> data. Every
-                    accurate action you record helps ACE learn the best ways to complete various tasks effectively.</li>
+                    accurate action you record helps Ace learn the best ways to complete various tasks effectively.</li>
                 <li>
-                    <strong>Continuous Evaluation Of Ace:</strong> We evaluate ACE&apos;s performance on a weekly basis to identify any patterns
+                    <strong>Continuous Evaluation Of Ace:</strong> We evaluate Ace&apos;s performance on a weekly basis to identify any patterns
                     or gaps in its learning. This ongoing assessment allows us to refine our
                     instructions and improve the data collection process as needed.
                 </li>
@@ -513,7 +513,7 @@ export default function FirTopic() {
         {openIndex === 4 && (
           <ul className="ul" style={{ borderBottom: "solid white 1px", borderLeft: "solid white 1px", borderRight: "solid white 1px", listStyle: "none", padding: "10px" }}>
             <li>
-            To ensure comprehensive coverage of [tool_name], create a function mapper for the tool’s functionalities. Track the features you’ve recorded using the Google Sheet of the same. This method helps you monitor which features have been covered and identify any gaps, ensuring that ACE receives thorough training on all aspects of [tool_name]. Refer to the <strong>Extensive Tool Coverage and Function Mapper</strong> section for more information on this topic.
+            To ensure comprehensive coverage of [tool_name], create a function mapper for the tool’s functionalities. Track the features you’ve recorded using the Google Sheet of the same. This method helps you monitor which features have been covered and identify any gaps, ensuring that Ace receives thorough training on all aspects of [tool_name]. Refer to the <strong>Extensive Tool Coverage and Function Mapper</strong> section for more information on this topic.
             </li>
           </ul>
         )}
@@ -524,16 +524,16 @@ export default function FirTopic() {
 
             <h2 className="h2"><strong>Closing Notes</strong></h2>
             <ol className='ol'>
-                <li><strong>Teaching ACE from your Expertise</strong> <br /> Your mission is to teach ACE your areas of expertise, guiding it step by step to master the tasks you perform. We are confident that by working together, you can help ACE become the best computer control agent possible.</li>
+                <li><strong>Teaching Ace from your Expertise</strong> <br /> Your mission is to teach Ace your areas of expertise, guiding it step by step to master the tasks you perform. We are confident that by working together, you can help Ace become the best computer control agent possible.</li>
                 <li>
                     <strong>Practice Tasks</strong> <br /> We&apos;ll share sample tasks for you to try before you begin official recordings.
                     This helps you get comfortable with our workflow.
                 </li>
-                <li><strong>Remember</strong> <br /> A well-executed, clean recording (with minimal extra steps) is key to training ACE effectively. If in doubt, re-record rather than submit a flawed session.</li>
+                <li><strong>Remember</strong> <br /> A well-executed, clean recording (with minimal extra steps) is key to training Ace effectively. If in doubt, re-record rather than submit a flawed session.</li>
             </ol>
             <br />
             <p className="p">
-                <strong>Thank you</strong> for contributing to ACE&apos;s development! Don&apos;t hesitate to reach out if you have any questions or need clarification on these guidelines. By following these principles, we&apos;ll build a robust dataset that helps ACE learn to navigate and execute tasks with precision.
+                <strong>Thank you</strong> for contributing to Ace&apos;s development! Don&apos;t hesitate to reach out if you have any questions or need clarification on these guidelines. By following these principles, we&apos;ll build a robust dataset that helps Ace learn to navigate and execute tasks with precision.
             </p>
 
 

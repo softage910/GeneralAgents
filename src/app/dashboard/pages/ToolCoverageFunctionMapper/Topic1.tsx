@@ -43,7 +43,7 @@ export default function FirstTopic() {
                 <li><strong>Your Role as an Expert</strong>
                     <ul className='ul'>
                         <li>
-                        Teach the Computer Control Agent Every Possible Action: As an expert, you have in-depth knowledge of the tool and its functionality. It is your responsibility to curate prompts and recordings covering all possible interactions.
+                        Teach Ace Every Possible Action: As an expert, you have in-depth knowledge of the tool and its functionality. It is your responsibility to curate prompts and recordings covering all possible interactions.
                         </li>
                         <li>
                         Utilize a Function/Feature Mapper: To guarantee thorough coverage, request a detailed function mapper. This serves as a reference for which features have been covered and which still need data.

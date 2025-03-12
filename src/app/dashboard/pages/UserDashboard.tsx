@@ -7,7 +7,7 @@ return (
 
   <div className="ProgressbarContent">
     <br/>
-    <p>Welcome to the ACE Data Collection Project! Our mission is to gather clean, precise recordings of tasks to train ACE, our computer control agent. As a data creator, you’ll play a key role in shaping ACE into the best computer control agent.</p><br/>
+    <p>Welcome to the Ace Data Collection Project! Our mission is to gather clean, precise recordings of tasks to train Ace, our computer control agent. As a Domain Expert, you&apos;ll play a key role in shaping Ace into the best computer control agent.</p><br/>
 
   </div>
   {/* <div className="ProgressGraph">
