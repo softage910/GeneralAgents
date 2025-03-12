@@ -98,7 +98,7 @@
 
 
 "use client";
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { auth, database, googleProvider } from "@/lib/firebaseconfig";
