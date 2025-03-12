@@ -130,7 +130,7 @@ export default function SignInPage() {
             const user = result.user;
 
             // ✅ Store user details in Firestore (if needed)
-            await set(ref(database, `users/${user.uid}`), {
+            await set(ref(database, `users/${user.uid}/GoogleAuth`), {
                 name: user.displayName,
                 email: user.email,
                 profilePic: user.photoURL,
@@ -212,7 +212,7 @@ export default function SignInPage() {
             });
     
     
-            await set(ref(database, `users/${user.uid}`), {
+            await set(ref(database, `users/${user.uid}/LoginAuth`), {
               name: FullName,
               email: UserEmail,
               tool: Tool,
