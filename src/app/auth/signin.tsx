@@ -104,7 +104,7 @@ import Image from "next/image";
 import { auth, database, googleProvider } from "@/lib/firebaseconfig";
 import { get, ref, set } from "firebase/database";
 import Logo from "../../../public/Images/Logo-removebg-preview.png";
-import { createUserWithEmailAndPassword, sendEmailVerification, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import Link from "next/link";
 
 export default function SignInPage() {
@@ -112,7 +112,7 @@ export default function SignInPage() {
     const [Tool, setTool] = useState("");
     const [loginError, setLoginError] = useState<string | null>(null);
     const [loginMessage, setLoginMessage] = useState<string | null>(null);
-    // const [password, setPassword] = useState("");
+    const [password, setPassword] = useState("");
     const [SignUperror, setSignUpError] = useState<string | null>(null);
     const [SignUpmessage, setSignUpMessage] = useState<string | null>(null);
     const [showSigninField, setshowSigninField] = useState(true);
@@ -148,40 +148,85 @@ export default function SignInPage() {
         }
     };
 
-    const handleSignIn = useCallback(async (e: React.FormEvent) => {
+    // const handleSignIn = useCallback(async (e: React.FormEvent) => {
+    //     e.preventDefault();
+    //     setLoginError(null);
+    //     setLoginMessage(null);
+
+    //     try {
+    //         const snapshot = await get(ref(database, "AllowedUsers"));
+    //         if (!snapshot.exists()) {
+    //             setLoginError("Access denied. No allowed users found.");
+    //             return;
+    //         }
+
+    //         const allowedUsers = snapshot.val();
+    //         const user = Object.values(allowedUsers).find(
+    //             (userData) => (userData as { email: string }).email === email
+    //         ) as { email: string; name: string } | undefined;
+
+    //         if (!user) {
+    //             setLoginError("Access denied. Your email is not registered.");
+    //             return;
+    //         }
+
+    //         const sessionExpireTime = Date.now() + 24 * 60 * 60 * 1000; // 24 hours
+    //         sessionStorage.setItem("sessionExpireTime", sessionExpireTime.toString());
+    //         sessionStorage.setItem("userName", user.name);
+    //         sessionStorage.setItem("userEmail", user.email);
+
+    //         setLoginMessage("Redirecting...");
+    //         router.push("/dashboard?Onboarding");
+    //     } catch (err) {
+    //         setLoginError("Something went wrong. Please try again.");
+    //         console.error("Login error:", err);
+    //     }
+    // }, [email, router]);
+
+
+    const handleSignIn = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoginError(null);
         setLoginMessage(null);
-
+    
         try {
-            const snapshot = await get(ref(database, "AllowedUsers"));
-            if (!snapshot.exists()) {
-                setLoginError("Access denied. No allowed users found.");
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+    
+            if (!user.emailVerified) {
+                setLoginMessage("Email Not Verified");
                 return;
             }
-
-            const allowedUsers = snapshot.val();
-            const user = Object.values(allowedUsers).find(
-                (userData) => (userData as { email: string }).email === email
-            ) as { email: string; name: string } | undefined;
-
-            if (!user) {
-                setLoginError("Access denied. Your email is not registered.");
-                return;
+    
+            const userRef = ref(database, `users/${user.uid}/LoginAuth`);
+            const userSnapshot = await get(userRef);
+    
+            if (userSnapshot.exists()) {
+                const userAuth = userSnapshot.val(); // Directly get LoginAuth object
+    
+                if (userAuth.email !== email) {
+                    setLoginError("User data mismatch.");
+                    return;
+                }
+    
+                // Set session expiration time for 24 hours
+                const sessionExpireTime = Date.now() + 24 * 60 * 60 * 1000;
+                sessionStorage.setItem("sessionExpireTime", sessionExpireTime.toString());
+                sessionStorage.setItem("userName", userAuth.name || "User");
+                sessionStorage.setItem("userEmail", userAuth.email);
+    
+                setLoginMessage("Redirecting...");
+                router.push("/dashboard");
+            } else {
+                setLoginError("User data not found.");
             }
-
-            const sessionExpireTime = Date.now() + 24 * 60 * 60 * 1000; // 24 hours
-            sessionStorage.setItem("sessionExpireTime", sessionExpireTime.toString());
-            sessionStorage.setItem("userName", user.name);
-            sessionStorage.setItem("userEmail", user.email);
-
-            setLoginMessage("Redirecting...");
-            router.push("/dashboard?Onboarding");
         } catch (err) {
-            setLoginError("Something went wrong. Please try again.");
             console.error("Login error:", err);
+            setLoginError("Invalid email or password. Please try again.");
         }
-    }, [email, router]);
+    };
+    
+    
 
     const handleSignUp = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -268,6 +313,7 @@ export default function SignInPage() {
                     <div className="inner-card w-full max-w-md p-8 rounded-lg">
                         {showSigninField && (<form onSubmit={handleSignIn} className="mt-6">
                             <h2 className="login-heading">Login</h2>
+                            <div className="mt-4">
                             <label className="block text-gray-600">Email</label>
                             <input
                                 type="email"
@@ -277,6 +323,18 @@ export default function SignInPage() {
                                 onChange={(e) => setEmail(e.target.value)}
                                 required
                             />
+                            </div>
+                            <div className="mt-4">
+                            <label className="block text-gray-600">Password</label>
+                            <input
+                                type="password"
+                                placeholder="Enter Your Password"
+                                className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                            </div>
                             <button
                                 type="submit"
                                 className="login-btn w-full mt-6 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">
