@@ -208,7 +208,7 @@ export default function FirstTopic() {
 
             <p className="p">Notice the change in starting condition and in the prompt here?</p>
             <p className="p">For the contextual recording, we start with the design already open in Canva.</p>
-            <p className="p">For the non-contextual recording, we start from the desktop, you can start from anywhere apart from the design to do a non-contextual recording. Also, , the prompt mentions &quot;on canva&quot;, this distinction also helps ACE understand some navigation.</p>
+            <p className="p">For the non-contextual recording, we start from the desktop, you can start from anywhere apart from the design to do a non-contextual recording. Also, , the prompt mentions &quot;on canva&quot;, this distinction also helps Ace understand some navigation.</p>
             <br />
             <br />
             <p className="p">Now lets look at another example, this time on Trello</p>
