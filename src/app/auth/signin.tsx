@@ -109,6 +109,7 @@ import Link from "next/link";
 
 export default function SignInPage() {
     const [email, setEmail] = useState("");
+    const [Tool, setTool] = useState("");
     const [loginError, setLoginError] = useState<string | null>(null);
     const [loginMessage, setLoginMessage] = useState<string | null>(null);
     // const [password, setPassword] = useState("");
@@ -214,6 +215,7 @@ export default function SignInPage() {
             await set(ref(database, `users/${user.uid}`), {
               name: FullName,
               email: UserEmail,
+              tool: Tool,
               password: UserPassword,
             // Default role, change if needed
               signUpDate: signUpDate,
@@ -284,18 +286,18 @@ export default function SignInPage() {
                             <button
     type="button"
     onClick={handleGoogleSignIn}
-    className="w-full flex items-center justify-center border border-gray-300 rounded-full py-2 px-4 hover:bg-gray-100 transition"
+    className="custom-google w-full flex items-center justify-center border border-gray-300 rounded-full py-2 px-4  transition"
 >
     <img
         src="https://developers.google.com/identity/images/g-logo.png"
         alt="Google logo"
-        className="w-5 h-5 mr-2"
+        className="w-5 h-5 mr-2 goog-img"
     />
     <span className="text-gray-700 font-medium">Sign in with Google</span>
 </button>
 
                             <div className="togglebutton">
-        <p>Don&apos;t Have An Account?</p>
+        <p>Don&apos;t Have An Account? </p>
         <Link className="Link" href="" onClick={toggle}>Sign-Up</Link>
       </div>
                             {loginMessage && <p className="mt-4 text-center text-green-500">{loginMessage}</p>}
@@ -306,8 +308,7 @@ export default function SignInPage() {
           <div className="login-heading">
             <h2>Sign Up</h2>
           </div>
-          <div className="mt-4" style={{display: "flex"}}>
-            <div style={{marginRight: "10px"}}>
+          <div className="mt-4">
             <label className="block text-gray-600">Full Name</label>
             <input
               type="text"
@@ -317,9 +318,11 @@ export default function SignInPage() {
               onChange={(e) => setFullName(e.target.value)}
               required
             />
-            </div>
-            <div style={{marginLeft: "10px"}}>
-            <label className="block text-gray-600">Email</label>
+        
+          </div>
+
+          <div className="mt-4">
+          <label className="block text-gray-600">Email</label>
             <input
               type="email"
               placeholder="Enter Your Email"
@@ -328,7 +331,18 @@ export default function SignInPage() {
               onChange={(e) => setUserEmail(e.target.value)} 
               required
             />
-            </div>
+          </div>
+
+          <div className="mt-4">
+          <label className="block text-gray-600">Domain/Tool of expertise</label>
+            <input
+              type="text"
+              placeholder="Enter Tool Name"
+              className="w-full  px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              value={Tool}
+              onChange={(e) => setTool(e.target.value)} 
+              required
+            />
           </div>
 
           <div className="mt-4" style={{display: "flex"}}>
@@ -361,7 +375,7 @@ export default function SignInPage() {
             SIGNUP
           </button>
           <div className="togglebutton">
-            <p>Already Have An Account?</p>
+            <p>Already Have An Account? </p>
             <Link className="Link" href="" onClick={toggleback}>Sign-In</Link>
           </div>
 
