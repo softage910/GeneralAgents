@@ -142,7 +142,7 @@ export default function SignInPage() {
 
             setLoginMessage("Redirecting...");
             router.push("/dashboard?Onboarding");
-        } catch (error) {
+        } catch  {
             setLoginError("Google Sign-In failed. Please try again.");
         }
     };
