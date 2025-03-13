@@ -140,14 +140,7 @@ export default function SignInPage() {
     
             // If the user is logging in for the first time, update their details
             if (userData.status !== "Joined") {
-                const options: Intl.DateTimeFormatOptions = {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    hour12: true,
-                };
+
                 // const joinDate = new Date().toLocaleString("en-US", options); // Readable format
                 const joinDate = new Date().toLocaleDateString("en-GB"); // "12/03/2025"
 

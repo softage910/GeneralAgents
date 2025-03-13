@@ -1,7 +1,7 @@
 "use client";
 import { push, ref, set, update, remove, onValue } from "firebase/database";
 import { useRouter } from "next/navigation"; // For redirection
-import { auth, database, signOut } from "@/lib/firebaseconfig";
+import { database } from "@/lib/firebaseconfig";
 import { useState, useEffect } from "react";
 import "./AdminPage.css";
 
