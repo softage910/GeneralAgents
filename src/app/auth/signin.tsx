@@ -104,22 +104,11 @@ import Image from "next/image";
 import { auth, database, googleProvider } from "@/lib/firebaseconfig";
 import { get, ref, set } from "firebase/database";
 import Logo from "../../../public/Images/Logo-removebg-preview.png";
-import { createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { signInWithPopup } from "firebase/auth";
 
 export default function SignInPage() {
-    const [email, setEmail] = useState("");
-    const [Tool, setTool] = useState("");
     const [loginError, setLoginError] = useState<string | null>(null);
     const [loginMessage, setLoginMessage] = useState<string | null>(null);
-    const [password, setPassword] = useState("");
-    const [SignUperror, setSignUpError] = useState<string | null>(null);
-    const [SignUpmessage, setSignUpMessage] = useState<string | null>(null);
-    const [showSigninField, setshowSigninField] = useState(true);
-    const [showSignupField, setshowSignupField] = useState(false);
-    const [FullName, setFullName] = useState("");
-    const [UserEmail, setUserEmail] = useState("");
-    const [UserPassword, setUserPassword] = useState("");
-    const [ConfirmPassword, setConfirmPassword] = useState("");
     const router = useRouter();
 
 
@@ -228,122 +217,8 @@ export default function SignInPage() {
     // }, [email, router]);
 
 
-    const handleSignIn = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setLoginError(null);
-        setLoginMessage(null);
-    
-        try {
-            const userCredential = await signInWithEmailAndPassword(auth, email, password);
-            const user = userCredential.user;
-    
-            if (!user.emailVerified) {
-                setLoginMessage("Email Not Verified");
-                return;
-            }
-    
-            const userRef = ref(database, `users/${user.uid}/LoginAuth`);
-            const userSnapshot = await get(userRef);
-    
-            if (userSnapshot.exists()) {
-                const userAuth = userSnapshot.val(); // Directly get LoginAuth object
-    
-                if (userAuth.email !== email) {
-                    setLoginError("User data mismatch.");
-                    return;
-                }
-    
-                // Set session expiration time for 24 hours
-                const sessionExpireTime = Date.now() + 24 * 60 * 60 * 1000;
-                sessionStorage.setItem("sessionExpireTime", sessionExpireTime.toString());
-                sessionStorage.setItem("userName", userAuth.name || "User");
-                sessionStorage.setItem("userEmail", userAuth.email);
-    
-                setLoginMessage("Redirecting...");
-                router.push("/dashboard");
-            } else {
-                setLoginError("User data not found.");
-            }
-        } catch (err) {
-            console.error("Login error:", err);
-            setLoginError("Invalid email or password. Please try again.");
-        }
-    };
-    
-    
 
-    const handleSignUp = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setSignUpError(null);
-        setSignUpMessage(null);
-      
-        if (UserPassword !== ConfirmPassword) {
-          setSignUpError("Passwords do not match.");
-          return;
-        }
-    
-      
-        try {
-          // Create user in Firebase Authentication
-          const userCredential = await createUserWithEmailAndPassword(auth, UserEmail, UserPassword);
-          const user = userCredential.user;
-      
-          if (user) {
-            // Get the current date and time
-            const signUpDate = new Date().toLocaleString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-              hour: "2-digit",
-              minute: "2-digit",
-              second: "2-digit",
-              hour12: true, // Ensures AM/PM format
-            });
-    
-    
-            await set(ref(database, `users/${user.uid}/LoginAuth`), {
-              name: FullName,
-              email: UserEmail,
-              tool: Tool,
-              password: UserPassword,
-            // Default role, change if needed
-              signUpDate: signUpDate,
-          });
-        
-          
-      
-            if (!user.emailVerified) {
-              await sendEmailVerification(user);
-              setSignUpMessage("A verification email has been sent. Please verify your email before logging in.");
-            }
-          }
-        } catch (error) {
-          console.error("Signup error:", error);
-          setSignUpError("Error signing up. Please try again.");
-        }
-      };
 
-      const toggle = () => {
-        setshowSignupField(true);
-        setshowSigninField(false);
-      }
-    
-      const toggleback = () => {
-        setshowSignupField(false);
-        setshowSigninField(true);
-      }
-
-      const handleConfirmPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const confirmPassword = e.target.value;
-        setConfirmPassword(confirmPassword);
-    
-        // Check if confirm password matches the original password
-        if (UserPassword && confirmPassword !== UserPassword) {
-            setSignUpError("Passwords do not match");
-        } else {
-          setSignUpError(""); // Clear error if passwords match
-        }
-    };
 
     return (
         <div className="main">
@@ -355,7 +230,7 @@ export default function SignInPage() {
                 </div>
                 <div className="flex items-center justify-center back-css p-5">
                     <div className="inner-card w-full max-w-md p-8 rounded-lg">
-                        {showSigninField && (<form onSubmit={handleSignIn} className="mt-6">
+                        <form  className="mt-6">
                             <h2 className="login-heading">Login</h2>
                             <button
     type="button"
@@ -372,7 +247,7 @@ export default function SignInPage() {
 
                             {loginMessage && <p className="mt-4 text-center text-green-500">{loginMessage}</p>}
                             {loginError && <p className="mt-4 text-center text-red-500">{loginError}</p>}
-                        </form>)}
+                        </form>
                     </div>
                 </div>
             </div>
