@@ -1,5 +1,8 @@
 import '../General.css';
-
+import Bulb from '../../../../../public/Images/bulb.png';
+import Image from 'next/image';
+import PromptsAsana from '../../../../../public/Images/PromptAsana.jpg';
+import Annotation from '../../../../../public/Images/AnnotationsAsana.png';
 
 
 
@@ -8,9 +11,6 @@ export default function FirTopic() {
 
     return (
         <>
-
-
-
             <p className="p">When working with Fluxe, remember that Instructional Prompts and Annotation
             Prompts are what guide the model. Let&apos;s break it down:
             </p>
@@ -27,7 +27,9 @@ Instructional prompt.
 
                   </p>
                   <br />
-                  <img/>
+                  <figure>
+                    <Image className='ins-img1' src={PromptsAsana} width={800} height={0} alt="Logo" />
+                </figure>
                   <br />
                   <p className='p'>
                   Here, the prompt is &quot;establish dependencies and timeline view for a multi-step
@@ -50,7 +52,9 @@ multi-step project&quot;, these will be the annotations, which will be smaller p
 in itself.
                     </p>
                     <br />
-                    <img/>
+                <figure>
+                    <Image className='ins-img1' src={Annotation} width={800} height={0} alt="Logo" />
+                </figure>
                     <br />
 
 
@@ -66,7 +70,16 @@ in itself.
 tasks.
 
                     </li>
-                    <img/>
+            <div className='Textarea-Hover'>
+                <div className='Textarea-Wrapper'>
+                    <Image width={50} height={50} src={Bulb} alt=''></Image>
+                    <p>
+                    In practice, both are prompts, distinguished by this one key
+                    difference.
+                    </p>
+                </div>
+            </div>
+  
                     <br />
                 </ul>
 

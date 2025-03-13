@@ -38,7 +38,7 @@ than two tags as well.
                 <br/>
                 <li>
                 Always end your recordings using the shortcut CMD+CTRL+SHIFT+R rather
-                than by clicking the “Stop Recording” button on Fluxe.
+                than by clicking the &quot;Stop Recording&quot; button on Fluxe.
                 </li>
                 <br/>
                 <li>Ensure that your MacBook is updated to the latest macOS version.</li>

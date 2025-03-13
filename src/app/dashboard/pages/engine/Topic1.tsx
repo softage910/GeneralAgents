@@ -131,7 +131,7 @@ export default function SecondTopic() {
             <hr />
             <h2 className="h2"><strong>Annotations</strong></h2>
             <p className="p">
-            You can annotate specific parts of your recordings to give detailed instructions per segment. This is particularly useful when your recording has a mix of features while performing one task. Take this recording of a data creator collecting data on chess, for example:</p>
+            You can annotate specific parts of your recordings to give detailed instructions per segment. This is particularly useful when your recording has a mix of features while performing one task. Take this recording of a domain expert collecting data on chess, for example:</p>
             <br />
             <figure>
                 <Image className='Image-Tag' src={twelve} width={700} height={0} alt="logo" />
@@ -174,7 +174,7 @@ export default function SecondTopic() {
 
                 <br />
 
-                <p className="p"> Lets take a look at another example. In this task, the data creator records data to train Ace on Microsoft Word. The instruction is &quot;center align the &apos;next
+                <p className="p"> Lets take a look at another example. In this task, the domain expert records data to train Ace on Microsoft Word. The instruction is &quot;center align the &apos;next
                     steps&apos; section and apply green shading in project report.docx&quot;.</p>
                 <br />
                 <figure className='img-510'>

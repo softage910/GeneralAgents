@@ -6,7 +6,6 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../lib/firebaseconfig";
 import Image from "next/image";
 import Logo1 from "../../../public/Images/Logo-removebg-preview.png";
-import ComingSoon from "./pages/ComingSoon";
 import Fluxe from "./pages/Fluxe";
 import Engine from "./pages/Engine";
 import DataCreation from "./pages/DataCreationGuidelines";
@@ -19,6 +18,8 @@ import BasicsPrompt from "./pages/BasicsOfPrompting";
 import DataPopulation from "./pages/DataPopulation";
 import PromptsInstructions from "./pages/PromptsInstructions";
 import FinalCheck from "./pages/FinalCheck";
+import Admin from "./pages/Admin";
+import Glossary from "./pages/Glossary";
 
 type ModuleInfo = {
   day: string;
@@ -32,13 +33,15 @@ export default function Dashboard() {
   const [userName, setUserName] = useState<string | null>(null);
   const router = useRouter(); // Correct way to use router in App Router
   const [isOpen, setIsOpen] = useState(false);
+  const [userType, setUserType] = useState<string | null>(null);
 
 
   const dayModules: { [key: string]: string[] } = {
-    "DataList": ["Onboarding","Introduction To Fluxe", "Introduction To Engine", "Data Creation Guidelines","Importance of Data Population and Diversity","Prompts: Instructions and Annotations","Prompting Basics","Extensive Tool Coverage And Function Mapper","Sample Tasks To Practice On","Current Eval Performance","Suggested Reading Materials","Final Checklist","Glossary"],
+    "DataList": ["ADMIN","Onboarding","Introduction To Fluxe", "Introduction To Engine", "Data Creation Guidelines","Importance of Data Population and Diversity","Prompts: Instructions and Annotations","Prompting Basics","Extensive Tool Coverage And Function Mapper","Suggested Reading Materials","Final Checklist","Glossary"],
   };
-
+  
   const moduleMap: { [key: string]: ModuleInfo & { customName: string } } = {
+    "DataList - ADMIN": { day: "DataList", module: "ADMIN", component: Admin, customName: "ADMIN" },
     "DataList - Onboarding": { day: "DataList", module: "Onboarding", component: UserDashboard, customName: "Onboarding" },
     "DataList - Introduction To Fluxe": { day: "DataList", module: "Introduction To Fluxe", component: Fluxe, customName: "Fluxe" },
     "DataList - Introduction To Engine": { day: "DataList", module: "Introduction To Engine", component: Engine, customName: "Engine" },
@@ -47,18 +50,24 @@ export default function Dashboard() {
     "DataList - Prompts: Instructions and Annotations": { day: "DataList", module: "Prompts: Instructions and Annotations", component: PromptsInstructions, customName: "prompt_inst" },
     "DataList - Prompting Basics": { day: "DataList", module: "Prompting Basics", component: BasicsPrompt, customName: "Prompting_basics" },
     "DataList - Extensive Tool Coverage And Function Mapper": { day: "DataList", module: "Extensive Tool Coverage And Function Mapper", component: ToolCoverage, customName: "Function_Mapper" },
-    "DataList - Sample Tasks To Practice On": { day: "DataList", module: "Sample Tasks To Practice", component: ComingSoon, customName: "Demo_Tasks" },
-    "DataList - Current Eval Performance": { day: "DataList", module: "Current Eval Performance", component: ComingSoon, customName: "Eval" },
     "DataList - Suggested Reading Materials": { day: "DataList", module: "Suggested Reading Materials", component: ReadingMaterial, customName: "Suggested_Reading" },
     "DataList - Final Checklist": { day: "DataList", module: "Final Checklist", component: FinalCheck, customName: "Final-Checklist" },
-    "DataList - Glossary": { day: "DataList", module: "Glossary", component: ComingSoon, customName: "Glossary" },
+    "DataList - Glossary": { day: "DataList", module: "Glossary", component: Glossary, customName: "Glossary" },
 };
 
 
-  useEffect(() => {
+
+
+useEffect(() => {
     const sessionExpireTime = sessionStorage.getItem("sessionExpireTime");
     const currentTime = new Date().getTime();
     const storedUserName = sessionStorage.getItem("userName");
+    const storedUserType = sessionStorage.getItem("userType"); // Retrieve user type
+
+    if (storedUserType){
+        setUserType(storedUserType);
+    } 
+
 
     if (storedUserName) {
         setUserName(storedUserName);
@@ -94,6 +103,8 @@ export default function Dashboard() {
 
     setLoading(false);
 }, []);
+
+
 
 
 const handleLogout = async () => {
@@ -159,21 +170,22 @@ return (
                 <hr/>
 
                 <ul className="sidebar-links">
-
-                    {Object.keys(dayModules).map((day, i) => (
-                        <li key={i}>
-                            <ul>
-                                {dayModules[day].map((module: string, index: number) => (
-                                    <li key={index} className={selectedModule === `${day} - ${module}` ? "active" : ""}>
-                                        <a href="#" onClick={() => setSelectedModuleHandler(`${day} - ${module}`)}>
-                                            {module}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </li>
-                    ))}
-                </ul>
+          {Object.keys(dayModules).map((day, i) => (
+            <li key={i}>
+              <ul>
+                {dayModules[day]
+                  .filter((module) => userType === "ADMIN" || module !== "ADMIN") // Hide "ADMIN" for normal users
+                  .map((module, index) => (
+                    <li key={index}>
+                      <a href="#" onClick={() => setSelectedModule(`${day} - ${module}`)}>
+                        {module}
+                      </a>
+                    </li>
+                  ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
             </aside>
 
       
@@ -203,7 +215,7 @@ return (
     const prevModule = currentIndex > 1 ? modules[currentIndex - 1] : null;
     const nextModule = currentIndex < modules.length - 1 ? modules[currentIndex + 1] : null;
 
-    return selectedModule !== "DataList - Onboarding" ? ( // 🚀 Hides Next Button for Onboarding
+    return (selectedModule !== "DataList - Onboarding") && (selectedModule !== "DataList - ADMIN")  ? ( // 🚀 Hides Next Button for Onboarding
         <div className="NextPrev-btn">
             {prevModule && (
                 <button

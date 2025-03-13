@@ -1,0 +1,154 @@
+"use client";
+import { push, ref, set, update, remove, onValue } from 'firebase/database';
+import { useRouter } from 'next/navigation'; // For redirection
+import { auth, database, signOut } from '@/lib/firebaseconfig';
+import { useState, useEffect } from 'react';
+import './AdminPage.css';
+
+export default function AdminPage() {
+    const [users, setUsers] = useState<any[]>([]);
+    const [inviteEmail, setInviteEmail] = useState("");
+    const [inviteMessage, setInviteMessage] = useState<string | null>(null);
+    const router = useRouter(); // Next.js router for navigation
+
+    useEffect(() => {
+        const user = sessionStorage.getItem("userEmail"); // Check session
+        if (!user) {
+            router.replace("/"); // Redirect to login if not logged in
+        }
+    }, []);
+
+    useEffect(() => {
+        const usersRef = ref(database, "invitedUsers");
+        onValue(usersRef, (snapshot) => {
+            const data = snapshot.val();
+            if (data) {
+                const userList = Object.keys(data).map((key, index) => ({
+                    id: key,
+                    sno: index + 1,
+                    ...data[key]
+                }));
+                setUsers(userList);
+            }
+        });
+    }, []);
+
+    const handleInviteUser = async () => {
+        if (!inviteEmail) {
+            setInviteMessage("Please enter an email.");
+            return;
+        }
+
+        try {
+            const newUserRef = push(ref(database, "invitedUsers")); // Create new entry
+            await set(newUserRef, {
+                email: inviteEmail,
+                name: "-",
+                joiningdate: "-",
+                status: "Pending",
+                type: "USER",
+                invitedAt: new Date().toISOString(),
+            });
+
+            setInviteMessage(`Invitation sent to ${inviteEmail}`);
+            setInviteEmail(""); // Clear input after invite
+        } catch (error) {
+            console.error("Error inviting user:", error);
+            setInviteMessage("Failed to send invite. Please try again.");
+        }
+    };
+
+    const handleTypeChange = async (userId: string, newType: string) => {
+        try {
+            await update(ref(database, `invitedUsers/${userId}`), {
+                type: newType,
+            });
+
+            setUsers((prevUsers) =>
+                prevUsers.map((user) =>
+                    user.id === userId ? { ...user, type: newType } : user
+                )
+            );
+        } catch (error) {
+            console.error("Error updating user type:", error);
+        }
+    };
+
+    const handleDeleteUser = async (userId: string) => {
+        try {
+            await remove(ref(database, `invitedUsers/${userId}`)); // Delete from Firebase
+
+            setUsers((prevUsers) => prevUsers.filter((user) => user.id !== userId)); // Update UI
+        } catch (error) {
+            console.error("Error deleting user:", error);
+        }
+    };
+
+    const handleAdminLogout = async () => {
+        try {
+            await signOut(auth);
+            sessionStorage.clear();
+            router.replace("/");
+          } catch (error) {
+            console.error("Logout error:", error);
+          }
+    };
+
+    return (
+        <>
+            <div className="Admin-table" id="customers_table">
+                <section className="table__header">
+                    <div className="input-group">
+                        <input
+                            type="search"
+                            placeholder="Invite Users (Enter Email)"
+                            value={inviteEmail}
+                            onChange={(e) => setInviteEmail(e.target.value)}
+                        />
+                        <button onClick={handleInviteUser}>Invite</button>
+                    </div>
+                </section>
+                <section className="table__body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th> SNo. </th>
+                                <th> Email </th>
+                                <th> Name </th>
+                                <th> Joining Date </th>
+                                <th> Status </th>
+                                <th> Type </th>
+                                <th> Action </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {users.map((user) => (
+                                <tr key={user.id}>
+                                    <td> {user.sno} </td>
+                                    <td> {user.email} </td>
+                                    <td> {user.name} </td>
+                                    <td> {user.joiningdate} </td>
+                                    <td>
+                                        <p className={`status ${user.status === 'Pending' ? 'pending' : 'joined'}`}>{user.status}</p>
+                                    </td>
+                                    <td>
+                                        <select
+                                            value={user.type}
+                                            onChange={(e) => handleTypeChange(user.id, e.target.value)}
+                                        >
+                                            <option value="USER">USER</option>
+                                            <option value="ADMIN">ADMIN</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button className="Delete-btn" onClick={() => handleDeleteUser(user.id)}>Delete</button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </>
+    );
+}

@@ -81,7 +81,7 @@ export async function POST(req: NextRequest) {
 
         await transporter.sendMail({
             from: "quiz.verse@softage.ai",
-            to: "saajid@generalagents.com",
+            to: "training.queries@generalagents.com",
             subject: "New Query - GeneralAgents",
             html: `
   <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">

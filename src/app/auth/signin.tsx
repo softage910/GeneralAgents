@@ -105,7 +105,6 @@ import { auth, database, googleProvider } from "@/lib/firebaseconfig";
 import { get, ref, set } from "firebase/database";
 import Logo from "../../../public/Images/Logo-removebg-preview.png";
 import { createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import Link from "next/link";
 
 export default function SignInPage() {
     const [email, setEmail] = useState("");
@@ -128,25 +127,70 @@ export default function SignInPage() {
         try {
             const result = await signInWithPopup(auth, googleProvider);
             const user = result.user;
+    
+            // Check if the user exists in the invitedUsers database
+            const invitedUsersRef = ref(database, "invitedUsers");
+            const invitedUsersSnapshot = await get(invitedUsersRef);
+    
+            if (!invitedUsersSnapshot.exists()) {
+                setLoginError("Access denied. No invited users found.");
+                return;
+            }
+    
+            const invitedUsers = invitedUsersSnapshot.val();
+            const invitedUserKey = Object.keys(invitedUsers).find(
+                (key) => invitedUsers[key].email === user.email
+            );
+    
+            if (!invitedUserKey) {
+                setLoginError("Access denied. Your email is not invited.");
+                return;
+            }
+    
+            const userData = invitedUsers[invitedUserKey];
+    
+            // If the user is logging in for the first time, update their details
+            if (userData.status !== "Joined") {
+                const options: Intl.DateTimeFormatOptions = {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: true,
+                };
+                // const joinDate = new Date().toLocaleString("en-US", options); // Readable format
+                const joinDate = new Date().toLocaleDateString("en-GB"); // "12/03/2025"
 
-            // ✅ Store user details in Firestore (if needed)
-            await set(ref(database, `users/${user.uid}/GoogleAuth`), {
-                name: user.displayName,
-                email: user.email,
-                profilePic: user.photoURL,
-                provider: "Google",
-            });
+    
+                await set(ref(database, `invitedUsers/${invitedUserKey}`), {
+                    ...userData,
+                    status: "Joined",
+                    joiningdate: joinDate,
+                    name: user.displayName,
+                });
 
+
+            }
+    
             sessionStorage.setItem("sessionExpireTime", (Date.now() + 24 * 60 * 60 * 1000).toString());
             sessionStorage.setItem("userName", user.displayName || "");
             sessionStorage.setItem("userEmail", user.email || "");
+            sessionStorage.setItem("userType", userData.type || "");
 
+    
+            // ✅ Redirect based on user type
+                router.push("/dashboard?Onboarding");
+    
             setLoginMessage("Redirecting...");
-            router.push("/dashboard?Onboarding");
-        } catch  {
+        } catch (error) {
+            console.error("Google Sign-In failed:", error);
             setLoginError("Google Sign-In failed. Please try again.");
         }
     };
+    
+    
+    
 
     // const handleSignIn = useCallback(async (e: React.FormEvent) => {
     //     e.preventDefault();
@@ -313,34 +357,6 @@ export default function SignInPage() {
                     <div className="inner-card w-full max-w-md p-8 rounded-lg">
                         {showSigninField && (<form onSubmit={handleSignIn} className="mt-6">
                             <h2 className="login-heading">Login</h2>
-                            <div className="mt-4">
-                            <label className="block text-gray-600">Email</label>
-                            <input
-                                type="email"
-                                placeholder="Enter Your Email"
-                                className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                            />
-                            </div>
-                            <div className="mt-4">
-                            <label className="block text-gray-600">Password</label>
-                            <input
-                                type="password"
-                                placeholder="Enter Your Password"
-                                className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                            />
-                            </div>
-                            <button
-                                type="submit"
-                                className="login-btn w-full mt-6 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">
-                                LOGIN
-                            </button>
-                            <p style={{textAlign: "center", marginTop: "10px"}}>OR</p>
                             <button
     type="button"
     onClick={handleGoogleSignIn}
@@ -354,92 +370,9 @@ export default function SignInPage() {
     <span className="text-gray-700 font-medium">Sign in with Google</span>
 </button>
 
-                            <div className="togglebutton">
-        <p>Don&apos;t Have An Account? </p>
-        <Link className="Link" href="" onClick={toggle}>Sign-Up</Link>
-      </div>
                             {loginMessage && <p className="mt-4 text-center text-green-500">{loginMessage}</p>}
                             {loginError && <p className="mt-4 text-center text-red-500">{loginError}</p>}
                         </form>)}
-
-                        {showSignupField && (<form onSubmit={handleSignUp} className="mt-6">
-          <div className="login-heading">
-            <h2>Sign Up</h2>
-          </div>
-          <div className="mt-4">
-            <label className="block text-gray-600">Full Name</label>
-            <input
-              type="text"
-              placeholder="Enter Your Full Name"
-              className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              value={FullName}
-              onChange={(e) => setFullName(e.target.value)}
-              required
-            />
-        
-          </div>
-
-          <div className="mt-4">
-          <label className="block text-gray-600">Email</label>
-            <input
-              type="email"
-              placeholder="Enter Your Email"
-              className="w-full  px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              value={UserEmail}
-              onChange={(e) => setUserEmail(e.target.value)} 
-              required
-            />
-          </div>
-
-          <div className="mt-4">
-          <label className="block text-gray-600">Domain/Tool of expertise</label>
-            <input
-              type="text"
-              placeholder="Enter Tool Name"
-              className="w-full  px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              value={Tool}
-              onChange={(e) => setTool(e.target.value)} 
-              required
-            />
-          </div>
-
-          <div className="mt-4" style={{display: "flex"}}>
-            <div style={{marginRight: "10px"}}>
-            <label className="block text-gray-600">Password</label>
-            <input
-              type="password"
-              placeholder="Create Password"
-              className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              value={UserPassword}
-              onChange={(e) => setUserPassword(e.target.value)}
-              required
-            />
-            </div>
-            <div style={{marginLeft: "10px"}}>
-            <label className="block text-gray-600">Confirm Password</label>
-            <input
-              type="password"
-              placeholder="Confirm Your Password"
-              className="w-full  px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              onChange={handleConfirmPasswordChange}
-              required
-            />
-            </div>
-          </div>
-          <button
-            type="submit"
-            className="w-full mt-6 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition "
-          >
-            SIGNUP
-          </button>
-          <div className="togglebutton">
-            <p>Already Have An Account? </p>
-            <Link className="Link" href="" onClick={toggleback}>Sign-In</Link>
-          </div>
-
-          {SignUpmessage && <p className="mt-4 text-center text-green-500">{SignUpmessage}</p>}
-          {SignUperror && <p className="mt-4 text-center text-red-500">{SignUperror}</p>}
-        </form>)}
                     </div>
                 </div>
             </div>
