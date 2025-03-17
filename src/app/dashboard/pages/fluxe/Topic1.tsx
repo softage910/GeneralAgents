@@ -13,6 +13,7 @@ import eleven from '../../../../../public/Images/5.1.9.png';
 import twelve from '../../../../../public/Images/5.1.10.png';
 import thirteen from '../../../../../public/Images/5.1.4.png';
 import Bulb from '../../../../../public/Images/bulb.png';
+import short from '../../../../../public/Images/shortcut.png';
 
 
 import Image from 'next/image';
@@ -140,43 +141,28 @@ export default function FirstTopic() {
 
                 </li>
 
-                <li>
-                    To stop a recording use the shortcut: <strong className='stop-recor'>[ CMD + Shift + Ctrl + R ]</strong>
 
-                    {/* <ul className='ul'>
-                        <br />
-                        
-                        <li>ENSURE TO STOP YOUR RECORDING USING THE SHORTCUT MENTIONED. DO NOT USE THE &quot;STOP RECORDING&quot; BUTTON ON FLUXE TO STOP THE RECORDING.</li>
-                        <li>Using the &quot;STOP RECORDING&quot; button causes issues in our data processing. So you should avoid using that.</li>
-                    </ul> */}
+                <li>
+                    <div className="inline-container" style={{ display: "flex", alignItems: 'center', gap: '10px' }}>
+                        <span>To stop a recording use the shortcut :</span>
+                        <figure className='short' style={{ maxHeight: '50px', width: 'auto' }}>
+                            <Image src={short} width={200} height={50} alt="Shortcut" style={{ borderRadius: "7px" }} />
+                        </figure>
+                    </div>
+
                     <div className='Textarea-Hover' style={{ backgroundColor: 'orange' }}>
                         <div className='Textarea-Wrapper'>
                             <div style={{ marginTop: "5px", marginRight: "10px" }}>
-                                <Image width={70} height={0} src={Bulb} alt=''></Image>
+                                <Image width={70} height={0} src={Bulb} alt='Bulb Icon'></Image>
                             </div>
-                            {/* <ul className='ul'>
-                        <li>ENSURE TO STOP YOUR RECORDING USING THE SHORTCUT MENTIONED. DO NOT USE THE &quot;STOP RECORDING&quot; BUTTON ON FLUXE TO STOP THE RECORDING.</li>
-                        <li>Using the &quot;STOP RECORDING&quot; button causes issues in our data processing. So you should avoid using that.</li>
-                    </ul> */}
                             <div>
-                                <p className='p'>
-                                    1. ENSURE TO STOP YOUR RECORDING USING THE SHORTCUT MENTIONED. DO NOT USE THE &quot;STOP RECORDING&quot; BUTTON ON FLUXE TO STOP THE RECORDING.
-
-
-                                </p>
-                                <p className='p'>
-                                    2. Using the &quot;STOP RECORDING&quot; button causes issues in our data processing. So you should avoid using that.
-                                </p>
+                                <p className='p'>1. ENSURE TO STOP YOUR RECORDING USING THE SHORTCUT MENTIONED. DO NOT USE THE "STOP RECORDING" BUTTON ON FLUXE TO STOP THE RECORDING.</p>
+                                <p className='p'>2. Using the "STOP RECORDING" button causes issues in our data processing. So you should avoid using that.</p>
                             </div>
-
                         </div>
                     </div>
-
-
-                    <br />
-                    <br />
-
                 </li>
+
 
 
 
