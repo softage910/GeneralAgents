@@ -156,8 +156,8 @@ export default function FirstTopic() {
                                 <Image width={70} height={0} src={Bulb} alt='Bulb Icon'></Image>
                             </div>
                             <div>
-                                <p className='p'>1. ENSURE TO STOP YOUR RECORDING USING THE SHORTCUT MENTIONED. DO NOT USE THE "STOP RECORDING" BUTTON ON FLUXE TO STOP THE RECORDING.</p>
-                                <p className='p'>2. Using the "STOP RECORDING" button causes issues in our data processing. So you should avoid using that.</p>
+                                <p className='p'>1. ENSURE TO STOP YOUR RECORDING USING THE SHORTCUT MENTIONED. DO NOT USE THE &quot;STOP RECORDING&quot; BUTTON ON FLUXE TO STOP THE RECORDING.</p>
+                                <p className='p'>2. Using the &quot;STOP RECORDING&quot; button causes issues in our data processing. So you should avoid using that.</p>
                             </div>
                         </div>
                     </div>
