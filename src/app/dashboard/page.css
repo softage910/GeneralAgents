@@ -54,15 +54,14 @@ body{
     position: fixed;
     left: -100%; /* Completely hidden */
     top: 0;
-    width: 400px; /* Default width */
+    width: 24vw; /* Default width */
     height: 100vh;
     background: #333;
     color: white;
     transition: left 0.3s ease-in-out;
     padding: 20px;
     z-index: 1000;
-    overflow-y: auto;
-}
+  }
 
 
 /* Sidebar Open */
@@ -80,7 +79,7 @@ body{
 /* Shift content when sidebar opens */
 .sidebar.open + .Inner-Section {
     margin-left: 400px;
-    width: calc(100% - 400px);
+    width: calc(100% - 24vw);
 }
 
 /* Hamburger Button */
@@ -112,6 +111,7 @@ body{
 .sidebar-links {
     list-style: none;
     padding: 0;
+    overflow: scroll;
 }
 
 .sidebar-links li {
@@ -192,8 +192,6 @@ body{
   list-style: none;
   margin-top: 20px;
   height: 90%;
-  overflow-y: auto;
-  scrollbar-width: none;
 }
 
 .sidebar-links::-webkit-scrollbar {

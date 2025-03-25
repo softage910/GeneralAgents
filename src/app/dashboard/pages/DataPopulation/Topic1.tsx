@@ -15,9 +15,6 @@ import Trello2 from '../../../../../public/Images/Trello_WellPopulatedBoard.png'
 
 
 export default function FirTopic() {
-    
-
-
     return (
         <>
         <p className="p">When creating data to train Ace, it is important to have a full-fledged, &apos;real&apos;

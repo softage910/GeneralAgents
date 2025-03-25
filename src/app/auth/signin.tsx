@@ -171,9 +171,6 @@ export default function SignInPage() {
         }
     };
     
-    
-    
-
     // const handleSignIn = useCallback(async (e: React.FormEvent) => {
     //     e.preventDefault();
     //     setLoginError(null);

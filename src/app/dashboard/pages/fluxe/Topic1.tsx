@@ -145,8 +145,8 @@ export default function FirstTopic() {
                 <li>
                     <div className="inline-container" style={{ display: "flex", alignItems: 'center', gap: '10px' }}>
                         <span>To stop a recording use the shortcut :</span>
-                        <figure className='short' style={{ maxHeight: '50px', width: 'auto' }}>
-                            <Image src={short} width={200} height={50} alt="Shortcut" style={{ borderRadius: "7px" }} />
+                        <figure className='short' style={{  display: "flex", alignItems: "center", margin: "0" }}>
+                            <Image src={short} width={300} height={80} alt="Shortcut" style={{ borderRadius: "7px" , verticalAlign: "middle" }} />
                         </figure>
                     </div>
 

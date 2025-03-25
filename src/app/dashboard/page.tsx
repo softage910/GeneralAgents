@@ -20,6 +20,7 @@ import PromptsInstructions from "./pages/PromptsInstructions";
 import FinalCheck from "./pages/FinalCheck";
 import Admin from "./pages/Admin";
 import Glossary from "./pages/Glossary";
+import Report from './pages/Report';
 
 type ModuleInfo = {
   day: string;
@@ -36,13 +37,22 @@ export default function Dashboard() {
   const [isOpen, setIsOpen] = useState(false);
   const [userType, setUserType] = useState<string | null>(null);
 
-  const baseModules = [
-    "Onboarding", "Introduction To Fluxe", "Introduction To Engine", 
+  let baseModules = [
+    "Onboarding", "Report", "Introduction To Fluxe", "Introduction To Engine", 
     "Data Creation Guidelines", "Importance of Data Population and Diversity", 
     "Prompts: Instructions and Annotations", "Prompting Basics",
     "Extensive Tool Coverage And Function Mapper", "Suggested Reading Materials", 
     "Final Checklist", "Glossary"
   ];
+
+  if (userType === "In-House Team") {
+    baseModules = baseModules.filter(module => !["Onboarding", "Extensive Tool Coverage And Function Mapper","Suggested Reading Materials"].includes(module));
+  }
+  
+  if (userType === "Domain Expert") {
+    baseModules = baseModules.filter(module => !["Report", "Extensive Tool Coverage And Function Mapper","Suggested Reading Materials"].includes(module));
+  }
+  
 
   const dayModules: { [key: string]: string[] } = {
     "DataList": userType === "ADMIN" ? ["ADMIN", ...baseModules] : baseModules,
@@ -57,6 +67,7 @@ export default function Dashboard() {
         component: ({
             "ADMIN": Admin,
             "Onboarding": UserDashboard,
+            "Report": Report,
             "Introduction To Fluxe": Fluxe,
             "Introduction To Engine": Engine,
             "Data Creation Guidelines": DataCreation,

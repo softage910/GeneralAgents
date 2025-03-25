@@ -13,8 +13,8 @@ interface User {
   name: string;
   joiningdate: string;
   status: "Pending" | "Joined";
-  type: "USER" | "ADMIN";
-}
+  type: "Domain Expert" | "ADMIN" | "In-House Team";
+} 
 
 export default function AdminPage() {
   const [users, setUsers] = useState<User[]>([]);
@@ -40,7 +40,7 @@ export default function AdminPage() {
           name: data[key].name || "-",
           joiningdate: data[key].joiningdate || "-",
           status: data[key].status as "Pending" | "Joined",
-          type: data[key].type as "USER" | "ADMIN",
+          type: data[key].type as "Domain Expert" | "ADMIN" | "In-House Team",
         }));
         setUsers(userList);
       }
@@ -55,7 +55,7 @@ export default function AdminPage() {
         name: "-",
         joiningdate: "-",
         status: "Pending",
-        type: "USER",
+        type: "Domain Expert",
         invitedAt: new Date().toISOString(),
       });
 
@@ -65,7 +65,7 @@ export default function AdminPage() {
     }
   };
 
-  const handleTypeChange = async (userId: string, newType: "USER" | "ADMIN") => {
+  const handleTypeChange = async (userId: string, newType: "Domain Expert" | "ADMIN" | "In-House Team") => {
     try {
       await update(ref(database, `invitedUsers/${userId}`), {
         type: newType,
@@ -138,11 +138,12 @@ export default function AdminPage() {
                     <select
                       value={user.type}
                       onChange={(e) =>
-                        handleTypeChange(user.id, e.target.value as "USER" | "ADMIN")
+                        handleTypeChange(user.id, e.target.value as "Domain Expert" | "ADMIN" | "In-House Team")
                       }
                     >
-                      <option value="USER">USER</option>
+                      <option value="Domain Expert">Domain Expert</option>
                       <option value="ADMIN">ADMIN</option>
+                      <option value="In-House Team">In-House Team</option>
                     </select>
                   </td>
                   <td>
