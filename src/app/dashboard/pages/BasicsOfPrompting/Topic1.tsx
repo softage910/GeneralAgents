@@ -181,12 +181,11 @@ export default function FirstTopic() {
                         <div className="Onboarding-Content">
                             <div className="Content-Video">
                                 {/* <h1>(Space For Onboarding Video)</h1> */}
-                                <div style={{ position: "relative", paddingTop: "56.25%" }}><iframe src="https://iframe.mediadelivery.net/embed/394091/6549b683-2ee4-4b2a-ba5d-3f6afa0c5dcd?autoplay=false&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style={{position:"absolute",top:"0",height:"100%", width: "100%" }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"></iframe></div>
+                                <div style={{ position: "relative", paddingTop: "56.25%" }}><iframe src="https://iframe.mediadelivery.net/embed/393476/79fd2fea-a874-4662-98e6-6c2ec2edaf9d?autoplay=true&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style={{position:"absolute",top:"0",height:"100%", width: "100%" }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"></iframe></div>
                             </div>
                         </div>
                     </ul>
                 </li>
-
 
                 <li><strong>Non-Contextual</strong>
                 <br />
@@ -199,7 +198,7 @@ export default function FirstTopic() {
                         <div className="Onboarding-Content">
                             <div className="Content-Video">
                                 {/* <h1>(Space For Onboarding Video)</h1> */}
-                                <div style={{ position: "relative", paddingTop: "56.25%" }}><iframe src="https://iframe.mediadelivery.net/embed/394091/ac15a9bb-caa5-4d13-8a91-a6d40d4a5b03?autoplay=false&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style={{position:"absolute",top:"0",height:"100%", width: "100%"}} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"></iframe></div>
+                                <div style={{ position: "relative", paddingTop: "56.25%" }}><iframe src="https://iframe.mediadelivery.net/embed/393476/7c2bb1b7-d1c4-44af-8cfa-831dc725db73?autoplay=true&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style={{position:"absolute",top:"0",height:"100%", width: "100%"}} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"></iframe></div>
                             </div>
                         </div>
                     </ul>
@@ -221,7 +220,7 @@ export default function FirstTopic() {
                         <div className="Onboarding-Content">
                             <div className="Content-Video">
                                 {/* <h1>(Space For Onboarding Video)</h1> */}
-                                <div style={{ position: "relative", paddingTop: "56.25%" }}><iframe src="https://iframe.mediadelivery.net/embed/394091/3b85cba3-62b5-48ac-8789-353457b17c11?autoplay=false&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style={{position:"absolute",top:"0",height:"100%", width: "100%" }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"></iframe></div>
+                                <div style={{ position: "relative", paddingTop: "56.25%" }}><iframe src="https://iframe.mediadelivery.net/embed/393476/d74be2f4-8a8a-45a5-9db6-013c6e52f207?autoplay=true&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style={{position:"absolute",top:"0",height:"100%", width: "100%" }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"></iframe></div>
                             </div>
                         </div>
                     </ul>
@@ -235,7 +234,7 @@ export default function FirstTopic() {
                         <div className="Onboarding-Content">
                             <div className="Content-Video">
                                 {/* <h1>(Space For Onboarding Video)</h1> */}
-                                <div style={{ position: "relative", paddingTop: "56.25%" }}><iframe src="https://iframe.mediadelivery.net/embed/394091/66425a1d-06fc-4f5b-9767-fd53235d740d?autoplay=false&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style={{position:"absolute",top:"0",height:"100%", width: "100%" }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"></iframe></div>
+                                <div style={{ position: "relative", paddingTop: "56.25%" }}><iframe src="https://iframe.mediadelivery.net/embed/393476/1b4424d1-cabd-4ffc-b07d-ae3dd81c2952?autoplay=true&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style={{position:"absolute",top:"0",height:"100%", width: "100%" }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"></iframe></div>
                             </div>
                         </div>
                     </ul>

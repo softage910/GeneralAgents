@@ -47,9 +47,28 @@ export default function AdminPage() {
     });
   }, []);
 
+  // const handleInviteUser = async () => {
+  //   try {
+  //     const newUserRef = push(ref(database, "invitedUsers")); // Create new entry
+  //     await set(newUserRef, {
+  //       email: inviteEmail,
+  //       name: "-",
+  //       joiningdate: "-",
+  //       status: "Pending",
+  //       type: "Domain Expert",
+  //       invitedAt: new Date().toISOString(),
+  //     });
+
+  //     setInviteEmail(""); // Clear input after invite
+  //   } catch (error) {
+  //     console.error("Error inviting user:", error);
+  //   }
+  // };
+
+
   const handleInviteUser = async () => {
     try {
-      const newUserRef = push(ref(database, "invitedUsers")); // Create new entry
+      const newUserRef = push(ref(database, "invitedUsers"));
       await set(newUserRef, {
         email: inviteEmail,
         name: "-",
@@ -58,12 +77,21 @@ export default function AdminPage() {
         type: "Domain Expert",
         invitedAt: new Date().toISOString(),
       });
-
-      setInviteEmail(""); // Clear input after invite
+  
+      // Send email using API
+      await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: inviteEmail }),
+      });
+  
+      setInviteEmail("");
+      console.log("User invited and email sent!");
     } catch (error) {
       console.error("Error inviting user:", error);
     }
   };
+  
 
   const handleTypeChange = async (userId: string, newType: "Domain Expert" | "ADMIN" | "In-House Team") => {
     try {
