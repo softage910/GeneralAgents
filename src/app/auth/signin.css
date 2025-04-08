@@ -1,0 +1,280 @@
+/* 
+  
+  .mainsection{
+      width: 100%;
+      background-color:#141413;
+    display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+  }
+  
+  .container{
+    padding: 70px;
+    color: white;
+  }
+  
+  
+  .back-css{
+    margin-top: 40px;
+    width: 100%;
+      color: black;
+  }
+  
+  .description-section{
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      font-size: 1.5rem;
+  }
+  
+  .Logo{
+      display: flex;
+      justify-content: center;
+  }
+  
+  .heading{
+      text-align: center;
+      font-size:x-large;
+  }
+  
+  .heading h1 span{
+          background: -webkit-linear-gradient(    rgb(9, 45, 80),
+          rgb(230, 34, 34));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-weight: bold;
+          width: fit-content;          
+  }
+  
+  
+  .heading h1 span::before{
+      content: "AI-Operations";
+      animation: animate infinite 3s;
+      padding-left: 10px;
+  }
+  
+  
+  @keyframes animate {
+  
+      0% {
+          content: "AI-Operations";
+      }
+  
+      50% {
+          content: "AI-Audit";
+      }
+  
+      100% {
+          content: "AI-Recording";
+      }
+  }
+  
+  .main-content{
+      width: 80%;
+      margin: 50px auto auto auto;
+      font-size: larger;
+  }
+  
+  ul {
+      list-style: none;
+      text-align: center;
+    }
+    
+  
+  li{
+      margin-top: 10px;
+  }
+  
+  .login-heading{
+    text-align: center;
+    font-weight: bolder;
+    font-size: x-large;
+  }
+  
+  
+  @media only screen and (max-width: 950px) {
+
+    .mainsection{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+  
+  .togglebutton{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .togglebutton p{
+    padding: 0px 2px 0px 2px;
+  }
+  
+  .Link{
+    color: blue;
+  } */
+
+
+
+
+/* General Styles */
+
+.main{
+  width: 100%;
+  min-height: 100vh;
+  background-color: #141413;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainsection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: black;
+}
+
+.container {
+  text-align: center;
+}
+
+/* Logo */
+.Logo {
+  display: flex;
+  justify-content: center;
+}
+
+/* Form Card */
+.back-css {
+  width: fit-content;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.inner-card{
+  background: rgba(23, 23, 23, 0.045); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  border: solid rgba(255, 255, 255, 0.2) 1px; /* Subtle white border */
+  box-shadow: 4px 0px 30px rgba(0, 0, 0, 0.618);
+  /* height: 50vh;
+  overflow: scroll; */
+
+}
+
+/* Heading */
+.login-heading {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+
+
+/* Login Button */
+.login-btn{
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Success & Error Messages */
+
+/* Responsive Adjustments */
+@media only screen and (max-width: 768px) {
+  .container {
+      padding: 30px;
+  }
+
+  .back-css {
+      width: 90%;
+      padding: 15px;
+  }
+
+  .login-heading {
+      font-size: 1.3rem;
+  }
+
+  input[type="email"] {
+      font-size: 0.9rem;
+  }
+
+  .login-btn {
+      font-size: 0.9rem;
+      padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .mainsection {
+      padding: 15px;
+  }
+
+  .container {
+      padding: 20px;
+  }
+
+  .back-css {
+      width: 95%;
+      padding: 12px;
+  }
+
+  .login-heading {
+      font-size: 1.2rem;
+  }
+
+  input[type="email"] {
+      font-size: 0.85rem;
+      padding: 10px;
+  }
+
+  .login-btn {
+      font-size: 0.85rem;
+      padding: 8px;
+  }
+}
+
+
+.togglebutton{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;  
+}
+
+.togglebutton p{
+  padding: 0px 2px 0px 2px;
+}
+
+.Link{
+  color: blue;
+}
+
+.custom-google{
+  cursor: pointer;
+
+
+  
+}
+.custom-google:hover{
+  background-color: rgb(240, 235, 235);
+}

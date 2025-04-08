@@ -1,0 +1,447 @@
+/* Importing Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+
+/* fallback */
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v226/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsLjBuVY.woff2) format('woff2');
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #212121;
+}
+
+
+.Dashboard-Section{
+  width: 100%;
+  display: flex;
+}
+
+
+body{
+    color: white !important;
+}
+
+/* Sidebar - Initially Hidden */
+.sidebar {
+    position: fixed;
+    left: -100%; /* Completely hidden */
+    top: 0;
+    width: 24vw; /* Default width */
+    height: 100vh;
+    background: #333;
+    color: white;
+    transition: left 0.3s ease-in-out;
+    padding: 20px;
+    z-index: 1000;
+  }
+
+
+/* Sidebar Open */
+.sidebar.open {
+    left: 0;
+}
+
+/* Main Content (Inner Section) */
+.Inner-Section {
+    margin-left: 0;
+    transition: margin-left 0.3s ease-in-out;
+    width: 100%;
+}
+
+/* Shift content when sidebar opens */
+.sidebar.open + .Inner-Section {
+    margin-left: 400px;
+    width: calc(100% - 24vw);
+}
+
+/* Hamburger Button */
+.hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: transparent;
+    border: none;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    z-index: 1100;
+ }
+
+/* Close Button */
+.close-btn {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+/* Sidebar Links */
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    overflow: scroll;
+}
+
+.sidebar-links li {
+    padding: 10px;
+}
+
+.sidebar-links li.active {
+    background: #555;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 80%; /* Take more space on smaller screens */
+    }
+
+    .sidebar.open + .Inner-Section {
+        margin-left: 0; /* Do not push content on small screens */
+        width: 100%;
+    }
+
+    .hamburger {
+        font-size: 30px; /* Smaller icon on mobile */
+    }
+}
+
+
+.sidebar-header{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* .sidebar .sidebar-header h2 {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: 23px;
+} */
+
+.sidebar-links h4 {
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  margin: 10px 0;
+  position: relative;
+}
+
+/* .sidebar-links h4 span {
+  opacity: 1;
+}
+
+.sidebar:hover .sidebar-links h4 span {
+  opacity: 0;
+} */
+
+.sidebar-links .menu-separator {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  transform: scaleX(1);
+  transform: translateY(-50%);
+  background: #4f52ba;
+  transform-origin: right;
+  transition-delay: 0.2s;
+}
+
+.sidebar:hover .sidebar-links .menu-separator {
+  transition-delay: 0s;
+  transform: scaleX(0);
+}
+
+.sidebar-links {
+  list-style: none;
+  margin-top: 20px;
+  height: 90%;
+}
+
+.sidebar-links::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-links li a {
+  display: flex;
+  align-items: center;
+  gap: 0 20px;
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 15px 10px;
+  text-decoration: none;
+  transition: 0.2s ease;
+  font-size: 0.85rem;
+}
+
+.sidebar-links li a:hover {
+  color: white;
+  background: #2f2f2f;
+  border-radius: 10px;
+}
+
+
+.user-account {  background: rgba(23, 23, 23, 0.6); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+
+  border: solid rgba(255, 255, 255, 0.2) 1px; /* Subtle white border */
+  box-shadow: 4px 0px 30px rgba(0, 0, 0, 0.982); /* Soft shadow effect */
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+}
+
+.user-profile {
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding: 10px;
+}
+
+.user-profile h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.user-profile span {
+  font-size: 0.775rem;
+  font-weight: 600;
+}
+
+.user-detail {
+  display: flex;
+  flex-direction: column;
+justify-content: center;
+align-items: center;
+border-right: white 0.025px solid;
+padding: 10px;
+}
+
+.Logout-button{
+  padding: 10px;
+}
+
+/* .sidebar:hover .user-account {
+  background: #fff;
+  border-radius: 4px;
+} */
+
+.InnerDashboard{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.NextPrev-btn{
+    display: flex;
+    justify-content: end;
+    width: 85%;
+    background-color: #303030;
+    margin-top: 10px;
+    border-radius: 0px 0px 30px 30px;
+    padding: 10px;
+}
+
+.NextPrev-btn button{
+    text-align: center;
+     padding: 10px;
+     color: black;
+     background-color: white;
+     min-width: 150px;
+     border-radius: 20px;
+     cursor: pointer;
+     margin: 0px 10px 0px 10px;
+     backdrop-filter: blur(10px); 
+     -webkit-backdrop-filter: blur(10px);
+     border: solid rgba(255, 255, 255, 0.2) 1px; 
+     box-shadow: 4px 0px 15px rgba(0, 0, 0, 0.982);
+}
+
+.NextPrev-btn button:hover{
+    color: white;
+    background-color: black;
+    transition: 0.25s;
+  
+  }
+
+
+/* .Inner-Section{
+  width: 100%;
+  background: #212121;
+  color: white;
+} */
+
+.Dashboard-Navbar{
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+  height: 10vh;
+}
+
+
+
+.Dashboard-Container{
+  width: 85%;
+}
+
+@media only screen and (max-width: 1460px) {
+  .sidebar{
+    width: 30%;
+  }
+}
+
+
+.sidebar-links li{
+  padding: 5px;
+}
+
+.sidebar-links li.active {
+  background-color: #212121; /* Change to your theme color */
+  color: white;
+  border-radius: 10px;
+}
+
+.sidebar-links li.active a {
+  color: white;
+  font-size: 0.85rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .Inner-Dashboard {
+  display: flex; 
+  gap: 10px; 
+  justify-content: center; 
+} */
+
+/* .Inner-Dashboard button {
+  background-color: grey;
+  color: white; 
+  border: none; 
+  border-radius: 4px; 
+  padding: 10px 20px; 
+  cursor: pointer; 
+  font-size: 25px; 
+  height: 10%;
+  width: 10%;
+  
+} */
+
+/* .Inner-Dashboard button:hover {
+  background-color: darkgrey; 
+} */
+
+
+
+.Logout-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Logout-button a{
+  color: white;
+  list-style: none;
+  text-decoration: none;
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Logout-button a span{
+  margin-right: 5px;
+  font-size: xx-large;
+}
+
+.dropdown-menu {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.locked a {
+  opacity: 0.5;
+  /* pointer-events: none; */
+}
+
+.locked:not(:first-child) a {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+
+.locked {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.unlocked {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+

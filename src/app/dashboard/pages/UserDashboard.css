@@ -1,0 +1,323 @@
+.Progress-Section{
+    height: 80vh;
+    overflow: scroll;
+  }
+  
+  .Xyz {
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 10px;
+    background: rgba(23, 23, 23, 0.6); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border: solid rgba(255, 255, 255, 0.2) 1px; /* Subtle white border */
+    box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.982);
+  }
+  
+  .progressbar {
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 50%;
+    position: relative;
+    background: conic-gradient(green 0deg, green 0deg, #212121 0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .progressbar::before {
+    content: "";
+    width: 90px; /* Smaller inner circle for narrow ring effect */
+    height: 90px;
+    position: absolute;
+    background: #303030; /* Match container background */
+    border-radius: 50%;
+  }
+  .progressbar .title {
+    position: absolute;
+    font-size: 22px;
+    font-weight: bold;
+    z-index: 2;
+    color: white;
+  }
+  
+  .progressbar .overlay {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #212121;
+  }
+  .progressbar .left,
+  .progressbar .right {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 10px solid green;
+    border-radius: 100px 0px 0px 100px;
+    border-right: 0;
+    transform-origin: right;
+  }
+  .progressbar .left {
+    animation: load1 1s linear forwards;
+  }
+  .progressbar:nth-of-type(2) .right,
+  .progressbar:nth-of-type(3) .right {
+    animation: load2 0.5s linear forwards 1s;
+  }
+  .progressbar:last-of-type .right,
+  .progressbar:first-of-type .right {
+    animation: load3 0.8s linear forwards 1s;
+  }
+  @keyframes load1 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+  @keyframes load2 {
+    0% {
+      z-index: 100;
+      transform: rotate(180deg);
+    }
+    100% {
+      z-index: 100;
+      transform: rotate(270deg);
+    }
+  }
+  @keyframes load3 {
+    0% {
+      z-index: 100;
+      transform: rotate(180deg);
+    }
+    100% {
+      z-index: 100;
+      transform: rotate(315deg);
+    }
+  }
+  
+  .locked {
+    position: relative;
+  }
+  
+  .lock-icon {
+    position: absolute;
+    font-size: 24px;
+    color: red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .Section-Heading{
+    text-align: center;
+  }
+  
+  .ProgressbarContent{
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    background-color: #303030;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+
+
+  .ProgressbarContent h1{
+    font-weight: bold;
+    font-size: x-large;
+  }
+
+  .ProgressbarContent p{
+    font-size: larger;
+  }
+  
+  .ProgressGraph{
+    display: flex;
+    width: 90%;
+    margin: 30px auto auto auto;
+    justify-content: space-between;
+  }
+
+  .Onboarding-Content{
+    display: flex;
+    width: 60%;
+    margin: 30px auto auto auto;
+    justify-content: center;
+  }
+
+  .Content-Video{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+  }
+
+  /* .Content-Video button{
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+  } */
+
+  .Content-Video div{
+    padding: 20px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 45vh;
+  }
+
+  .Content-Video div iframe{
+    width: 80%;
+    height: 100%;
+    border-radius: 20px;
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border: solid rgba(255, 255, 255, 0.2) 1px; /* Subtle white border */
+    box-shadow: 4px 0px 30px rgba(0, 0, 0, 0.982);
+  }
+
+  .Content-Video button:hover{
+    background-color: black;
+    color: white;
+  }
+  
+  .progress-container {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 50px;
+    background-color: #303030;
+    border-radius: 20px;
+  }
+  
+  .Graph-Container{
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 50px;
+    background-color: #303030;
+    border-radius: 20px;
+  
+  }
+  /* 
+  
+  
+  
+  
+  .progress-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    align-items: center;
+    padding: 50px;
+  }
+  
+  .Xyz {
+    background: #303030;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 0px 10px 0px 10px;
+  }
+  
+  .progressbar {
+    width: 150px;
+    height: 150px;
+    font-size: 30px;
+    color: #fff;
+    border-radius: 50%;
+    position: relative;
+    background: #212121;
+    text-align: center;
+    line-height: 150px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .progressbar::after {
+    content: "%";
+  }
+  
+  .progressbar .title {
+    position: absolute;
+    z-index: 10;
+  }
+  
+  .progressbar .circle {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    clip: rect(0, 150px, 150px, 75px);
+  }
+  
+  .progressbar .circle .progress {
+    width: 100%;
+    height: 100%;
+    background: green;
+    border-radius: 50%;
+    clip: rect(0, 75px, 150px, 0);
+    transform: rotate(0deg);
+    position: absolute;
+  }
+  
+  .progressbar .circle .progress.right {
+    animation: rotateRight 1s linear forwards;
+  }
+  
+  .progressbar .circle .progress.left {
+    animation: rotateLeft 1s linear forwards;
+    display: none; /* Initially hidden, only shown when progress > 50% */
+  /* }
+  
+  @keyframes rotateRight {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(180deg);
+    }
+  }
+  
+  @keyframes rotateLeft {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(180deg);
+    }
+  } */
+  
+  
+  

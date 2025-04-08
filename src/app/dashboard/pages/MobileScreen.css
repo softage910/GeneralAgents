@@ -1,0 +1,10 @@
+/*This section is made to add css for the mobile devices so that the website is overall reponsive*/
+
+.Mobile-design{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.143);
+}
