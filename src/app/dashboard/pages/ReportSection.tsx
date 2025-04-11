@@ -2,6 +2,7 @@
 
 // @ts-expect-error: html2pdf types not available
 import html2pdf from "html2pdf.js";
+
 import {
   Chart as ChartJS,
   LineController,
@@ -40,11 +41,6 @@ export default function GenerateReportButton({
 
     for (const tier of tiers) {
       const users = getTierUsers(tier, allData, selectedParam);
-      const validUsers = users.filter(
-        (u) => typeof u.value === "number" && !isNaN(u.value)
-      );
-
-      if (!validUsers.length) continue;
 
       const color = tier === "low" ? "red" : tier === "mid" ? "orange" : "green";
 
@@ -59,13 +55,25 @@ export default function GenerateReportButton({
       chartHeading.style.fontSize = "15px";
       tierBlock.appendChild(chartHeading);
 
+      if (!users.length) {
+        const noDataNote = document.createElement("p");
+        noDataNote.innerText = "❌ No data available for this tier.";
+        noDataNote.style.fontStyle = "italic";
+        noDataNote.style.color = "#666";
+        noDataNote.style.marginBottom = "1rem";
+        tierBlock.appendChild(noDataNote);
+        wrapper.appendChild(tierBlock);
+        continue;
+      }
+
+      // Chart
       const chartCanvas = document.createElement("canvas");
       chartCanvas.width = 800;
       chartCanvas.height = 300;
       const ctx = chartCanvas.getContext("2d");
       if (!ctx) continue;
 
-      const sortedChart = [...validUsers].sort((a, b) => a.value - b.value);
+      const sortedChart = [...users].sort((a, b) => a.value - b.value);
 
       new ChartJS(ctx, {
         type: "line",
@@ -78,7 +86,7 @@ export default function GenerateReportButton({
               borderColor: color,
               backgroundColor: "transparent",
               fill: false,
-              tension: 0.3,
+              tension: 0, // Ensure no Bezier curves to avoid 'cp1x' bug
               pointRadius: 3,
               pointHoverRadius: 4,
             },
@@ -104,8 +112,8 @@ export default function GenerateReportButton({
       img.style.margin = "1rem 0";
       tierBlock.appendChild(img);
 
-      const sortedTable = [...validUsers].sort((a, b) => b.value - a.value);
-
+      // Table
+      const sortedTable = [...users].sort((a, b) => b.value - a.value);
       const table = document.createElement("table");
       table.style.width = "100%";
       table.style.borderCollapse = "collapse";
@@ -136,6 +144,7 @@ export default function GenerateReportButton({
 
       table.appendChild(tbody);
       tierBlock.appendChild(table);
+
       wrapper.appendChild(tierBlock);
     }
 
@@ -155,21 +164,28 @@ export default function GenerateReportButton({
     tier: "low" | "mid" | "high",
     allData: Record<string, Record<string, number>>,
     param: string
-  ): { email: string; value: number }[] => {
+  ) => {
     const users = Object.entries(allData)
       .filter(([, vals]) => vals[param] > 0)
       .map(([email, vals]) => ({ email, value: vals[param] }));
 
-    if (!users.length) return [];
+    const validUsers = users.filter(
+      (u) => typeof u.value === "number" && !isNaN(u.value)
+    );
 
-    const min = Math.min(...users.map((u) => u.value));
-    const max = Math.max(...users.map((u) => u.value));
+    if (!validUsers.length) return [];
 
-    if (min === max) return tier === "high" ? users : [];
+    const min = Math.min(...validUsers.map((u) => u.value));
+    const max = Math.max(...validUsers.map((u) => u.value));
+
+    // If all values are same, all belong to high tier
+    if (min === max) {
+      return tier === "high" ? validUsers : [];
+    }
 
     const normalize = (val: number) => ((val - min) / (max - min)) * 100;
 
-    return users
+    return validUsers
       .map((u) => ({ ...u, norm: normalize(u.value) }))
       .filter((u) =>
         tier === "low"
