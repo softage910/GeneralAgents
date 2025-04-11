@@ -2,7 +2,6 @@
 
 // @ts-expect-error: html2pdf types not available
 import html2pdf from "html2pdf.js";
-
 import {
   Chart as ChartJS,
   LineElement,
@@ -44,32 +43,32 @@ export default function GenerateUserReportButton({
     let paramCount = 0;
 
     for (const [param, userValue] of Object.entries(userData)) {
-      if (userValue <= 0) continue;
+      if (typeof userValue !== "number" || userValue <= 0 || isNaN(userValue)) continue;
 
       const allValues = Object.entries(allData)
         .map(([email, values]) => ({ email, value: values[param] }))
-        .filter((v) => v.value > 0);
+        .filter((v) => typeof v.value === "number" && v.value > 0 && !isNaN(v.value));
 
       const sorted = [...allValues].sort((a, b) => b.value - a.value);
-      // Generate dense ranks for all users
-const rankMap: Record<string, number> = {};
-let rankCounter = 1;
-let sameScoreCount = 0;
-let lastValue: number | null = null;
 
-for (const user of sorted) {
-  if (user.value === lastValue) {
-    sameScoreCount++;
-  } else {
-    rankCounter += sameScoreCount;
-    sameScoreCount = 1;
-  }
-  rankMap[user.email] = rankCounter;
-  lastValue = user.value;
-}
+      // Dense ranking
+      const rankMap: Record<string, number> = {};
+      let rankCounter = 1;
+      let sameScoreCount = 0;
+      let lastValue: number | null = null;
 
-const rank = rankMap[selectedEmail];
+      for (const user of sorted) {
+        if (user.value === lastValue) {
+          sameScoreCount++;
+        } else {
+          rankCounter += sameScoreCount;
+          sameScoreCount = 1;
+        }
+        rankMap[user.email] = rankCounter;
+        lastValue = user.value;
+      }
 
+      const rank = rankMap[selectedEmail];
 
       const min = Math.min(...sorted.map((u) => u.value));
       const max = Math.max(...sorted.map((u) => u.value));
@@ -112,9 +111,14 @@ const rank = rankMap[selectedEmail];
       `;
       section.appendChild(table);
 
-      const rawValues = [...new Set(sorted.map((u) => u.value))].sort((a, b) => a - b);
+      const rawValues = [...new Set(sorted.map((u) => u.value))]
+        .filter((v) => typeof v === "number" && !isNaN(v))
+        .sort((a, b) => a - b);
+
       const mean = rawValues.reduce((a, b) => a + b, 0) / rawValues.length;
-      const stdDev = Math.sqrt(rawValues.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / rawValues.length);
+      const stdDev = Math.sqrt(
+        rawValues.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / rawValues.length
+      );
       const threshold = stdDev * 0.4;
 
       const clustered: { value: number; label: string; radius: number }[] = [];
@@ -138,11 +142,15 @@ const rank = rankMap[selectedEmail];
         }
       });
 
-      const finalData = clustered.sort((a, b) => a.value - b.value);
+      const finalData = clustered
+        .filter((d) => typeof d.value === "number" && !isNaN(d.value))
+        .sort((a, b) => a.value - b.value);
+
+      if (!finalData.length) continue;
 
       const canvas = document.createElement("canvas");
       canvas.width = 500;
-      canvas.height = 247; // Reduced height to avoid overflow
+      canvas.height = 247;
       const ctx = canvas.getContext("2d");
       if (!ctx) continue;
 
@@ -157,7 +165,7 @@ const rank = rankMap[selectedEmail];
               borderColor: "#83aac8",
               backgroundColor: "transparent",
               fill: false,
-              tension: 0.3,
+              tension: 0, // 🔒 Prevent curve (cp1x error)
               pointRadius: finalData.map((d) => d.radius),
               pointBackgroundColor: "#83aac8",
               pointBorderColor: "#83aac8",
@@ -205,38 +213,13 @@ const rank = rankMap[selectedEmail];
       }
     }
 
-    // Append final page if anything remains
     if (page.childNodes.length > 0) {
-      const content = Array.from(page.childNodes).some((node) => {
-        return (
-          ((node as HTMLElement).innerText?.trim().length ?? 0) > 0 ||
-          !!(node as HTMLElement).querySelector("img")
-        );
-        
-      });
-      if (content) {
-        wrapper.appendChild(page);
-      }
+      wrapper.appendChild(page);
     }
 
-    // ✅ Final cleanup — Remove last empty page if present
-    const pages = wrapper.querySelectorAll("div.page-block, div");
-    const last = pages[pages.length - 1] as HTMLElement;
-    const isEmpty =
-      last &&
-      last.innerText.trim().length === 0 &&
-      !last.querySelector("table") &&
-      !last.querySelector("img") &&
-      !last.querySelector("canvas");
-
-    if (isEmpty) {
-      wrapper.removeChild(last);
-    }
-
-    // 📄 Generate PDF
     html2pdf()
       .set({
-        margin: 0.3, // Reduced margin to better fit
+        margin: 0.3,
         filename: `User-Report-${selectedEmail}.pdf`,
         image: { type: "jpeg", quality: 1 },
         html2canvas: { scale: 2, useCORS: true },
