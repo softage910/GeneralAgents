@@ -14,12 +14,18 @@ import {
 import { Line } from "react-chartjs-2";
 import { initializeApp, getApps } from "firebase/app";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
+import dynamic from "next/dynamic";
 
 import SelectedUser from "./SelectedUser";
 import EmailSearchDropdown from "./EmailSearchDropdown";
 import ParameterDropdown from "./ParameterDropdown";
-import ReportGeneratorButton from "./ReportSection";
-import GenerateUserReportButton from "./generateReport"; // ✅ import user report component
+const ReportGeneratorButton = dynamic(() => import("./ReportSection"), {
+  ssr: false, 
+});
+const GenerateUserReportButton = dynamic(() => import("./generateReport"), {
+  ssr: false, 
+});
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyATgZ3Ifa49BVy7Yo7TAoZdOmL-28t-gDA",
