@@ -1,6 +1,8 @@
 "use client";
 
+// @ts-ignore
 import html2pdf from "html2pdf.js";
+
 import {
   Chart as ChartJS,
   LineController,

@@ -1,6 +1,8 @@
 "use client";
 
+// @ts-ignore
 import html2pdf from "html2pdf.js";
+
 import {
   Chart as ChartJS,
   LineElement,
@@ -206,7 +208,11 @@ const rank = rankMap[selectedEmail];
     // Append final page if anything remains
     if (page.childNodes.length > 0) {
       const content = Array.from(page.childNodes).some((node) => {
-        return (node as HTMLElement).innerText?.trim() || node.querySelector("img");
+        return (
+          ((node as HTMLElement).innerText?.trim().length ?? 0) > 0 ||
+          !!(node as HTMLElement).querySelector("img")
+        );
+        
       });
       if (content) {
         wrapper.appendChild(page);
