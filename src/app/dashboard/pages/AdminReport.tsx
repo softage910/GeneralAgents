@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import html2canvas from "html2canvas";
 import {
   Chart as ChartJS,
   LineElement,
@@ -78,7 +79,7 @@ export default function TieredDashboard() {
     const users = Object.entries(allData)
       .filter(([, vals]) => vals[selectedParam] > 0)
       .map(([email, vals]) => ({ email, value: vals[selectedParam] }))
-      .filter((u) => u.value !== undefined && u.value !== null && !isNaN(u.value));
+      .filter((u) => typeof u.value === "number" && !isNaN(u.value));
 
     if (!users.length) return null;
 
@@ -117,6 +118,39 @@ export default function TieredDashboard() {
     const chartData = getTierData(tier);
     if (!chartData) return null;
     const color = tier === "low" ? "red" : tier === "mid" ? "orange" : "green";
+    const chartId = `chart-${tier}`;
+
+    const handleCopy = async () => {
+      const el = document.getElementById(chartId);
+      if (!el) return;
+
+      const buttons = el.querySelectorAll(".chart-buttons");
+      buttons.forEach((btn) => ((btn as HTMLElement).style.display = "none"));
+
+      const canvas = await html2canvas(el);
+      canvas.toBlob(async (blob) => {
+        if (blob) {
+          await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
+        }
+        buttons.forEach((btn) => ((btn as HTMLElement).style.display = "flex"));
+      });
+    };
+
+    const handleDownload = async () => {
+      const el = document.getElementById(chartId);
+      if (!el) return;
+
+      const buttons = el.querySelectorAll(".chart-buttons");
+      buttons.forEach((btn) => ((btn as HTMLElement).style.display = "none"));
+
+      const canvas = await html2canvas(el);
+      const link = document.createElement("a");
+      link.download = `${tier}-tier-${selectedParam}.png`;
+      link.href = canvas.toDataURL();
+      link.click();
+
+      buttons.forEach((btn) => ((btn as HTMLElement).style.display = "flex"));
+    };
 
     return (
       <div key={tier} style={{ marginBottom: "2rem" }}>
@@ -124,26 +158,49 @@ export default function TieredDashboard() {
           {tier.toUpperCase()} Tier: <span style={{ color }}>{selectedParam}</span>
         </h3>
         <div
+          id={chartId}
           style={{
+            position: "relative",
             backgroundColor: "white",
             borderRadius: "12px",
             height: "50vh",
             padding: "1rem",
           }}
+          onMouseEnter={() => {
+            const btns = document.querySelectorAll(`#${chartId} .chart-buttons`);
+            btns.forEach((btn) => ((btn as HTMLElement).style.opacity = "1"));
+          }}
+          onMouseLeave={() => {
+            const btns = document.querySelectorAll(`#${chartId} .chart-buttons`);
+            btns.forEach((btn) => ((btn as HTMLElement).style.opacity = "0"));
+          }}
         >
+          {/* Buttons */}
+          <div
+            className="chart-buttons"
+            style={{
+              position: "absolute",
+              top: "10px",
+              right: "10px",
+              display: "flex",
+              gap: "8px",
+              opacity: 0,
+              transition: "opacity 0.3s ease",
+              zIndex: 10,
+            }}
+          >
+            <button onClick={handleCopy} style={iconButtonStyle}>📋</button>
+            <button onClick={handleDownload} style={iconButtonStyle}>⬇️</button>
+          </div>
+
           <Line
             data={chartData}
             options={{
               responsive: true,
               maintainAspectRatio: false,
-              plugins: {
-                legend: { position: "top" },
-              },
+              plugins: { legend: { position: "top" } },
               scales: {
-                y: {
-                  beginAtZero: true,
-                  ticks: { precision: 0 },
-                },
+                y: { beginAtZero: true, ticks: { precision: 0 } },
               },
             }}
           />
@@ -152,31 +209,41 @@ export default function TieredDashboard() {
     );
   };
 
+  const iconButtonStyle = {
+    background: "rgba(0,0,0,0.6)",
+    border: "none",
+    borderRadius: "4px",
+    color: "white",
+    padding: "4px 6px",
+    cursor: "pointer",
+    fontSize: "14px",
+  };
+
   return (
     <>
       {showWarning && (
-        <div
-          style={{
-            backgroundColor: "#e74c3c",
-            color: "white",
-            padding: "8px",
-            borderRadius: "6px",
-            marginTop: "10px",
-            textAlign: "center",
-            position: "absolute",
-            top: "10vh",
-            right: "10px",
-            width: "15vw",
-            zIndex: 10,
-          }}
-        >
+        <div style={{
+          backgroundColor: "#e74c3c",
+          color: "white",
+          padding: "8px",
+          borderRadius: "6px",
+          marginTop: "10px",
+          textAlign: "center",
+          position: "absolute",
+          top: "10vh",
+          right: "10px",
+          width: "15vw",
+          zIndex: 10,
+        }}>
           Select a Parameter Before Report Generation
         </div>
       )}
 
-      <div style={{ height: "75vh", overflowY: "scroll", padding: "2rem" }}>
+      <div style={{ height: "75vh", overflowY: "scroll", padding: "2rem",scrollbarWidth: "none",        // Firefox
+    msOverflowStyle: "none",       // IE/Edge
+    WebkitOverflowScrolling: "touch", }}>
         <div style={{ maxWidth: "1000px", margin: "auto" }}>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div style={{ display: "flex", justifyContent: "space-between" ,alignItems:"center"}}>
             <h1 style={{ fontSize: "1.5rem", margin: 0 }}>Report Section</h1>
             <div style={{ display: "flex", gap: "1rem" }}>
               <ParameterDropdown
@@ -193,17 +260,17 @@ export default function TieredDashboard() {
             </div>
           </div>
 
-          <div style={{ display: "flex", justifyContent: "space-between", marginTop: "1rem" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", marginTop: "1rem", alignItems:"center"
+           }}>
             <div>
               {selectedParam && (
-                <h2 style={{ fontSize: "13px", color: "white" }}>
-                  {selectedEmail
-                    ? `${selectedEmail}'s ${selectedParam}`
-                    : `Per Tier Reports of ${selectedParam}`}
-                </h2>
+                <h2 style={{ margin: 0, fontSize: "13px", fontWeight: 500, color: "white" }}>
+                {selectedEmail
+                  ? `${selectedEmail}'s ${selectedParam} till ${new Date(Date.now() - 86400000).toLocaleDateString()}`
+                  : `Per Tier Reports of ${selectedParam} till ${new Date(Date.now() - 86400000).toLocaleDateString()}`}
+              </h2>
               )}
             </div>
-
             <div>
               {selectedEmail && selectedParam ? (
                 <GenerateUserReportButton selectedEmail={selectedEmail} allData={allData} />
@@ -231,7 +298,6 @@ export default function TieredDashboard() {
             </div>
           </div>
 
-          {/* Main Chart Section */}
           {selectedEmail ? (
             <SelectedUser email={selectedEmail} selectedParam={selectedParam} />
           ) : dataLoaded && selectedParam ? (
