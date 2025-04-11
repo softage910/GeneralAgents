@@ -90,6 +90,7 @@ export default function GenerateUserReportButton({
       table.style.borderCollapse = "collapse";
       table.style.fontSize = "11px";
       table.style.marginBottom = "1rem";
+      table.style.marginTop = "1rem";
 
       table.innerHTML = `
         <thead>
