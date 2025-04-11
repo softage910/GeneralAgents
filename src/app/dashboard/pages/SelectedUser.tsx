@@ -57,7 +57,7 @@ const SelectedUser: React.FC<SelectedUserProps> = ({ email, selectedParam }) => 
   const getChartData = () => {
     if (!data || !userPerformance || !Array.isArray(data[selectedParam])) return null;
 
-    const rawValues = data[selectedParam].filter((v: number) => v > 0);
+    const rawValues = data[selectedParam].filter((v: number) => typeof v === "number" && v > 0 && !isNaN(v));
     const values = [...new Set(rawValues)].sort((a, b) => a - b);
     if (!values.length) return null;
 
@@ -69,16 +69,20 @@ const SelectedUser: React.FC<SelectedUserProps> = ({ email, selectedParam }) => 
     const threshold = stdDev * 0.4;
 
     const importantPoints = new Map<number, string>();
-    importantPoints.set(topValue, "Top Performer");
-    if (userValue !== undefined && userValue !== 0) importantPoints.set(userValue, email);
+    if (typeof topValue === "number") importantPoints.set(topValue, "Top Performer");
+    if (typeof userValue === "number" && userValue > 0 && !isNaN(userValue)) {
+      importantPoints.set(userValue, email);
+    }
 
     const clustered: { value: number; label: string; radius: number }[] = [];
     const added = new Set<number>();
     let lastAdded: number | null = null;
 
     for (const [val, label] of importantPoints.entries()) {
-      clustered.push({ value: val, label, radius: 7 });
-      added.add(val);
+      if (typeof val === "number" && !isNaN(val)) {
+        clustered.push({ value: val, label, radius: 7 });
+        added.add(val);
+      }
     }
 
     values.forEach((val) => {
@@ -89,7 +93,7 @@ const SelectedUser: React.FC<SelectedUserProps> = ({ email, selectedParam }) => 
       }
     });
 
-    const finalData = clustered.sort((a, b) => a.value - b.value);
+    const finalData = clustered.filter(d => typeof d.value === "number" && !isNaN(d.value)).sort((a, b) => a.value - b.value);
 
     return {
       labels: finalData.map((d) => d.label),
@@ -101,7 +105,7 @@ const SelectedUser: React.FC<SelectedUserProps> = ({ email, selectedParam }) => 
           backgroundColor: "transparent",
           borderWidth: 2,
           fill: false,
-          tension: 0.3,
+          tension: 0,
           pointRadius: finalData.map((d) => d.radius),
           pointBackgroundColor: "#83aac8",
           pointBorderColor: "#83aac8",
@@ -116,20 +120,15 @@ const SelectedUser: React.FC<SelectedUserProps> = ({ email, selectedParam }) => 
   const handleCopy = async () => {
     const chartElement = document.getElementById("selected-user-chart");
     if (!chartElement) return;
-
     const buttons = chartElement.querySelectorAll(".chart-buttons");
     buttons.forEach((btn) => ((btn as HTMLElement).style.display = "none"));
 
     const canvas = await html2canvas(chartElement);
     canvas.toBlob(async (blob) => {
       if (blob) {
-        try {
-          await navigator.clipboard.write([
-            new ClipboardItem({ "image/png": blob }),
-          ]);
-        } catch {
-          alert("Failed to copy chart.");
-        }
+        await navigator.clipboard.write([
+          new ClipboardItem({ "image/png": blob }),
+        ]);
       }
       buttons.forEach((btn) => ((btn as HTMLElement).style.display = "flex"));
     });
@@ -138,7 +137,6 @@ const SelectedUser: React.FC<SelectedUserProps> = ({ email, selectedParam }) => 
   const handleDownload = async () => {
     const chartElement = document.getElementById("selected-user-chart");
     if (!chartElement) return;
-
     const buttons = chartElement.querySelectorAll(".chart-buttons");
     buttons.forEach((btn) => ((btn as HTMLElement).style.display = "none"));
 
@@ -147,7 +145,6 @@ const SelectedUser: React.FC<SelectedUserProps> = ({ email, selectedParam }) => 
     link.download = `${email}-${selectedParam}.png`;
     link.href = canvas.toDataURL();
     link.click();
-
     buttons.forEach((btn) => ((btn as HTMLElement).style.display = "flex"));
   };
 
@@ -160,19 +157,10 @@ const SelectedUser: React.FC<SelectedUserProps> = ({ email, selectedParam }) => 
   }
 
   return (
-    <div
-      style={{
-        padding: "2rem",
-        height: "51vh",
-        width: "100%",
-        boxSizing: "border-box",
-      }}
-    >
+    <div style={{ padding: "2rem", height: "51vh", width: "100%" }}>
       <h3 style={{ marginBottom: "1rem" }}>
-        Performance Curve:{" "}
-        <span style={{ color: "#83aac8" }}>{selectedParam}</span>
+        Performance Curve: <span style={{ color: "#83aac8" }}>{selectedParam}</span>
       </h3>
-
       <div
         id="selected-user-chart"
         style={{
@@ -196,7 +184,6 @@ const SelectedUser: React.FC<SelectedUserProps> = ({ email, selectedParam }) => 
           btns.forEach((btn) => ((btn as HTMLElement).style.opacity = "0"));
         }}
       >
-        {/* Chart Buttons */}
         <div
           className="chart-buttons"
           style={{
@@ -210,34 +197,8 @@ const SelectedUser: React.FC<SelectedUserProps> = ({ email, selectedParam }) => 
             zIndex: 10,
           }}
         >
-          <button
-            onClick={handleCopy}
-            style={{
-              background: "rgba(0,0,0,0.6)",
-              border: "none",
-              borderRadius: "4px",
-              color: "white",
-              padding: "4px 6px",
-              cursor: "pointer",
-              fontSize: "14px",
-            }}
-          >
-            📋
-          </button>
-          <button
-            onClick={handleDownload}
-            style={{
-              background: "rgba(0,0,0,0.6)",
-              border: "none",
-              borderRadius: "4px",
-              color: "white",
-              padding: "4px 6px",
-              cursor: "pointer",
-              fontSize: "14px",
-            }}
-          >
-            ⬇️
-          </button>
+          <button onClick={handleCopy} style={{ background: "#333", color: "#fff", borderRadius: "4px", padding: "4px 6px", cursor: "pointer" }}>📋</button>
+          <button onClick={handleDownload} style={{ background: "#333", color: "#fff", borderRadius: "4px", padding: "4px 6px", cursor: "pointer" }}>⬇️</button>
         </div>
 
         <Line
@@ -245,18 +206,12 @@ const SelectedUser: React.FC<SelectedUserProps> = ({ email, selectedParam }) => 
           options={{
             responsive: true,
             maintainAspectRatio: false,
-            plugins: {
-              legend: { position: "top" },
-              title: { display: false },
-            },
+            plugins: { legend: { position: "top" } },
             scales: {
               y: {
                 beginAtZero: true,
                 ticks: { precision: 0 },
-                title: {
-                  display: true,
-                  text: selectedParam,
-                },
+                title: { display: true, text: selectedParam },
               },
             },
           }}
