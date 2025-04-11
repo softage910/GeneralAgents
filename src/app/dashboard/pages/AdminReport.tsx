@@ -428,34 +428,50 @@ export default function TieredDashboard() {
 
           {/* Charts or User Report */}
           {selectedEmail ? (
-            <SelectedUser email={selectedEmail} selectedParam={selectedParam} />
-          ) : dataLoaded && selectedParam ? (
-            <div
-              style={{
-                backgroundColor: "#212121",
-                padding: "2rem",
-                borderRadius: "12px",
-                marginTop: "1rem",
-              }}
-            >
-              {["high", "mid", "low"]
-                .map((tier) => ({ tier, data: getTierData(tier as "low" | "mid" | "high") }))
-                .filter(({ data }) => data !== null)
-                .map(({ tier }) => renderChart(tier as "low" | "mid" | "high"))}
-            </div>
-          ) : (
-            <div
-              style={{
-                textAlign: "center",
-                padding: "2rem",
-                backgroundColor: "transparent",
-                borderRadius: "8px",
-                fontSize: "16px",
-              }}
-            >
-              <p style={{ fontStyle: "italic", color: "#777" }}>Select a Parameter for Results...</p>
-            </div>
-          )}
+  <SelectedUser email={selectedEmail} selectedParam={selectedParam} />
+) : selectedParam && dataLoaded ? (
+  <div
+    style={{
+      backgroundColor: "#212121",
+      padding: "2rem",
+      borderRadius: "12px",
+      marginTop: "1rem",
+    }}
+  >
+    {["high", "mid", "low"].map((tier) => {
+      const chart = getTierData(tier as "low" | "mid" | "high");
+      if (!chart) return null;
+      return renderChart(tier as "low" | "mid" | "high");
+    })}
+  </div>
+) : dataLoaded && !selectedParam ? (
+  <div
+    style={{
+      textAlign: "center",
+      padding: "2rem",
+      backgroundColor: "transparent",
+      borderRadius: "8px",
+      fontSize: "16px",
+    }}
+  >
+    <p style={{ fontStyle: "italic", color: "#777" }}>
+      Select a Parameter for Results...
+    </p>
+  </div>
+) : (
+  <div
+    style={{
+      textAlign: "center",
+      padding: "2rem",
+      backgroundColor: "transparent",
+      borderRadius: "8px",
+      fontSize: "16px",
+    }}
+  >
+    <p style={{ fontStyle: "italic", color: "#777" }}>Loading data...</p>
+  </div>
+)}
+
 
         </div>
       </div>
