@@ -2,7 +2,6 @@
 
 // @ts-expect-error: html2pdf types not available
 import html2pdf from "html2pdf.js";
-
 import {
   Chart as ChartJS,
   LineController,
@@ -41,6 +40,11 @@ export default function GenerateReportButton({
 
     for (const tier of tiers) {
       const users = getTierUsers(tier, allData, selectedParam);
+      const validUsers = users.filter(
+        (u) => typeof u.value === "number" && !isNaN(u.value)
+      );
+
+      if (!validUsers.length) continue;
 
       const color = tier === "low" ? "red" : tier === "mid" ? "orange" : "green";
 
@@ -55,19 +59,13 @@ export default function GenerateReportButton({
       chartHeading.style.fontSize = "15px";
       tierBlock.appendChild(chartHeading);
 
-      if (!users.length) {
-
-        continue;
-      }
-
-      // Chart
       const chartCanvas = document.createElement("canvas");
       chartCanvas.width = 800;
       chartCanvas.height = 300;
       const ctx = chartCanvas.getContext("2d");
       if (!ctx) continue;
 
-      const sortedChart = [...users].sort((a, b) => a.value - b.value);
+      const sortedChart = [...validUsers].sort((a, b) => a.value - b.value);
 
       new ChartJS(ctx, {
         type: "line",
@@ -106,8 +104,8 @@ export default function GenerateReportButton({
       img.style.margin = "1rem 0";
       tierBlock.appendChild(img);
 
-      // Table
-      const sortedTable = [...users].sort((a, b) => b.value - a.value);
+      const sortedTable = [...validUsers].sort((a, b) => b.value - a.value);
+
       const table = document.createElement("table");
       table.style.width = "100%";
       table.style.borderCollapse = "collapse";
@@ -138,7 +136,6 @@ export default function GenerateReportButton({
 
       table.appendChild(tbody);
       tierBlock.appendChild(table);
-
       wrapper.appendChild(tierBlock);
     }
 
@@ -158,7 +155,7 @@ export default function GenerateReportButton({
     tier: "low" | "mid" | "high",
     allData: Record<string, Record<string, number>>,
     param: string
-  ) => {
+  ): { email: string; value: number }[] => {
     const users = Object.entries(allData)
       .filter(([, vals]) => vals[param] > 0)
       .map(([email, vals]) => ({ email, value: vals[param] }));
@@ -168,10 +165,7 @@ export default function GenerateReportButton({
     const min = Math.min(...users.map((u) => u.value));
     const max = Math.max(...users.map((u) => u.value));
 
-    // If all values are same, all belong to high tier
-    if (min === max) {
-      return tier === "high" ? users : [];
-    }
+    if (min === max) return tier === "high" ? users : [];
 
     const normalize = (val: number) => ((val - min) / (max - min)) * 100;
 
