@@ -115,21 +115,15 @@ export default function FirestoreDocument() {
       const top10Threshold = topPerformer * 0.9;
       const bottom10Threshold = topPerformer * 0.1;
 
+      setShowPopup(false);
+      setPopupMessage("");
       if (myPerformance >= top10Threshold) {
         setPopupMessage("You are in the top 10% performers!");
         setShowPopup(true);
       } else if (myPerformance <= bottom10Threshold) {
         setPopupMessage("You are in the bottom 10% performers!");
         setShowPopup(true);
-      } else {
-        setShowPopup(false);
-        setPopupMessage("");
       }
-
-      popupTimeoutRef.current = setTimeout(() => {
-        setShowPopup(false);
-        setPopupMessage("");
-      }, 3000);
     }
   }, [selectedKey, data, userPerformance]);
 
@@ -137,7 +131,7 @@ export default function FirestoreDocument() {
   const getChartData = () => {
     if (!data || !selectedKey || !Array.isArray(data[selectedKey])) return null;
 
-    let uniqueValues = [...new Set(data[selectedKey].filter((val: number) => val !== 0))].sort((a, b) => a - b);
+    const uniqueValues = [...new Set(data[selectedKey].filter((val: number) => val !== 0))].sort((a, b) => a - b);
     if (uniqueValues.length === 0) return null;
 
     const topPerformer = uniqueValues[uniqueValues.length - 1];

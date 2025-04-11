@@ -54,7 +54,7 @@ body{
     position: fixed;
     left: -100%; /* Completely hidden */
     top: 0;
-    width: 24vw; /* Default width */
+    width: 20vw; /* Default width */
     height: 100vh;
     background: #333;
     color: white;
@@ -79,7 +79,7 @@ body{
 /* Shift content when sidebar opens */
 .sidebar.open + .Inner-Section {
     margin-left: 400px;
-    width: calc(100% - 24vw);
+    width: calc(100% - 20vw);
 }
 
 /* Hamburger Button */
@@ -328,7 +328,7 @@ padding: 10px;
 
 @media only screen and (max-width: 1460px) {
   .sidebar{
-    width: 30%;
+    width: 27%;
   }
 }
 
