@@ -41,7 +41,7 @@ export default function TieredDashboard() {
   const [allData, setAllData] = useState<Record<string, Record<string, number>>>({});
   const [selectedEmail, setSelectedEmail] = useState("");
   const [selectedParam, setSelectedParam] = useState("");
-  const [showWarning, setShowWarning] = useState(false);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -226,8 +226,7 @@ export default function TieredDashboard() {
           ) : (
             <button
               onClick={() => {
-                setShowWarning(true);
-                setTimeout(() => setShowWarning(false), 2000);
+   
               }}
               style={{
                 backgroundColor: "#ccc",
