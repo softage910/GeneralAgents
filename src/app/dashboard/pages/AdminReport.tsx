@@ -50,6 +50,8 @@ export default function TieredDashboard() {
   const [selectedEmail, setSelectedEmail] = useState("");
   const [selectedParam, setSelectedParam] = useState("");
   const [showWarning, setShowWarning] = useState(false);
+  const [dataLoaded, setDataLoaded] = useState(false);
+
 
   console.log("State initialized:", { selectedEmail, selectedParam, showWarning });
 
@@ -77,9 +79,11 @@ export default function TieredDashboard() {
         }
         setAllData(cleanedData);
         console.log("Cleaned data set:", cleanedData);
+        setDataLoaded(true);
       } catch (error) {
         console.error("Error fetching data from Firebase:", error);
       }
+      
     };
     fetchData();
   }, [db]); // Added db as a dependency
@@ -425,7 +429,7 @@ export default function TieredDashboard() {
           {/* Charts or User Report */}
           {selectedEmail ? (
             <SelectedUser email={selectedEmail} selectedParam={selectedParam} />
-          ) : selectedParam ? (
+          ) : dataLoaded && selectedParam ? (
             <div
               style={{
                 backgroundColor: "#212121",
