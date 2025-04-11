@@ -91,7 +91,6 @@ export default function GenerateUserReportButton({
       table.style.fontSize = "11px";
       table.style.marginBottom = "1rem";
       table.style.marginTop = "1rem";
-
       table.innerHTML = `
         <thead>
           <tr style="background:#eee">
