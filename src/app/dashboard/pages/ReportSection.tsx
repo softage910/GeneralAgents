@@ -1,6 +1,6 @@
 "use client";
 
-//@ts-expect-error
+// @ts-expect-error: html2pdf types not available
 import html2pdf from "html2pdf.js";
 
 import {
