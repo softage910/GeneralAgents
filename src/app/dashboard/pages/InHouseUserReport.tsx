@@ -23,7 +23,7 @@ import ParameterDropdown from "./ParameterDropdown";
 const ReportGeneratorButton = dynamic(() => import("./ReportSection"), { ssr: false });
 const GenerateUserReportButton = dynamic(() => import("./generateReport"), { ssr: false });
 
-const firebaseConfig = {
+const firebaseConfig2 = {
   apiKey: "AIzaSyATgZ3Ifa49BVy7Yo7TAoZdOmL-28t-gDA",
   authDomain: "generalagents-f8993.firebaseapp.com",
   databaseURL: "https://generalagents-f8993-default-rtdb.firebaseio.com",
@@ -34,7 +34,7 @@ const firebaseConfig = {
   measurementId: "G-EG0PCF0M0J",
 };
 
-const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+const app = getApps().length === 0 ? initializeApp(firebaseConfig2) : getApps()[0];
 const db = getFirestore(app);
 
 ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale, Title, Tooltip, Legend);
