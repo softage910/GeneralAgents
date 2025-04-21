@@ -43,7 +43,7 @@ return (
     <div className="Graph-Container"><p>Graph</p></div>
   </div> */}
 
-  <div className="Onboarding-Content">
+<div className="Onboarding-Content">
     <div className="Content-Video">
         {/* <h1>(Space For Onboarding Video)</h1> */}
         <div style={{position: "relative", paddingTop:"56.25%"}}><iframe src="https://iframe.mediadelivery.net/embed/393476/ee967ce6-a454-479a-9958-cfb10547f99c?autoplay=true&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style={{ position: "absolute", top: "0", height:"100%", width: "100%"}} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"></iframe></div>
