@@ -41,10 +41,13 @@ ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale, Title, T
 
 export default function TieredDashboard() {
   const [allData, setAllData] = useState<Record<string, Record<string, number>>>({});
-  const [selectedEmail, setSelectedEmail] = useState("");
+  // const [selectedEmail, setSelectedEmail] = useState("");
   const [selectedParam, setSelectedParam] = useState("");
   const [showWarning, setShowWarning] = useState(false);
   const [dataReady, setDataReady] = useState(false);
+
+  const UserEmail = session.getItem("userEmail");
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -160,15 +163,15 @@ export default function TieredDashboard() {
             <div style={{ display: "flex", gap: "1rem" }}>
               <ParameterDropdown
                 allData={allData}
-                selectedEmail={selectedEmail}
+                selectedEmail={UserEmail}
                 selectedParam={selectedParam}
                 setSelectedParam={setSelectedParam}
               />
-              <EmailSearchDropdown
+{/*               <EmailSearchDropdown
                 emails={Object.keys(allData)}
                 selectedEmail={selectedEmail}
                 setSelectedEmail={setSelectedEmail}
-              />
+              /> */}
             </div>
           </div>
 
