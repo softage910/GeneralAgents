@@ -548,19 +548,19 @@
 
 
 import '../General.css';
-import one from '../../../../../public/Images/5.3.png';
+// import one from '../../../../../public/Images/5.3.png';
 
-import Image from 'next/image';
-import Bulb from '../../../../../public/Images/bulb.png';
+// import Image from 'next/image';
+// import Bulb from '../../../../../public/Images/bulb.png';
 import {  useState } from 'react';
 
 
 export default function FirTopic() {
     const [openIndex, setOpenIndex] = useState<number | null>(null); // Specify type
 
-    const toggleFAQ = (index: number) => {
-      setOpenIndex(openIndex === index ? null : index); // Only toggle the clicked FAQ
-    };
+    // const toggleFAQ = (index: number) => {
+    //   setOpenIndex(openIndex === index ? null : index); // Only toggle the clicked FAQ
+    // };
     return (
         <>
 
@@ -850,7 +850,7 @@ during your recording.</p>
                 <li><strong>Creating Realistic Accounts</strong>
                 <p><strong>Populate with Realistic Data</strong></p>
                 <ul className='ul'>
-                  <li>Use "test" or &quot;fake&quot; data that makes your screen look authentic and varied</li>
+                  <li>Use &quot;test&quot; or &quot;fake&quot; data that makes your screen look authentic and varied</li>
                   <li>Create multiple files with real-sounding names in boards, projects, and
                   workspaces</li>
                   <li>This diversity helps Ace understand different users patterns and habits</li>
