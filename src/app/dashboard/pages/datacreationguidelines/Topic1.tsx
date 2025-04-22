@@ -556,7 +556,7 @@ import {  useState } from 'react';
 
 
 export default function FirTopic() {
-    const [openIndex, setOpenIndex] = useState<number | null>(null); // Specify type
+    // const [openIndex, setOpenIndex] = useState<number | null>(null); // Specify type
 
     // const toggleFAQ = (index: number) => {
     //   setOpenIndex(openIndex === index ? null : index); // Only toggle the clicked FAQ
