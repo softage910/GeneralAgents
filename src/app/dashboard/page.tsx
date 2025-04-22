@@ -207,7 +207,7 @@ import FinalCheck from "./pages/FinalCheck";
 import Admin from "./pages/Admin";
 import Glossary from "./pages/Glossary";
 import Report from './pages/Report';
-import EditableTextPage from "./pages/adminedit";
+// import EditableTextPage from "./pages/adminedit";
 
 type ModuleInfo = {
   day: string;
@@ -225,7 +225,6 @@ export default function Dashboard() {
   const [userType, setUserType] = useState<string | null>(null);
 
   let baseModules = [
-    "EditableTextPage",
     "Onboarding", "Report", "Introduction To Fluxe", "Introduction To Engine", 
     "Data Creation Guidelines", "Importance of Data Population and Diversity", 
     "Prompts: Instructions and Annotations", "Prompting Basics",
@@ -234,15 +233,15 @@ export default function Dashboard() {
   ];
 
   if (userType === "In-House Team") {
-    baseModules = baseModules.filter(module => !["EditableTextPage","Onboarding", "Extensive Tool Coverage And Function Mapper","Suggested Reading Materials"].includes(module));
+    baseModules = baseModules.filter(module => !["Onboarding", "Extensive Tool Coverage And Function Mapper","Suggested Reading Materials"].includes(module));
   }
   
   if (userType === "Domain Expert") {
-    baseModules = baseModules.filter(module => !["EditableTextPage","Report", "Extensive Tool Coverage And Function Mapper","Suggested Reading Materials"].includes(module));
+    baseModules = baseModules.filter(module => !["Report", "Extensive Tool Coverage And Function Mapper","Suggested Reading Materials"].includes(module));
   }
   
   if (userType === "Agent Trainer") {
-    baseModules = baseModules.filter(module => !["EditableTextPage",
+    baseModules = baseModules.filter(module => ![
     "Onboarding", "Report", "Introduction To Fluxe", "Introduction To Engine", 
     "Importance of Data Population and Diversity", 
     "Prompts: Instructions and Annotations", "Prompting Basics",
@@ -260,7 +259,6 @@ export default function Dashboard() {
         day: "DataList",
         module,
         component: ({
-          "EditableTextPage":EditableTextPage,
             "ADMIN": Admin,
             "Onboarding": UserDashboard,
             "Report": Report,
