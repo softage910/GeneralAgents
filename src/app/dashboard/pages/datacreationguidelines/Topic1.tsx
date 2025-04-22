@@ -552,7 +552,7 @@ import '../General.css';
 
 // import Image from 'next/image';
 // import Bulb from '../../../../../public/Images/bulb.png';
-import {  useState } from 'react';
+// import {  useState } from 'react';
 
 
 export default function FirTopic() {
