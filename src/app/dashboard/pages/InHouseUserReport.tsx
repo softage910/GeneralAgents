@@ -277,22 +277,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, doc, getDoc, DocumentData } from "firebase/firestore";
 import { Chart as ChartJS, LineElement, PointElement, LinearScale, CategoryScale, Title, Tooltip, Legend } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import { db } from "@/lib/firebaseconfig";
 
 ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale, Title, Tooltip, Legend);
 
-const firebaseConfig = {
-  apiKey: "AIzaSyATgZ3Ifa49BVy7Yo7TAoZdOmL-28t-gDA",
-  authDomain: "generalagents-f8993.firebaseapp.com",
-  databaseURL: "https://generalagents-f8993-default-rtdb.firebaseio.com",
-  projectId: "generalagents-f8993",
-  storageBucket: "generalagents-f8993.firebasestorage.app",
-  messagingSenderId: "560678836746",
-  appId: "1:560678836746:web:84cda659e267c9acea9df3",
-  measurementId: "G-EG0PCF0M0J"
-};
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+
 
 export default function FirestoreDocument() {
   const [userEmail, setUserEmail] = useState<string | null>(null);

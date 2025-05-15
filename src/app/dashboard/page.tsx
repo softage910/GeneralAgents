@@ -338,7 +338,7 @@ export default function Dashboard() {
   return (
     <div className="Dashboard-Section">
       <button className="hamburger" onClick={() => setIsOpen(!isOpen)}>☰</button>
-      <aside className={`sidebar ${isOpen ? "open" : ""}`}>
+      <aside className={`sidebar ${isOpen ? "open" : ""}`} style={{width:"27%"}}>
         <div className="sidebar-header">
           <Image src={Logo1} alt="Logo" width={180} height={0} />
         </div>

@@ -291,7 +291,7 @@ export default function SignInPage() {
       sessionStorage.setItem("userType", userData.type || "");
   
       setLoginMessage("Redirecting...");
-      router.push("/dashboard?Onboarding");
+      router.push("/dashboard?module=Onboarding");
     } catch (error) {
       console.error("Auto-login using key failed:", error);
       setLoginError("Auto-login failed. Please sign in manually.");
@@ -383,7 +383,7 @@ export default function SignInPage() {
       sessionStorage.setItem("userEmail", user.email || "");
       sessionStorage.setItem("userType", userData.type || "");
 
-      router.push("/dashboard?Onboarding");
+      router.push("/dashboard?module=Onboarding");
       setLoginMessage("Redirecting...");
     } catch (error) {
       console.error("Google Sign-In failed:", error);
