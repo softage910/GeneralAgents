@@ -273,8 +273,7 @@
 "use client";
 
 import { useEffect,useRef, useState } from "react";
-import { initializeApp } from "firebase/app";
-import { getFirestore, doc, getDoc, DocumentData } from "firebase/firestore";
+import { doc, getDoc, DocumentData } from "firebase/firestore";
 import { Chart as ChartJS, LineElement, PointElement, LinearScale, CategoryScale, Title, Tooltip, Legend } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { db } from "@/lib/firebaseconfig";
